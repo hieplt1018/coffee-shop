@@ -4,7 +4,9 @@
   "description": "gift for my best friend - Trinh Quang Hung",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server/server.js",
+    "dev": "SET NODE_ENV=DEVELOPMENT& nodemon server/server",
+    "prod": "SET NODE_ENV=PRODUCTION& nodemon server/server"
   },
   "repository": {
     "type": "git",
@@ -20,5 +22,8 @@
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "mongoose": "^7.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.21"
   }
 }
