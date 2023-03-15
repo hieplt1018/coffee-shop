@@ -1,0 +1,122 @@
+[
+  {
+    "name": "Americano",
+    "price": 14000,
+    "description": "Americano is a type of coffee drink prepared by diluting an espresso with hot water, giving it a similar strength to, but different flavor from, traditionally brewed coffee. Its strength varies with the number of shots of espresso and amount of water added. The name is also spelled with varying capitalization and use of diacritics: e.g., café americano.",
+    "images": [{
+      "public_id": "products/americano",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/0/09/Hokitika_Cheese_and_Deli%2C_Hokitika_%283526706594%29.jpg"
+    }],
+    "category": "Coffee",
+    "seller": "Trinh Quang Hung",
+    "stock": 5
+  },
+  {
+    "name": "Brioche",
+    "price": 32000,
+    "description": "Americano is a type of coffee drink prepared by diluting an espresso with hot water, giving it a similar strength to, but different flavor from, traditionally brewed coffee. Its strength varies with the number of shots of espresso and amount of water added. The name is also spelled with varying capitalization and use of diacritics: e.g., café americano.",
+    "images": [{
+      "public_id": "products/brioche",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/0/09/Hokitika_Cheese_and_Deli%2C_Hokitika_%283526706594%29.jpg"
+    }],
+    "category": "Pastries",
+    "seller": "Nguyen Khac Toan",
+    "stock": 5
+  },
+  {
+    "name": "Croissant",
+    "price": 30000,
+    "description": "Americano is a type of coffee drink prepared by diluting an espresso with hot water, giving it a similar strength to, but different flavor from, traditionally brewed coffee. Its strength varies with the number of shots of espresso and amount of water added. The name is also spelled with varying capitalization and use of diacritics: e.g., café americano.",
+    "images": [{
+      "public_id": "products/croissant",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/0/09/Hokitika_Cheese_and_Deli%2C_Hokitika_%283526706594%29.jpg"
+    }],
+    "category": "Pastries",
+    "seller": "Trinh Quang Hung",
+    "stock": 5
+  },
+  {
+    "name": "Mini croissant",
+    "price": 31000,
+    "description": "Americano is a type of coffee drink prepared by diluting an espresso with hot water, giving it a similar strength to, but different flavor from, traditionally brewed coffee. Its strength varies with the number of shots of espresso and amount of water added. The name is also spelled with varying capitalization and use of diacritics: e.g., café americano.",
+    "images": [{
+      "public_id": "products/minicroissant",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/0/09/Hokitika_Cheese_and_Deli%2C_Hokitika_%283526706594%29.jpg"
+    }],
+    "category": "Pastries",
+    "seller": "Trinh Quang Hung",
+    "stock": 5
+  },
+  {
+    "name": "Garlic butter bread",
+    "price": 25000,
+    "description": "Americano is a type of coffee drink prepared by diluting an espresso with hot water, giving it a similar strength to, but different flavor from, traditionally brewed coffee. Its strength varies with the number of shots of espresso and amount of water added. The name is also spelled with varying capitalization and use of diacritics: e.g., café americano.",
+    "images": [{
+      "public_id": "products/garliccupcake",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/0/09/Hokitika_Cheese_and_Deli%2C_Hokitika_%283526706594%29.jpg"
+    }],
+    "category": "Pastries",
+    "seller": "Trinh Quang Hung",
+    "stock": 5
+  },
+  {
+    "name": "Black Coffee's Bean",
+    "price": 50000,
+    "description": "Americano is a type of coffee drink prepared by diluting an espresso with hot water, giving it a similar strength to, but different flavor from, traditionally brewed coffee. Its strength varies with the number of shots of espresso and amount of water added. The name is also spelled with varying capitalization and use of diacritics: e.g., café americano.",
+    "images": [{
+      "public_id": "products/blackcoffee",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/0/09/Hokitika_Cheese_and_Deli%2C_Hokitika_%283526706594%29.jpg"
+    }],
+    "category": "Coffee Bean",
+    "seller": "Nguyen Khac Toan",
+    "stock": 5
+  },
+  {
+    "name": "Arbica Daklak",
+    "price": 32000,
+    "description": "Americano is a type of coffee drink prepared by diluting an espresso with hot water, giving it a similar strength to, but different flavor from, traditionally brewed coffee. Its strength varies with the number of shots of espresso and amount of water added. The name is also spelled with varying capitalization and use of diacritics: e.g., café americano.",
+    "images": [{
+      "public_id": "products/arbicadaklak",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/0/09/Hokitika_Cheese_and_Deli%2C_Hokitika_%283526706594%29.jpg"
+    }],
+    "category": "Cake",
+    "seller": "Trinh Quang Hung",
+    "stock": 5
+  },
+  {
+    "name": "Strawberry Cupcake",
+    "price": 14000,
+    "description": "Americano is a type of coffee drink prepared by diluting an espresso with hot water, giving it a similar strength to, but different flavor from, traditionally brewed coffee. Its strength varies with the number of shots of espresso and amount of water added. The name is also spelled with varying capitalization and use of diacritics: e.g., café americano.",
+    "images": [{
+      "public_id": "products/strawberrycupcake",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/0/09/Hokitika_Cheese_and_Deli%2C_Hokitika_%283526706594%29.jpg"
+    }],
+    "category": "Cake",
+    "seller": "Trinh Quang Hung",
+    "stock": 5
+  },
+  {
+    "name": "Hot Dog",
+    "price": 25000,
+    "description": "Americano is a type of coffee drink prepared by diluting an espresso with hot water, giving it a similar strength to, but different flavor from, traditionally brewed coffee. Its strength varies with the number of shots of espresso and amount of water added. The name is also spelled with varying capitalization and use of diacritics: e.g., café americano.",
+    "images": [{
+      "public_id": "products/hotdog",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/0/09/Hokitika_Cheese_and_Deli%2C_Hokitika_%283526706594%29.jpg"
+    }],
+    "category": "Pastries",
+    "seller": "Trinh Quang Hung",
+    "stock": 5
+  },
+  {
+    "name": "Expresso",
+    "price": 32000,
+    "description": "Americano is a type of coffee drink prepared by diluting an espresso with hot water, giving it a similar strength to, but different flavor from, traditionally brewed coffee. Its strength varies with the number of shots of espresso and amount of water added. The name is also spelled with varying capitalization and use of diacritics: e.g., café americano.",
+    "images": [{
+      "public_id": "products/expresso",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/0/09/Hokitika_Cheese_and_Deli%2C_Hokitika_%283526706594%29.jpg"
+    }],
+    "category": "Coffee",
+    "seller": "Trinh Quang Hung",
+    "stock": 5
+  }
+]

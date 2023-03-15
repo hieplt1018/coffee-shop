@@ -45,7 +45,7 @@ const productSchema = new mongoose.Schema({
       message: 'Please select correct category for product'
     }
   },
-  : {
+  seller: {
     type: String,
     required: [true, 'Please enter product\'s seller']
   },
