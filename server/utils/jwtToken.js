@@ -1,3 +1,5 @@
+const User = require("../models/user");
+
 const sendToken = (user, statusCode, res) => {
   const token = user.getJwtToken();
 
