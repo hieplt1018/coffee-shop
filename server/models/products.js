@@ -54,6 +54,11 @@ const productSchema = new mongoose.Schema({
     min: [0, 'Product\'s stock can\'t below 0'],
     default: 0
   },
+  user: {
+    type: mongoose.Schema.ObjectId,
+    ref: 'User',
+    required: true
+  },
   createdAt: {
     type: Date,
     default: Date.now
