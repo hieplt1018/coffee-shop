@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const errorMiddleWare  = require('./middleware/middleware.js');
+const errorMiddleWare  = require('./middleware/errors');
 
 app.use(express.json());
 
