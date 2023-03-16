@@ -18,7 +18,8 @@ const userSchema = new mongoose.Schema({
   password: {
     type: String,
     required: [true, 'Please enter your password'],
-    minLength: [6, 'Your password must be longer than 6 characters']
+    minLength: [6, 'Your password must be longer than 6 characters'],
+    select: false
   },
   avatar: {
     public_id: {
@@ -55,4 +56,9 @@ userSchema.methods.getJwtToken = function () {
     expiresIn: process.env.JWT_EXPIRES_TIME
   });
 }
+
+userSchema.methods.comparePassword = async function (enteredPassword) {
+  return await bcrypt.compare(enteredPassword, this.password);
+};
+
 module.exports = mongoose.model('User', userSchema);
