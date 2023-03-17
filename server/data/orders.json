@@ -1,0 +1,127 @@
+[
+  {
+    "shippingInfo": {
+        "address": "To dan pho so 3",
+        "city": "Ha Noi",
+        "district": "Cau Giay",
+        "ward": "Thang Loi",
+        "street": "chua Lang"
+    },
+    "customer": "64144e3299f38649673dfdfc",
+    "seller": "64144e2399f38649673dfdf8",
+    "orderItems": [
+        {
+            "product": "6414384caa70e3fb7c129645",
+            "quantity": 2,
+            "itemPrice": 100000
+        },
+        {
+          "product": "64144c6b4cbdcfd854cc3cb2",
+          "quantity": 2,
+          "itemPrice": 28000
+        } 
+    ],
+    "paymentInfo": "Cash",
+    "totalItemsPrice": 128000,
+    "totalOrder": 128000
+  },
+  {
+    "shippingInfo": {
+        "address": "To dan pho so 3",
+        "city": "Ha Noi",
+        "district": "Cau Giay",
+        "ward": "Thang Loi",
+        "street": "chua Lang"
+    },
+    "customer": "64144e3299f38649673dfdfc",
+    "seller": "64144e2399f38649673dfdf8",
+    "orderItems": [
+        {
+            "product": "64144c6b4cbdcfd854cc3cb8",
+            "quantity": 1,
+            "itemPrice": 31000
+        } 
+    ],
+    "paymentInfo": "Cash",
+    "totalItemsPrice": 310000,
+    "totalOrder": 310000
+  },
+  {
+    "shippingInfo": {
+        "address": "To dan pho so 3",
+        "city": "Ha Noi",
+        "district": "Cau Giay",
+        "ward": "Thang Loi",
+        "street": "chua Lang"
+    },
+    "customer": "64144e2b99f38649673dfdfa",
+    "seller": "64144e2399f38649673dfdf8",
+    "orderItems": [
+        {
+            "product": "64144c6b4cbdcfd854cc3cb8",
+            "quantity": 2,
+            "itemPrice": 64000
+        } 
+    ],
+    "paymentInfo": "Cash",
+    "totalItemsPrice": 64000,
+    "totalOrder": 64000
+  },
+  {
+    "shippingInfo": {
+        "address": "To dan pho so 3",
+        "city": "Ha Noi",
+        "district": "Cau Giay",
+        "ward": "Thang Loi",
+        "street": "chua Lang"
+    },
+    "customer": "64144e2b99f38649673dfdfa",
+    "seller": "64144e2399f38649673dfdf8",
+    "orderItems": [
+        {
+            "product": "64144c6b4cbdcfd854cc3cbc",
+            "quantity": 2,
+            "itemPrice": 100000
+        },
+        {
+          "product": "64144c6b4cbdcfd854cc3cbe",
+          "quantity": 2,
+          "itemPrice": 64000
+        },
+        {
+          "product": "64144c6b4cbdcfd854cc3cb6",
+          "quantity": 2,
+          "itemPrice": 60000
+        }
+    ],
+    "paymentInfo": "Cash",
+    "totalItemsPrice": 224000,
+    "totalOrder": 224000
+  },
+  {
+    "shippingInfo": {
+        "address": "To dan pho so 3",
+        "city": "Ha Noi",
+        "district": "Cau Giay",
+        "ward": "Thang Loi",
+        "street": "chua Lang"
+    },
+    "customer": "64144e2b99f38649673dfdfa",
+    "seller": "64144e1c99f38649673dfdf6",
+    "orderItems": [
+        {
+            "product": "64144c6b4cbdcfd854cc3cc2",
+            "quantity": 5,
+            "itemPrice": 125000
+        },
+        {
+          "product": "64144c6b4cbdcfd854cc3cc0",
+          "quantity": 2,
+          "itemPrice": 28000
+        }
+    ],
+    "paymentInfo": "Cash",
+    "totalItemsPrice": 153000,
+    "totalOrder": 153000
+  }
+]

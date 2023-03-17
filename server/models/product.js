@@ -43,12 +43,6 @@ const productSchema = new mongoose.Schema({
       message: 'Please select correct category for product'
     }
   },
-  seller: {
-    type: String,
-    required: [true, 'Please enter product\'s seller'],
-    trim: true,
-    maxLength: [200, 'Exceeded 200 characters']
-  },
   stock: {
     type: Number,
     required: [true, 'Please enter product\'s stock'],
@@ -56,10 +50,9 @@ const productSchema = new mongoose.Schema({
     min: [0, 'Product\'s stock can\'t below 0'],
     default: 0
   },
-  user: {
+  supplier: {
     type: mongoose.Schema.ObjectId,
-    ref: 'User',
-    required: true
+    ref: 'User'
   },
   createdAt: {
     type: Date,
