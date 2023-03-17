@@ -99,7 +99,7 @@ exports.resetPassword = catchAsyncErrors(async (req, res, next) => {
   sendToken(user, 200, res);
 });
 
-exports.getUserProfile = catchAsyncErrors(async (req, res, next) => {
+exports.getCurrentUser = catchAsyncErrors(async (req, res, next) => {
   const user = await User.findById(req.user.id);
 
   res.status(200).json({
@@ -119,6 +119,29 @@ exports.updatePassword = catchAsyncErrors(async (req, res, next) => {
   user.password = req.body.password;
   await user.save();
   sendToken(user, 200, res);
+});
+
+exports.getAllUsers = catchAsyncErrors(async (req, res, next) => {
+  const users = await User.find();
+
+  res.status(200).json({
+    success: true,
+    users
+  })
+});
+
+exports.getSingleUser = catchAsyncErrors(async (req, res, next) => {
+  const user = await User.findById(req.params.id);
+
+  if(!user) {
+    return next(new ErrorHandler(`User does not found with id: ${req.params.id}`
+      , 400));
+  };
+
+  res.status(200).json({
+    success: true,
+    user
+  });
 });
 
 exports.logout = catchAsyncErrors( async (req, res, next) => {
