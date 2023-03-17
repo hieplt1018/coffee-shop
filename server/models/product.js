@@ -45,7 +45,9 @@ const productSchema = new mongoose.Schema({
   },
   seller: {
     type: String,
-    required: [true, 'Please enter product\'s seller']
+    required: [true, 'Please enter product\'s seller'],
+    trim: true,
+    maxLength: [200, 'Exceeded 200 characters']
   },
   stock: {
     type: Number,

@@ -4,16 +4,19 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const crypto = require('crypto');
 
+const ROLE = ['admin', 'customer', 'staff'];
+
 const userSchema = new mongoose.Schema({
   name: {
     type: String,
     required: [true, 'Please enter your name'],
-    maxLength: [30, 'Your name can\'t exceed 30 characters']
+    maxLength: [100, 'Your name can\'t exceed 100 characters']
   },
   email: {
     type: String,
     required: [true, 'Please enter your email'],
     unique: true,
+    maxLength: [100, 'Your name can\'t exceed 100 characters'],
     validate: [validator.isEmail, 'Please enter valid email address']
   },
   password: {
@@ -34,7 +37,12 @@ const userSchema = new mongoose.Schema({
   },
   role: {
     type: String,
-    default: 'user'
+    required: true,
+    enum: {
+      values: ROLE,
+      message: 'Please select an available role'
+    },
+    default: 'customer'
   },
   createdAt: {
     type: Date,
