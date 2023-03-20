@@ -114,7 +114,7 @@ const orderSchema = mongoose.Schema({
       values: ORDER_STATUS,
       message: 'Please select an available order\'s status'
     },
-    default: 'processing'
+    default: ORDER_STATUS[0]
   },
   deliveredAt: {
     type: Date
