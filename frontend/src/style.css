@@ -131,6 +131,7 @@ ol {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top center;
+  background-image: var(--background);
 }
 
 .spad {
@@ -941,6 +942,10 @@ ol {
 /*---------------------
   Instagram
 -----------------------*/
+
+#instagram_home {
+  background-color: #E7DDB6;
+}
 .instagram__text {
   padding-top: 90px;
 }
@@ -1135,7 +1140,6 @@ ol {
 -----------------------*/
 .footer {
   padding-top: 30px;
-  /* background-image: url(../commons/images/footer-bg.jpg); */
 }
 
 .footer__widget {
