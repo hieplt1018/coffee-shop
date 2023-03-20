@@ -2,7 +2,7 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <footer className="footer set-bg" data-setbg="img/footer-bg.jpg">
+    <footer className="footer set-bg" style={{'--background': "url('img/footer-bg.jpg')"}}>
       <div className="container">
           <div className="row">
               <div className="col-lg-4 col-md-6 col-sm-6">
@@ -72,11 +72,11 @@ const Footer = () => {
 
                       <div >
                   <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fcantatacakecoffee%2F&tabs=timeline&width=400&height=200&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" 
-                  title="fb-iframe-1" width="100%" height="200px" style={{border:'none',overflow:'none'}} scrolling="no" frameborder="0" allowfullscreen="true" 
+                  title="fb-iframe-1" width="100%" height="200px" style={{border:'none', overflow:'none'}} scrolling="no" frameborder="0" allowfullscreen="true" 
                   allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
                   
                   <iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fcantatacakecoffee&width=150&layout=button_count&action=like&size=small&share=true&height=46&appId"
-                  title="fb-iframe-2" width="150" height="46" style={{border:'none',overflow:'none'}} scrolling="no" frameborder="0" allowfullscreen="true" 
+                  title="fb-iframe-2" width="150" height="46" style={{border:'none', overflow:'none'}} scrolling="no" frameborder="0" allowfullscreen="true" 
                   allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
                   </div>
 

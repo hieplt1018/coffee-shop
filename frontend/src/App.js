@@ -2,6 +2,7 @@ import React, { useState, useEffect, Fragment } from 'react';
 
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
+import Home from './components/Home';
 import CanvasMenu from './components/layout/CanvasMenu';
 import { PreLoader } from './components/layout/PreLoader';
 
@@ -21,6 +22,7 @@ function App() {
         <Fragment>
           <CanvasMenu /> 
           <Header />
+          <Home />
           <Footer />
         </Fragment>
         )
