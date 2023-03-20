@@ -7,8 +7,8 @@ const CanvasMenu = () => {
       <div className="offcanvas-menu-wrapper">
         <div className="offcanvas__cart">
           <div className="offcanvas__cart__links">
-              <a href="#" className="search-switch"><img src="img/icon/search.png" alt="search" /></a>
-              <a href="#"><img src="img/icon/heart.png" alt="heart" /></a>
+            <a href="#" className="search-switch"><img src="img/icon/search.png" alt="search" /></a>
+            <a href="#"><img src="img/icon/heart.png" alt="heart" /></a>
           </div>
         </div>
         <div className="offcanvas__logo">
@@ -26,7 +26,9 @@ const CanvasMenu = () => {
             <li>VN <span className="arrow_carrot-down"></span>
               <ul>
                 <li>VN</li>
-                <a href="./index.html"><li>EN</li></a>
+                <a href="./index.html">
+                  <li>EN</li>
+                </a>
               </ul>
             </li>
             <li><a href="#">Đăng nhập</a> <span className="arrow_carrot-down"></span></li>
