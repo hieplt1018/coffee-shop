@@ -179,8 +179,8 @@ ol {
   /*padding: 16px 100px;*/
 }
 
-/* Preloder */
-#preloder {
+/* Preloader */
+#preloader {
   position: fixed;
   width: 100%;
   height: 100%;
@@ -957,7 +957,7 @@ ol {
   position: absolute;
   left: 0;
   top: -34px;
-  background: url(../commons/images/cake-piece.png) no-repeat;
+  background: url(./commons/images/cake-piece.png) no-repeat;
   height: 139px;
   width: 114px;
   content: "";
