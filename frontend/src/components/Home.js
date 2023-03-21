@@ -1,11 +1,22 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useEffect } from 'react'
 import Carousel from 'react-bootstrap/Carousel';
 import MetaData from './layout/MetaData';
 import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
+import { useDispatch, useSelector } from 'react-redux';
+import { getProducts } from '../actions/productActions';
+import Product from './product/Product';
 
 const Home = () => {
+  const dispatch = useDispatch();
+
+  const { loading, products, error, productsCount } = useSelector(state => state.products);
+
+  useEffect(() => {
+    dispatch(getProducts());
+  }, [dispatch]);
+
   return (
     <Fragment>
       <MetaData title={'Home'} />
@@ -72,138 +83,13 @@ const Home = () => {
       </div>
 
       <section className="product spad">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-3 col-md-6 col-sm-6">
-              <div className="product__item">
-                <div className="product__item__pic set-bg" style={{'--background': "url('img/shop/product-1.jpg')"}}>
-                  <div className="product__label">
-                    <span>Bánh mỳ</span>
-                  </div>
-                </div>
-                <div className="product__item__text">
-                  <h6><a href="#">Bánh mỳ hoa cúc</a></h6>
-                  <div className="product__item__price">$32.00</div>
-                  <div className="cart_add">
-                    <a href="#">Thêm vào giỏ hàng</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-3 col-md-6 col-sm-6">
-              <div className="product__item">
-                <div className="product__item__pic set-bg" style={{'--background': "url('img/shop/product-2.jpg')"}}>
-                  <div className="product__label">
-                    <span>Bánh mỳ</span>
-                  </div>
-                </div>
-                <div className="product__item__text">
-                  <h6><a href="#">Bánh sừng bò</a></h6>
-                  <div className="product__item__price">$30.00</div>
-                  <div className="cart_add">
-                    <a href="#">Thêm vào giỏ hàng</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-3 col-md-6 col-sm-6">
-              <div className="product__item">
-                <div className="product__item__pic set-bg" style={{'--background': "url('img/shop/product-3.jpg')"}}>
-                  <div className="product__label">
-                    <span>Bánh mỳ</span>
-                  </div>
-                </div>
-                <div className="product__item__text">
-                  <h6><a href="#">Bánh sừng bò tí hon</a></h6>
-                  <div className="product__item__price">$31.00</div>
-                  <div className="cart_add">
-                    <a href="#">Thêm vào giỏ hàng</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-3 col-md-6 col-sm-6">
-              <div className="product__item">
-                <div className="product__item__pic set-bg" style={{'--background': "url('img/shop/product-4.jpg')"}}>
-                  <div className="product__label">
-                    <span>Bánh mỳ</span>
-                  </div>
-                </div>
-                <div className="product__item__text">
-                  <h6><a href="#">Bánh mỳ bơ tỏi phô mai</a></h6>
-                  <div className="product__item__price">$25.00</div>
-                  <div className="cart_add">
-                    <a href="#">Thêm vào giỏ hàng</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-3 col-md-6 col-sm-6">
-              <div className="product__item">
-                <div className="product__item__pic set-bg" style={{'--background': "url('img/shop/product-5.jpg')"}}>
-                  <div className="product__label">
-                    <span>Cà phê</span>
-                  </div>
-                </div>
-                <div className="product__item__text">
-                  <h6><a href="#">Black Coffee</a></h6>
-                  <div className="product__item__price">$05.00</div>
-                  <div className="cart_add">
-                    <a href="#">Thêm vào giỏ hàng</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-3 col-md-6 col-sm-6">
-              <div className="product__item">
-                <div className="product__item__pic set-bg" style={{'--background': "url('img/shop/product-6.jpg')"}}>
-                  <div className="product__label">
-                    <span>Cà phê</span>
-                  </div>
-                </div>
-                <div className="product__item__text">
-                  <h6><a href="#">Americano</a></h6>
-                  <div className="product__item__price">$14.00</div>
-                  <div className="cart_add">
-                    <a href="#">Thêm vào giỏ hàng</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-3 col-md-6 col-sm-6">
-              <div className="product__item">
-                <div className="product__item__pic set-bg" style={{'--background': "url('img/shop/product-7.jpg')"}}>
-                  <div className="product__label">
-                    <span>Cà phê</span>
-                  </div>
-                </div>
-                <div className="product__item__text">
-                  <h6><a href="#">Arabica Daklak</a></h6>
-                  <div className="product__item__price">$32.00</div>
-                  <div className="cart_add">
-                    <a href="#">Thêm vào giỏ hàng</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-3 col-md-6 col-sm-6">
-              <div className="product__item">
-                <div className="product__item__pic set-bg" style={{'--background': "url('img/shop/product-8.jpg')"}}>
-                  <div className="product__label">
-                    <span>Cà phê</span>
-                  </div>
-                </div>
-                <div className="product__item__text">
-                  <h6><a href="#">Fine Robusta</a></h6>
-                  <div className="product__item__price">$08.00</div>
-                  <div className="cart_add">
-                    <a href="#">Thêm vào giỏ hàng</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+      <div className="container">
+        <div className="row">
+          {products && products.slice(0,8).map(product => (
+            <Product key={product._id} product={product} />
+          ))};
         </div>
+      </div>
       </section>
 
       <section className="class spad">
