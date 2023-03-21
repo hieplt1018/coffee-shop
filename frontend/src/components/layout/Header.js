@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -24,16 +25,16 @@ const Header = () => {
                         </a>
                       </ul>
                     </li>
-                    <li><a href="#">Đăng nhập</a> <span className="arrow_carrot-down"></span></li>
+                    <li><Link to="#">Đăng nhập</Link> <span className="arrow_carrot-down"></span></li>
                   </ul>
                 </div>
                 <div className="header__logo">
-                  <a href="./index.html"><img src="img/logo.png" alt="Cantata logo" /></a>
+                  <Link to="./index.html"><img src="https://i.ibb.co/T4zW2Qm/logo.png" alt="logo" /></Link>
                 </div>
                 <div className="header__top__right">
                   <div className="header__top__right__links">
-                    <a href="#" className="search-switch"><img src="img/icon/search.png" alt="search" /></a>
-                    <a href="#"><img src="img/icon/heart.png" alt="heart" /></a>
+                    <Link to="#" className="search-switch"><img src="https://i.ibb.co/2SK2sbX/search.png" alt="search" /></Link>
+                    <Link to="#"><img src="https://i.ibb.co/DfVcbFT/heart.png" alt="heart" /></Link>
                   </div>
                 </div>
               </div>

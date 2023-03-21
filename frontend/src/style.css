@@ -107,6 +107,9 @@ ol {
   margin: 0;
 }
 
+#slogan {
+  text-align: justify;
+}
 /*---------------------
   Helper CSS
 -----------------------*/
@@ -135,7 +138,6 @@ ol {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top center;
-  background-image: var(--background);
 }
 
 .spad {
@@ -1144,6 +1146,7 @@ ol {
 -----------------------*/
 .footer {
   padding-top: 30px;
+  background-image: url('https://i.ibb.co/54D8Wrp/footer-bg.jpg');
 }
 
 .footer__widget {
@@ -4128,4 +4131,20 @@ ol {
 }
 #table1 img{
   width: 50px;
+}
+#baker {
+  background-image: url("https://i.ibb.co/3y6DtYz/team-1.jpg");
+}
+#bartender {
+  background-image: url("https://i.ibb.co/dGgL3m4/team-2.jpg");
+}
+#make_color {
+  background-image: url("https://i.ibb.co/pL49qYN/team-3.jpg");
+}
+#coo {
+  background-image: url("https://i.ibb.co/n3BkyHB/team-4.jpg");
+}
+.categories__item .categories__item__icon .image_categories {
+  height: 75px;
+  width: 75px;
 }
