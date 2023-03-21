@@ -968,7 +968,7 @@ ol {
   position: absolute;
   left: 0;
   top: -34px;
-  background: url(./commons/images/cake-piece.png) no-repeat;
+  background: url("https://i.ibb.co/PwY0zkK/cake-piece.png") no-repeat;
   height: 139px;
   width: 114px;
   content: "";

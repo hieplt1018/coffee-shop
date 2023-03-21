@@ -25,7 +25,7 @@ const Home = () => {
 
   return (
     <Fragment>
-      <MetaData title={'Home'} />
+      <MetaData title={'Trang chủ'} />
       <Carousel>
         <Carousel.Item>
           <img className="d-block w-100" src="https://i.ibb.co/Lt0rph0/hero-1.jpg" alt="hero-1" />
@@ -93,7 +93,7 @@ const Home = () => {
         <div className="row">
           {products && products.slice(0,8).map(product => (
             <Product key={product._id} product={product} />
-          ))};
+          ))}
         </div>
       </div>
       </section>
@@ -232,12 +232,6 @@ const Home = () => {
                 <div className="section-title">
                   <h2>Theo dõi chúng tôi</h2>
                 </div>
-                <Link to="https://www.facebook.com/cantatacakecoffee" target="_blank" rel="noopener noreferrer">
-                  <h5><i className="fa fa-facebook"></i> Cantata Cake & Coffee</h5>
-                </Link>
-                <Link to="https://www.instagram.com/cantatacoffee_/" target="_blank" rel="noopener noreferrer">
-                  <h5><i className="fa fa-instagram"></i> @cantatacoffee_</h5>
-                </Link>
                 <div id="followus">
                   <ul>
                     <li>
@@ -247,7 +241,7 @@ const Home = () => {
                     </li>
                     <li>
                       <Link to="https://www.instagram.com/cantatacoffee_/" target="_blank" rel="noopener noreferrer">
-                        <img src="https://i.ibb.co/DwKcSz1/icon-fb.png" alt="icon-fb" /> 
+                      <img src="https://i.ibb.co/HBZyBGc/icon-ins.png" alt="icon-ins" />
                       </Link>
                     </li>
                     <li>
