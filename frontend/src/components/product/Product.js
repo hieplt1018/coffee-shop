@@ -5,7 +5,10 @@ const Product = ({ product }) => {
   return (
     <div className="col-lg-3 col-md-6 col-sm-6">
       <div className="product__item">
-        <div className="product__item__pic set-bg" style={{'--background': "url('img/shop/product-1.jpg')"}}>
+        <div className="product__item__pic">
+          <Link to="#">
+            <img src="https://i.ibb.co/3CHfwN0/product-4.jpg" alt="product-4" />
+          </Link>
           <div className="product__label">
             <span>{product.category}</span>
           </div>

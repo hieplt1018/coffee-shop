@@ -1,8 +1,9 @@
 import React from 'react'
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="footer set-bg" style={{'--background': "url('img/footer-bg.jpg')"}}>
+    <footer className="footer set-bg">
       <div className="container">
         <div className="row">
           <div className="col-lg-4 col-md-6 col-sm-6">
@@ -18,31 +19,31 @@ const Footer = () => {
           <div className="col-lg-4 col-md-6 col-sm-6">
             <div className="footer__about">
               <div className="footer__logo">
-                <a href="#"><img src="img/footer-logo.png" alt="Cantata" /></a>
+                <Link to="#"><img src="https://i.ibb.co/8bFY6sw/footer-logo.png" alt="footer-logo" /></Link>
               </div>
               <p>Luôn phục vụ những thứ tốt nhất</p>
 
               <div id="footericon">
                 <ul>
                   <li>
-                    <a href="https://shopee.vn/shop/55494347/" target="_blank" rel="noopener noreferrer">
-                      <img src="img/icon/shopee.png" alt="shopee" />
-                    </a>
+                    <Link to="https://shopee.vn/shop/55494347/" target="_blank" rel="noopener noreferrer">
+                      <img src="https://i.ibb.co/3dCtWWm/shopee.png" alt="shopee" />
+                    </Link>
                   </li>
                   <li>
-                    <a href="https://shopee.vn/shop/55494347/" target="_blank" rel="noopener noreferrer">
-                      <img src="img/icon/shopeefood.png" alt="shopeefood" />
-                    </a>
+                    <Link to="https://shopee.vn/shop/55494347/" target="_blank" rel="noopener noreferrer">
+                      <img src="https://i.ibb.co/0nGh56Q/shopeefood.png" alt="shopeefood" />
+                    </Link>
                   </li>
                   <li>
-                    <a href="#" target="_blank" rel="noopener noreferrer">
-                      <img src="img/icon/grabfood.png" alt="grabfood" />
-                    </a>
+                    <Link to="#" target="_blank" rel="noopener noreferrer">
+                      <img src="https://i.ibb.co/n0XRJr0/grabfood.png" alt="grabfood" />
+                    </Link>
                   </li>
                   <li>
-                    <a href="#" target="_blank" rel="noopener noreferrer">
-                      <img src="img/icon/tiki.png" alt="tiki" />
-                    </a>
+                    <Link to="#" target="_blank" rel="noopener noreferrer">
+                      <img src="https://i.ibb.co/KGxrzY0/tiki.png" alt="tiki" />
+                    </Link>
                   </li>
                 </ul>
               </div>

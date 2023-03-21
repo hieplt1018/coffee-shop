@@ -1,4 +1,5 @@
-import React, {Fragment} from 'react'
+import React, {Fragment} from 'react';
+import { Link } from 'react-router-dom';
 
 const CanvasMenu = () => {
   return (
@@ -7,12 +8,12 @@ const CanvasMenu = () => {
       <div className="offcanvas-menu-wrapper">
         <div className="offcanvas__cart">
           <div className="offcanvas__cart__links">
-            <a href="#" className="search-switch"><img src="img/icon/search.png" alt="search" /></a>
-            <a href="#"><img src="img/icon/heart.png" alt="heart" /></a>
+            <Link to="#" className="search-switch"><img src="https://i.ibb.co/2SK2sbX/search.png" alt="search" /></Link>
+            <Link to="#"><img src="https://i.ibb.co/DfVcbFT/heart.png" alt="heart" /></Link>
           </div>
         </div>
         <div className="offcanvas__logo">
-          <a href="./index-VI.html"><img src="img/logo.png" alt="logo" /></a>
+          <Link to="./index-VI.html"><img src="https://i.ibb.co/T4zW2Qm/logo.png" alt="logo" /></Link>
         </div>
         <div id="mobile-menu-wrap"></div>
         <div className="offcanvas__option">
@@ -26,12 +27,12 @@ const CanvasMenu = () => {
             <li>VN <span className="arrow_carrot-down"></span>
               <ul>
                 <li>VN</li>
-                <a href="./index.html">
+                <Link to="./index.html">
                   <li>EN</li>
-                </a>
+                </Link>
               </ul>
             </li>
-            <li><a href="#">Đăng nhập</a> <span className="arrow_carrot-down"></span></li>
+            <li><Link to="#">Đăng nhập</Link> <span className="arrow_carrot-down"></span></li>
           </ul>
         </div>
       </div>
