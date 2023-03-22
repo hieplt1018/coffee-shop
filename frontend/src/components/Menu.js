@@ -25,6 +25,7 @@ const Menu = () => {
   function setCurrentPageNo(pageNumber) {
     setCurrentPage(pageNumber);
   }
+  
   return (
     <Fragment>
       <MetaData title={'Thực đơn'} />
@@ -86,6 +87,7 @@ const Menu = () => {
                   <Product key={product._id} product={product} />
                 ))}
               </div>
+              {console.log(`resPerPage: ${resPerPage}, productsCount: ${productsCount}`)}
               {resPerPage <= productsCount && (
                 <div className="shop__last__option">
                   <div className="row">
