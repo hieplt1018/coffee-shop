@@ -27,6 +27,7 @@ function App() {
           <Header />
           <Routes>
             <Route path="/" element={<Home />} /> 
+            <Route path="/search/:keyword" element={<Menu />} /> 
             <Route exact path='/product/:id' element={<ProductDetails />} />
             <Route exact path='/products' element={<Menu />} />
           </Routes>
