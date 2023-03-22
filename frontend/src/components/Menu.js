@@ -6,25 +6,27 @@ import Product from './product/Product';
 import { Link } from 'react-router-dom';
 import { useAlert } from 'react-alert';
 import Pagination from 'react-js-pagination';
-import { PreLoader } from './layout/PreLoader';
-
+import { PreLoader } from './common/PreLoader';
+import { useParams } from 'react-router-dom';
 
 const Menu = () => {
   const alert = useAlert();
   const dispatch = useDispatch();
   const [currentPage, setCurrentPage] = useState(1);
   const { loading, products, error, productsCount, resPerPage } = useSelector(state => state.products);
-
-  useEffect(() => {
-    dispatch(getProducts(currentPage));
-    if(error) {
-      alert.error(error);
-    };
-  }, [dispatch, alert, error, currentPage]);
+  const { keyword } = useParams();
 
   function setCurrentPageNo(pageNumber) {
     setCurrentPage(pageNumber);
-  }
+  };
+
+  useEffect(() => {
+    dispatch(getProducts(keyword, currentPage));
+    if(error) {
+      alert.error(error);
+    };
+  }, [dispatch, alert, error, keyword, currentPage]);
+
   return (
     <Fragment>
       <MetaData title={'Thực đơn'} />
@@ -52,21 +54,6 @@ const Menu = () => {
             <div className="container">
               <div className="shop__option">
                 <div className="row">
-                  <div className="col-lg-7 col-md-7">
-                    <div className="shop__option__search">
-                      <form action="#">
-                        <select>
-                          <option value>Categories</option>
-                          <option value>Cake</option>
-                          <option value>Coffee Drink</option>
-                          <option value>Coffee Bean</option>
-                          <option value>Machine</option>
-                        </select>
-                        <input type="text" placeholder="Search" />
-                        <button type="submit"><i className="fa fa-search" /></button>
-                      </form>
-                    </div>
-                  </div>
                   <div className="col-lg-5 col-md-5">
                     <div className="shop__option__right">
                       <select>

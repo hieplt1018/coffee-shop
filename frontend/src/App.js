@@ -3,9 +3,9 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'  ;
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 import Home from './components/Home';
-import ProductDetails from './components/product/ProductDetails';
+import ProductDetails from './components/ProductDetails';
 import CanvasMenu from './components/layout/CanvasMenu';
-import { PreLoader } from './components/layout/PreLoader';
+import { PreLoader } from './components/common/PreLoader';
 import Menu from './components/Menu';
 
 function App() {
@@ -27,8 +27,9 @@ function App() {
           <Header />
           <Routes>
             <Route path="/" element={<Home />} /> 
-            <Route exact path='/product/:id' element={<ProductDetails />} />
-            <Route exact path='/products' element={<Menu />} />
+            <Route path='/product/:id' element={<ProductDetails />} />
+            <Route path='/products' element={<Menu />} />
+            <Route path='/search/:keyword' element={<Menu />} />
           </Routes>
           <Footer />
         </Fragment>

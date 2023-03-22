@@ -1,12 +1,12 @@
 import React, { Fragment, useEffect } from 'react'
-import { getProductDetails } from '../../actions/productActions';
-import MetaData from '../layout/MetaData'
-import { PreLoader } from '../layout/PreLoader'
+import { getProductDetails } from '../actions/productActions';
+import MetaData from './layout/MetaData'
+import { PreLoader } from './common/PreLoader'
 import { Link, useParams } from 'react-router-dom';
-import { truncate } from '../../helpers/string_helpers';
+import { truncate } from '../helpers/string_helpers';
 import { useAlert } from 'react-alert';
 import { useDispatch, useSelector } from 'react-redux';
-import ProductImages from './ProductImages';
+import ProductImages from './product/ProductImages';
 
 
 
