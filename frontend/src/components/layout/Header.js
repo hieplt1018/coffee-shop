@@ -11,13 +11,13 @@ const Header = () => {
               <div className="header__top__inner">
                 <div className="header__top__left">
                   <ul>
-                    <li>VND<span className="arrow_carrot-down"></span>
+                    <li>VND<span className="fa-solid fa-chevron-down"></span>
                       <ul>
                         <li>VND</li>
                         <li>USD</li>
                       </ul>
                     </li>
-                    <li>VN<span className="arrow_carrot-down"></span>
+                    <li>VN<span className="fa-solid fa-chevron-down"></span>
                       <ul>
                         <li>VN</li>
                         <a href="./index.html">

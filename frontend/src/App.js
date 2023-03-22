@@ -1,12 +1,12 @@
 import React, { useState, useEffect, Fragment } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'  ;
-
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 import Home from './components/Home';
 import ProductDetails from './components/product/ProductDetails';
 import CanvasMenu from './components/layout/CanvasMenu';
 import { PreLoader } from './components/layout/PreLoader';
+import Menu from './components/Menu';
 
 function App() {
   const [loading, setLoading] = useState(false);
@@ -28,6 +28,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} /> 
             <Route exact path='/product/:id' element={<ProductDetails />} />
+            <Route exact path='/products' element={<Menu />} />
           </Routes>
           <Footer />
         </Fragment>
