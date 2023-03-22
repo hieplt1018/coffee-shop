@@ -27,10 +27,19 @@
 /*----------------------------------------*/
 /* Template default CSS
 /*----------------------------------------*/
+
+@font-face {
+  font-family: "Montserrat";
+  font-weight: 300;
+  font-style: normal;
+  src: url("./fonts/Montserrat-Light.woff2") format("woff2"),
+      url("./fonts/Montserrat-Light.woff") format("woff");
+}
+
 html,
 body {
   height: 100%;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -43,7 +52,7 @@ h6 {
   margin: 0;
   color: #11111194;
   font-weight: 400;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 h1 {
@@ -72,7 +81,7 @@ h6 {
 
 p {
   font-size: 16px;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   color: #111111;
   font-weight: 400;
   line-height: 28px;
@@ -131,7 +140,7 @@ ol {
   line-height: 60px;
   font-weight: 700;
   font-style: italic;
-  font-family: "Playfair Display", serif;
+  font-family: 'Playfair Display', serif;
 }
 
 .set-bg {
@@ -336,7 +345,7 @@ ol {
   float: left;
 }
 .header__top__left ul li {
-  font-size: 14px;
+  font-size: 16px;
   color: #111111;
   list-style: none;
   display: inline-block;
@@ -381,7 +390,7 @@ ol {
   position: absolute;
   right: -19px;
   top: 1px;
-  content: "|";
+  content: '|';
   color: #bbbbbb;
 }
 .header__top__left ul li:last-child {
@@ -392,6 +401,7 @@ ol {
 }
 .header__top__left ul li span {
   color: #888888;
+  margin-left: 0.5em;
 }
 
 .header__logo {
@@ -426,7 +436,7 @@ ol {
   position: absolute;
   right: -32px;
   top: 0px;
-  content: "|";
+  content: '|';
   font-size: 16px;
   color: #bababa;
 }
@@ -564,7 +574,7 @@ ol {
   height: calc(100% - 30px);
   width: calc(100% - 30px);
   border: 1px dashed #f08632;
-  content: "";
+  content: '';
   opacity: 0.3;
 }
 .hero__text h2 {
@@ -660,7 +670,7 @@ ol {
   height: 15px;
   border: 1px solid #42211A;
   border-color: transparent #42211A #42211A transparent;
-  content: "";
+  content: '';
   -webkit-transform: rotate(-135deg);
       -ms-transform: rotate(-135deg);
           transform: rotate(-135deg);
@@ -968,10 +978,10 @@ ol {
   position: absolute;
   left: 0;
   top: -34px;
-  background: url("https://i.ibb.co/PwY0zkK/cake-piece.png") no-repeat;
+  background: url('https://i.ibb.co/PwY0zkK/cake-piece.png') no-repeat;
   height: 139px;
   width: 114px;
-  content: "";
+  content: '';
 }
 .instagram__text h5 i {
   color: #111111;
@@ -1031,7 +1041,7 @@ ol {
   height: 20px;
   width: 20px;
   background: #ffffff;
-  content: "";
+  content: '';
   -webkit-transform: rotate(45deg);
       -ms-transform: rotate(45deg);
           transform: rotate(45deg);
@@ -1160,7 +1170,7 @@ ol {
   width: 1px;
   height: 165px;
   background: rgba(255, 255, 255, 0.1);
-  content: "";
+  content: '';
 }
 .footer__widget h6 {
   color: #ffffff;
@@ -1187,7 +1197,7 @@ ol {
   width: 1px;
   height: 165px;
   background: rgba(255, 255, 255, 0.1);
-  content: "";
+  content: '';
 }
 .footer__about .footer__logo {
   margin-bottom: 32px;
@@ -1307,7 +1317,7 @@ ol {
   position: absolute;
   right: -18px;
   top: 0;
-  content: "|";
+  content: '|';
   color: #888888;
 }
 .copyright__widget ul li:last-child {
@@ -1333,7 +1343,7 @@ ol {
   color: #5D453F;
   font-weight: 700;
   font-style: italic;
-  font-family: "Playfair Display", serif;
+  font-family: 'Playfair Display', serif;
 }
 
 .breadcrumb__links {
@@ -1351,7 +1361,7 @@ ol {
   position: absolute;
   right: -16px;
   top: 0;
-  content: "|";
+  content: '|';
   color: #888888;
 }
 .breadcrumb__links span {
@@ -1465,7 +1475,7 @@ ol {
   width: 1px;
   height: 20px;
   background: #e1e1e1;
-  content: "";
+  content: '';
 }
 .shop__option__search form .nice-select:after {
   border-bottom: 1px solid #888;
@@ -1568,7 +1578,7 @@ ol {
   height: 40px;
   width: 40px;
   border-radius: 50%;
-  line-height: 40px;
+  line-height: 28px;
   text-align: center;
   -webkit-transition: all, 0.5s;
   -o-transition: all, 0.5s;
@@ -1585,12 +1595,13 @@ ol {
   color: #ffffff;
 }
 
-.shop__last__text {
-  margin-bottom: 0;
-  color: #000000;
-  text-align: right;
+.pagination .page-item {
+  padding-right: 0.5em;
 }
 
+.pagination .active>.page-link{
+  background-color: #000;
+}
 /*---------------------
   Product Details
 -----------------------*/
@@ -1733,7 +1744,7 @@ ol {
   position: absolute;
   right: -25px;
   top: 0;
-  content: "|";
+  content: '|';
   color: #444444;
 }
 .product__details__tab .nav-tabs .nav-item:last-child {
@@ -2070,7 +2081,7 @@ ol {
   height: 14px;
   width: 14px;
   border: 1.5px solid #888888;
-  content: "";
+  content: '';
   border-radius: 2px;
 }
 .checkout__input__checkbox label .checkmark:after {
@@ -2084,7 +2095,7 @@ ol {
   -webkit-transform: rotate(127deg);
   -ms-transform: rotate(127deg);
   transform: rotate(127deg);
-  content: "";
+  content: '';
   opacity: 0;
 }
 .checkout__input__checkbox p {
@@ -2143,7 +2154,7 @@ ol {
   margin-bottom: 0;
 }
 .checkout__total__products li samp {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   font-weight: 600;
 }
@@ -2430,7 +2441,7 @@ ol {
   position: absolute;
   right: -14px;
   top: 0;
-  content: "|";
+  content: '|';
 }
 .blog__item__pic .blog__pic__inner ul li:last-child {
   margin-right: 0;
@@ -2443,7 +2454,7 @@ ol {
   padding-top: 42px;
 }
 .blog__item__text h2 {
-  font-family: "Playfair Display", serif;
+  font-family: 'Playfair Display', serif;
   color: #111111;
   font-style: italic;
   margin-bottom: 20px;
@@ -2529,7 +2540,7 @@ ol {
   height: 14px;
   width: 10px;
   background: rgba(226, 108, 12, 0.3);
-  content: "";
+  content: '';
 }
 .blog__sidebar__item .blog__sidebar__social a {
   display: inline-block;
@@ -2625,7 +2636,7 @@ ol {
   height: 14px;
   width: 14px;
   border: 1.5px solid #888888;
-  content: "";
+  content: '';
   border-radius: 2px;
 }
 .blog__sidebar__item form label .checkmark:after {
@@ -2639,7 +2650,7 @@ ol {
   -webkit-transform: rotate(127deg);
   -ms-transform: rotate(127deg);
   transform: rotate(127deg);
-  content: "";
+  content: '';
   opacity: 0;
 }
 
@@ -2666,7 +2677,7 @@ ol {
   color: #111111;
   line-height: 26px;
   font-style: italic;
-  font-family: "Playfair Display", serif;
+  font-family: 'Playfair Display', serif;
   margin-bottom: 8px;
 }
 .blog__sidebar__recent__item__text span {
@@ -2705,7 +2716,7 @@ ol {
 }
 .blog__hero__text h2 {
   font-size: 46px;
-  font-family: "Playfair Display", serif;
+  font-family: 'Playfair Display', serif;
   font-weight: 700;
   font-style: italic;
   color: #111111;
@@ -2723,7 +2734,7 @@ ol {
   position: absolute;
   right: -14px;
   top: 0;
-  content: "|";
+  content: '|';
 }
 .blog__hero__text ul li span {
   color: #111111;
@@ -2996,7 +3007,7 @@ ol {
   height: 14px;
   width: 10px;
   background: rgba(226, 108, 12, 0.3);
-  content: "";
+  content: '';
 }
 .blog__details__comment .primary-btn {
   background: rgba(226, 108, 12, 0.2);
@@ -3066,7 +3077,7 @@ ol {
   position: absolute;
   right: -16px;
   top: -2px;
-  content: "|";
+  content: '|';
   color: #888888;
   font-weight: 500;
 }
@@ -3126,7 +3137,7 @@ ol {
   color: #111111;
   font-weight: 700;
   font-style: italic;
-  font-family: "Playfair Display", serif;
+  font-family: 'Playfair Display', serif;
   margin-bottom: 20px;
 }
 .contact__text ul {
@@ -3413,7 +3424,7 @@ ol {
     height: 100%;
     width: 100%;
     background: rgba(0, 0, 0, 0.7);
-    content: "";
+    content: '';
     z-index: 98;
     -webkit-transition: all, 0.5s;
     -o-transition: all, 0.5s;
@@ -3538,7 +3549,7 @@ ol {
     position: absolute;
     right: -19px;
     top: 1px;
-    content: "|";
+    content: '|';
     color: #bbbbbb;
   }
   .offcanvas__option ul li:last-child {
@@ -3575,7 +3586,7 @@ ol {
     position: absolute;
     right: -18px;
     top: 0px;
-    content: "|";
+    content: '|';
     font-size: 16px;
     color: #bababa;
   }
@@ -4133,16 +4144,16 @@ ol {
   width: 50px;
 }
 #baker {
-  background-image: url("https://i.ibb.co/3y6DtYz/team-1.jpg");
+  background-image: url('https://i.ibb.co/3y6DtYz/team-1.jpg');
 }
 #bartender {
-  background-image: url("https://i.ibb.co/dGgL3m4/team-2.jpg");
+  background-image: url('https://i.ibb.co/dGgL3m4/team-2.jpg');
 }
 #make_color {
-  background-image: url("https://i.ibb.co/pL49qYN/team-3.jpg");
+  background-image: url('https://i.ibb.co/pL49qYN/team-3.jpg');
 }
 #coo {
-  background-image: url("https://i.ibb.co/n3BkyHB/team-4.jpg");
+  background-image: url('https://i.ibb.co/n3BkyHB/team-4.jpg');
 }
 .categories__item .categories__item__icon .image_categories {
   height: 75px;
