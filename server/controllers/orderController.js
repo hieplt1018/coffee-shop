@@ -34,6 +34,7 @@ exports.newOrder = catchAsyncErrors(async (req, res, next) => {
 
   res.status(200).json({
     success: true,
+    message: 'Đơn hàng tạo thành công!',
     order
   })
 });
@@ -42,7 +43,7 @@ exports.getMySingleOrder = catchAsyncErrors(async (req, res, next) => {
   const order = await Order.findById(req.params.id);
 
   if( !order || order.customer.valueOf() !== req.user.id ) {
-    return next(new ErrorHandler('No Order found with this ID', 404));
+    return next(new ErrorHandler('Không tìm thấy đơn đặt hàng', 404));
   };
 
   res.status(200).json({
@@ -75,7 +76,7 @@ exports.updateProcessOrder = catchAsyncErrors(async (req, res, next) => {
   const order = await Order.findById(req.params.id);
 
   if(order.orderStatus === 'Paid') {
-    return next(new ErrorHandler('This order is paid', 400));
+    return next(new ErrorHandler('Đơn đặt hàng này được thanh toán', 400));
   };
 
   order.orderItems.forEach(async item => {
@@ -88,6 +89,7 @@ exports.updateProcessOrder = catchAsyncErrors(async (req, res, next) => {
 
   res.status(200).json({
     success: true,
+    message: 'Cập nhật trạng thái thành công',
     order
   });
 });
@@ -103,13 +105,13 @@ exports.deleteOrder = catchAsyncErrors(async (req, res, next) => {
   const order = await Order.findById(req.params.id);
 
   if(!order) {
-    return next(new ErrorHandler('No order found with this ID', 404));
+    return next(new ErrorHandler('Không tìm thấy đơn đặt hàng', 404));
   }
 
   await order.deleteOne();
 
   res.status(200).json({
     success: true,
-    message: "Delete order successfully"
+    message: "Xóa đơn hàng thành công"
   })
 });

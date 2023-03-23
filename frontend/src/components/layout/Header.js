@@ -1,17 +1,22 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
-import { logout } from '../../actions/userActions';
-import { useAlert } from 'react-alert';
+import { clearErrors, logout } from '../../actions/userActions';
+import { toast } from 'react-toastify';
 
 const Header = () => {
   const{ user, loading } = useSelector(state => state.auth);
   const dispatch = useDispatch();
-  const alert = useAlert();
 
   const logoutHandler = () => {
     dispatch(logout());
-    alert.success('Logged out successfully');
+    toast.success('Đăng xuất thành công', {
+      theme: "colored"
+    });
+  }
+
+  const handleClick = () => {
+    dispatch(clearErrors);
   }
 
   return (
@@ -66,12 +71,12 @@ const Header = () => {
                         </Link>
                       </ul>
                     </li>
-                    ) : !loading && <li><Link to="/login">Đăng nhập</Link> <span className="arrow_carrot-down"></span></li> }
+                    ) : !loading && <li><Link to="/login" onClick={handleClick}>Đăng nhập</Link> <span className="arrow_carrot-down"></span></li> }
                     
                   </ul>
                 </div>
                 <div className="header__logo">
-                  <Link to="./index.html"><img src="https://i.ibb.co/T4zW2Qm/logo.png" alt="logo" /></Link>
+                  <Link to="/"><img src="https://i.ibb.co/T4zW2Qm/logo.png" alt="logo" /></Link>
                 </div>
                 <div className="header__top__right">
                   <div className="header__top__right__links">
@@ -90,11 +95,11 @@ const Header = () => {
           <div className="col-lg-12">
             <nav className="header__menu mobile-menu">
               <ul>
-                <li className="active"><a href="./index.html">Trang chủ</a></li>
-                <li><a href="./about.html">Giới thiệu</a></li>
-                <li><a href="./menu_vi.html">Thực đơn</a></li>
-                <li><a href="./blog.html">Tin tức</a></li>
-                <li><a href="./contact.html">Liên hệ</a></li>
+                <li className="active"><Link to="/">Trang chủ</Link></li>
+                <li><Link to="./about.html">Giới thiệu</Link></li>
+                <li><Link to="/products">Thực đơn</Link></li>
+                <li><Link to="./blog.html">Tin tức</Link></li>
+                <li><Link to="./contact.html">Liên hệ</Link></li>
               </ul>
             </nav>
           </div>

@@ -23,17 +23,17 @@ exports.registerUser = catchAsyncErrors(async (req, res, next) => {
 exports.loginUser = catchAsyncErrors(async (req, res, next) => {
   const { email, password } = req.body;
   if(!email || !password) {
-    return next(new ErrorHandler('Please enter email & password', 400));
+    return next(new ErrorHandler('Hãy nhập email và password', 400));
   };
 
   const user = await User.findOne({ email }).select('+password');
   if(!user) {
-    return next(new ErrorHandler('Invalid Email or Password', 401));
+    return next(new ErrorHandler('Email hoặc password không chính xác', 401));
   };
 
   const isPasswordMatched = await user.comparePassword(password);
   if(!isPasswordMatched) {
-    return next(new ErrorHandler('Invalid Email or Password'));
+    return next(new ErrorHandler('Email hoặc password không chính xác'));
   }
 
   const token = user.getJwtToken();
@@ -44,7 +44,7 @@ exports.forgotPassword = catchAsyncErrors(async (req, res, next) => {
   const user = await User.findOne({ email: req.body.email });
 
   if(!user) {
-    return next(new ErrorHandler('User not found with this email', 404));
+    return next(new ErrorHandler('Không tìm thấy người dùng với email này', 404));
   };
 
   const resetToken = user.getResetPasswordToken();
@@ -84,12 +84,12 @@ exports.resetPassword = catchAsyncErrors(async (req, res, next) => {
   });
 
   if(!user) {
-    return next(new ErrorHandler('Password reset token is invalid or has been expired'
+    return next(new ErrorHandler('Mã token đặt lại mật khẩu không hợp lệ hoặc đã hết hạn'
       , 400));
   };
   
   if(req.body.password !== req.body.confirmPassword) {
-    return next(new ErrorHandler('Password does not match', 400));
+    return next(new ErrorHandler('Mật khẩu không giống nhau', 400));
   };
 
   user.password = req.body.password;
@@ -113,7 +113,7 @@ exports.updatePassword = catchAsyncErrors(async (req, res, next) => {
 
   const isMatched = await user.comparePassword(req.body.oldPassword);
   if(!isMatched) {
-    return next(new ErrorHandler('Old password is incorrect!', 400));
+    return next(new ErrorHandler('Mật khẩu cũ không chính xác', 400));
   };
 
   user.password = req.body.password;
@@ -134,7 +134,7 @@ exports.getSingleUser = catchAsyncErrors(async (req, res, next) => {
   const user = await User.findById(req.params.id);
 
   if(!user) {
-    return next(new ErrorHandler(`User does not found with id: ${req.params.id}`
+    return next(new ErrorHandler(`Không tìm thấy người dùng`
       , 400));
   };
 
@@ -159,6 +159,7 @@ exports.updateUser = catchAsyncErrors(async (req, res, next) => {
 
   res.status(200).json({
     success: true,
+    message: 'Cập nhật thành công!',
     user
   });
 });
@@ -167,13 +168,14 @@ exports.deleteUser = catchAsyncErrors(async (req, res, next) => {
   const user = await User.findById(req.params.id);
 
   if(!user) {
-    return next(new ErrorHandler(`User does not found with id: ${req.params.id}`
+    return next(new ErrorHandler(`Không tìm thấy người dùng`
       , 400));
   };
 
   await user.deleteOne();
   res.status(200).json({
-    success: true
+    success: true,
+    message: 'Đã xóa thành công!'
   });
 });
 
@@ -190,7 +192,8 @@ exports.updateProfile = catchAsyncErrors(async (req, res, next) => {
   });
 
   res.status(200).json({
-    success: true
+    success: true,
+    'Cập nhật thành công!'
   });
 });
 
@@ -202,6 +205,6 @@ exports.logout = catchAsyncErrors( async (req, res, next) => {
 
   res.status(200).json({
     success: true,
-    message: "Logout successfully!"
+    message: "Đăng xuất thành công!"
   });
 });

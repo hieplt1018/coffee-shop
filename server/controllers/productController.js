@@ -9,6 +9,7 @@ exports.newProduct = catchAsyncErrors (async(req, res, next) => {
 
   res.status(201).json({
     success: true,
+    message: 'Tạo mới sản phẩm thành công',
     product
   })
 });
@@ -40,7 +41,7 @@ exports.getSingleProduct = catchAsyncErrors (async (req, res, next) => {
   const product = await Product.findById(req.params.id);
 
   if(!product) {
-    return next(new ErrorHandler('Product not found', 404));
+    return next(new ErrorHandler('Không tìm thấy sản phẩm', 404));
   };
 
   res.status(200).json({
@@ -52,7 +53,7 @@ exports.getSingleProduct = catchAsyncErrors (async (req, res, next) => {
 exports.updateProduct = catchAsyncErrors (async (req, res, nest) => {
   let product = await Product.findById(req.params.id);
   if(!product) {
-    return next(new ErrorHandler('Product not found', 404));
+    return next(new ErrorHandler('Không tìm thấy sản phẩm', 404));
   }
 
   product = await Product.findByIdAndUpdate(req.params.id, req.body, {
@@ -62,6 +63,7 @@ exports.updateProduct = catchAsyncErrors (async (req, res, nest) => {
 
   res.status(200).json({
     success: true,
+    message: 'Cập nhật sản phẩm thành công',
     product
   })
 });
@@ -69,13 +71,13 @@ exports.updateProduct = catchAsyncErrors (async (req, res, nest) => {
 exports.deleteProduct = catchAsyncErrors (async (req, res, next) => {
   const product = await Product.findById(req.params.id);
   if(!product) {
-    return next(new ErrorHandler('Product not found', 404));
+    return next(new ErrorHandler('Không tìm thấy sản phẩm', 404));
   }
   
   await product.deleteOne();
 
   res.status(200).json({
     success: true,
-    message: 'Product is deleted!'
+    message: 'Xóa sản phẩm thành công!'
   })
 });

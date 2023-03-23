@@ -1,17 +1,15 @@
 import React, { Fragment, useState, useEffect } from 'react'
 import MetaData from './layout/MetaData';
 import { useDispatch, useSelector } from 'react-redux';
-import { getProducts } from '../actions/productActions';
+import { getProducts, clearErrors } from '../actions/productActions';
 import Product from './product/Product';
-import { useAlert } from 'react-alert';
 import Pagination from 'react-js-pagination';
 import { PreLoader } from './layout/PreLoader';
 import Search from './common/Search';
 import { useParams } from 'react-router-dom';
-
+import { toast } from 'react-toastify';
 
 const Menu = () => {
-  const alert = useAlert();
   const dispatch = useDispatch();
   const [currentPage, setCurrentPage] = useState(1);
   const { loading, products, error, productsCount, resPerPage } = useSelector(state => state.products);
@@ -20,9 +18,12 @@ const Menu = () => {
   useEffect(() => {
     dispatch(getProducts(keyword, currentPage));
     if(error) {
-      alert.error(error);
+      toast.error(error, {
+        theme: "colored"
+      });
+      dispatch(clearErrors());
     };
-  }, [dispatch, alert, error, keyword, currentPage]);
+  }, [dispatch, error, keyword, currentPage]);
 
   function setCurrentPageNo(pageNumber) {
     setCurrentPage(pageNumber);

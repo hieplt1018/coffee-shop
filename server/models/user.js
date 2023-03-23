@@ -9,30 +9,30 @@ const ROLE = ['admin', 'customer', 'staff'];
 const userSchema = new mongoose.Schema({
   name: {
     type: String,
-    required: [true, 'Please enter your name'],
-    maxLength: [100, 'Your name can\'t exceed 100 characters']
+    required: [true, 'Vui lòng nhập tên của bạn'],
+    maxLength: [100, 'Không thể vượt quá 100 ký tự']
   },
   email: {
     type: String,
-    required: [true, 'Please enter your email'],
+    required: [true, 'Vui lòng nhập email'],
     unique: true,
-    maxLength: [100, 'Your name can\'t exceed 100 characters'],
-    validate: [validator.isEmail, 'Please enter valid email address']
+    maxLength: [100, 'Không thể vượt quá 100 ký tự'],
+    validate: [validator.isEmail, 'Vui lòng nhập địa chỉ email hợp lệ']
   },
   password: {
     type: String,
-    required: [true, 'Please enter your password'],
-    minLength: [6, 'Your password must be longer than 6 characters'],
+    required: [true, 'Vui lòng nhập mật khẩu của bạn'],
+    minLength: [6, 'Mật khẩu của bạn phải dài hơn 6 ký tự'],
     select: false
   },
   avatar: {
     public_id: {
       type: String,
-      maxLength: [300, 'Not invalid']
+      maxLength: [300, 'không hợp lệ']
     },
     url: {
       type: String,
-      maxLength: [300, 'Not invalid url']
+      maxLength: [300, 'không hợp lệ']
     }
   },
   role: {
@@ -40,7 +40,7 @@ const userSchema = new mongoose.Schema({
     required: true,
     enum: {
       values: ROLE,
-      message: 'Please select an available role'
+      message: 'Vui lòng chọn một vai trò có sẵn'
     },
     default: 'customer'
   },

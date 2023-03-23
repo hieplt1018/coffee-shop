@@ -9,31 +9,31 @@ const orderSchema = mongoose.Schema({
       type: String,
       required: true,
       trim: true,
-      maxLength: [100, 'Exceeded 100 characters']
+      maxLength: [100, 'Vượt quá 100 ký tự']
     },
     city: {
       type: String,
       required: true,
       trim: true,
-      maxLength: [50, 'Exceeded 50 characters']
+      maxLength: [50, 'Vượt quá 50 ký tự']
     },
     district: {
       type: String,
       required: true,
       trim: true,
-      maxLength: [50, 'Exceeded 50 characters']
+      maxLength: [50, 'Vượt quá 50 ký tự']
     },
     ward: {
       type: String,
       required: true,
       trim: true,
-      maxLength: [50, 'Exceeded 50 characters']
+      maxLength: [50, 'Vượt quá 50 ký tự']
     },
     street: {
       type: String,
       required: true,
       trim: true,
-      maxLength: [50, 'Exceeded 50 characters']
+      maxLength: [50, 'Vượt quá 50 ký tự']
     }
   },
   customer: {
@@ -56,15 +56,15 @@ const orderSchema = mongoose.Schema({
       quantity: {
         type: Number,
         required: true,
-        max: [1000000, 'Can\'t not exceed 1000000'],
-        min: [0, 'Can\'t below 0'],
+        max: [1000000, 'Không thể vượt quá 1.000.000'],
+        min: [0, 'Không thể dưới 0'],
         default: 0
       },
       itemPrice: {
         type: Number,
         required: true,
-        max: [100000000, 'Can\'t not exceed 100000000'],
-        min: [0, 'Can\'t below 0'],
+        max: [100000000, 'Không thể vượt quá 100.000.000'],
+        min: [0, 'Không thể dưới 0'],
         default: 0
       }
     }
@@ -74,7 +74,7 @@ const orderSchema = mongoose.Schema({
     required: true,
     enum: {
       values: PAYMENT_METHOD,
-      message: 'Please select an available payment method'
+      message: 'Vui lòng chọn phương thức thanh toán khả dụng'
     },
     default: 'Cash'
   },
@@ -86,22 +86,22 @@ const orderSchema = mongoose.Schema({
   taxPrice: {
     type: Number,
     required: true,
-    max: [1000000000, 'Can\'t not exceed 1000000000'],
-    min: [0, 'Can\'t below 0'],
+    max: [1000000000, 'Không thể vượt quá 1.000.000.000'],
+    min: [0, 'Không thể dưới 0'],
     default: 0
   },
   shippingPrice: {
     type: Number,
     required: true,
-    max: [1000000000, 'Can\'t not exceed 1000000000'],
-    min: [0, 'Can\'t below 0'],
+    max: [1000000000, 'Không thể vượt quá 1.000.000.000'],
+    min: [0, 'Không thể dưới 0'],
     default: 0
   },
   totalOrder: {
     type: Number,
     required: true,
-    max: [1000000000, 'Can\'t not exceed 1000000000'],
-    min: [0, 'Can\'t below 0'],
+    max: [1000000000, 'Không thể vượt quá 1.000.000.000'],
+    min: [0, 'Không thể dưới 0'],
     default: 0
   }, 
   paidAt: {
@@ -112,7 +112,7 @@ const orderSchema = mongoose.Schema({
     required: true,
     enum: {
       values: ORDER_STATUS,
-      message: 'Please select an available order\'s status'
+      message: 'Vui lòng chọn trạng thái đơn hàng sẵn có'
     },
     default: ORDER_STATUS[0]
   },

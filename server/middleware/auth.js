@@ -6,7 +6,7 @@ const User = require('../models/user');
 exports.isAuthenticateUser = catchAsyncErrors(async (req, res, next) => {
   const { token } = req.cookies;
   if(!token) {
-    return next(new ErrorHandler('Login first to access this resource.', 401));
+    return next(new ErrorHandler('Hãy đăng nhập để có thể truy cập.', 401));
   };
 
   const decoded = jwt.verify(token, process.env.JWT_SECRET);
@@ -19,7 +19,7 @@ exports.authorizeRoles = (...roles) => {
   return (req, res, next) => {
     if (!roles.includes(req.user.role)) {
       return next(
-        new ErrorHandler(`Role ${req.user.role} is not allowed to access this resource`,
+        new ErrorHandler(`${req.user.role} không được phép truy cập.`,
         403));
     };
     next();
