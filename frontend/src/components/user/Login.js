@@ -33,7 +33,8 @@ const Login = () => {
   const submitHandler = (e) => {
     e.preventDefault();
     dispatch(login(email, password));
-  }
+  };
+
   return (
     <Fragment>
       { loading ? <PreLoader /> : (
@@ -62,6 +63,9 @@ const Login = () => {
                                 placeholder='Email' 
                                 id="login-email" 
                                 value={email} 
+                                maxLength="100"
+                                minLength="0" 
+                                required
                                 className="form-control form-control-lg" 
                                 onChange={(e) => setEmail(e.target.value)}
                               />
@@ -69,8 +73,10 @@ const Login = () => {
                             <div className="form-outline mb-4">
                               <input 
                               type="password" 
-                              placeholder='Mật khẩu' 
+                              placeholder='Mật khẩu'
+                              minLength="6" 
                               id="login-password" 
+                              required
                               className="form-control form-control-lg" 
                               value={password}
                               onChange={(e) => setPassword(e.target.value)}
