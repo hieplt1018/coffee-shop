@@ -7,17 +7,13 @@ import ProductDetails from './components/product/ProductDetails';
 import CanvasMenu from './components/layout/CanvasMenu';
 import Menu from './components/Menu';
 import Login from './components/user/Login';
-import { clearErrors, loadUser } from './actions/userActions';
+import { loadUser } from './actions/userActions';
 import store from './store';
 import Register from './components/user/Register';
-import { useDispatch } from 'react-redux';
 
 function App() {
-  const dispatch = useDispatch();
-
   useEffect(() => {
     store.dispatch(loadUser());
-    dispatch(clearErrors());
   });
   
   return (
