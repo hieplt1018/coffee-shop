@@ -7,19 +7,24 @@ import {
   LOAD_USER_SUCCESS,
   LOAD_USER_FAIL,
   LOG_OUT_SUCCESS,
-  LOG_OUT_FAIL
+  LOG_OUT_FAIL,
+  REGISTER_USER_REQUEST,
+  REGISTER_USER_SUCCESS,
+  REGISTER_USER_FAIL
 } from "../constants/userConstants";
 
 export const authReducer = (state = { user: {}}, action) => {
   switch(action.type) {
     case LOGIN_USER_REQUEST:
     case LOAD_USER_REQUEST:
+    case REGISTER_USER_REQUEST:
       return {
         loading: true,
         isAuthenticated: false,
       }
     case LOGIN_USER_SUCCESS:
     case LOAD_USER_SUCCESS:
+    case REGISTER_USER_SUCCESS:
       return {
         ...state, 
         loading: false,
@@ -45,6 +50,7 @@ export const authReducer = (state = { user: {}}, action) => {
         error: action.payload
       }
     case LOGIN_USER_FAIL:
+    case REGISTER_USER_FAIL:
       return {
         ...state,
         loading: false,

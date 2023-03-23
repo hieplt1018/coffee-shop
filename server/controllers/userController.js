@@ -7,6 +7,7 @@ const crypto = require('crypto');
 
 exports.registerUser = catchAsyncErrors(async (req, res, next) => {
   const { name, email, password } = req.body;
+  
   const user = await User.create({
     name,
     email,
@@ -193,7 +194,7 @@ exports.updateProfile = catchAsyncErrors(async (req, res, next) => {
 
   res.status(200).json({
     success: true,
-    'Cập nhật thành công!'
+    message: 'Cập nhật thành công!'
   });
 });
 
