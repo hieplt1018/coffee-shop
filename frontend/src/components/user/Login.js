@@ -22,11 +22,14 @@ const Login = () => {
         theme: "colored"
       });
     }
+    
     if(error) {
-      toast.error(error, {
-        theme: "colored"
-      });
-      dispatch(clearErrors());
+      if(!error.split(' ').includes('truy')) {
+        toast.error(error, {
+          theme: "colored"
+        });
+        dispatch(clearErrors());
+      }
     }
   }, [dispatch, isAuthenticated, error, history]);
 
