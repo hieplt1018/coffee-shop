@@ -4159,3 +4159,16 @@ ol {
   height: 75px;
   width: 75px;
 }
+.login-page {
+  background-color: #eee;
+}
+#login-card {
+  border-radius: 1rem;
+}
+#login-icon-coffee {
+  color: #43201a;
+}
+.login-link:hover {
+  text-decoration: underline;
+  color:#3263af;
+}

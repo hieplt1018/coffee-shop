@@ -4,6 +4,7 @@ const catchAsyncErrors = require('../middleware/catchAsyncErrors');
 const sendToken = require('../utils/jwtToken');
 const sendEmail = require('../utils/sendEmail');
 const crypto = require('crypto');
+const cloudinary = require('cloudinary');
 
 exports.registerUser = catchAsyncErrors(async (req, res, next) => {
   const { name, email, password } = req.body;
@@ -12,8 +13,8 @@ exports.registerUser = catchAsyncErrors(async (req, res, next) => {
     email,
     password,
     avatar: {
-      public_id: 'avatars/defaultuser',
-      url: 'https://imageio.forbes.com/specials-images/imageserve/5c76bcaaa7ea43100043c836/0x0.jpg'
+      public_id: 'avatars/default',
+      url: 'https://i.ibb.co/h9mr7d4/download.png'
     }
   });
 
