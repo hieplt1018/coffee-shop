@@ -5,49 +5,49 @@ const CATEGORIES = ['Cake', 'Coffee', 'Coffee Bean', 'Pastries', 'Bread'];
 const productSchema = new mongoose.Schema({
   name: {
     type: String,
-    required: [true, 'Please enter product\'s name'],
+    required: [true, 'Vui lòng nhập tên sản phẩm'],
     trim: true,
-    maxLength: [100, 'Product\'s name can\'t exceed 100 characters']
+    maxLength: [100, 'Tên sản phẩm không được vượt quá 100 ký tự']
   },
   price: {
     type: Number,
-    required: [true, 'Please enter product\'s price'],
-    maxLength: [7, 'Product\'s price can\'t exceed 7 characters'],
-    max: [1000000, 'Product\'s price can\'t not exceed 1000000'],
-    min: [0, 'Product\'s price can\'t below 0'],
+    required: [true, 'Vui lòng nhập giá sản phẩm'],
+    maxLength: [7, 'Giá của sản phẩm không được vượt quá 7 ký tự'],
+    max: [1000000, 'Giá sản phẩm không được vượt quá 1.000.000'],
+    min: [0, 'Giá sản phẩm không thể dưới 0'],
     default: 0
   },
   description: {
     type: String,
-    required: [true, 'Please enter product\'s description'],
+    required: [true, 'Vui lòng nhập mô tả sản phẩm'],
     trim: true,
-    maxLength: [3000, 'Product\'s name can\'t exceed 3000 characters']
+    maxLength: [3000, 'Tên sản phẩm không được vượt quá 3000 ký tự']
   },
   images: [
     {
       public_id: {
         type: String,
-        maxLength: [300, 'Not invalid']
+        maxLength: [300, 'không hợp lệ']
       },
       url: {
         type: String,
-        maxLength: [300, 'Not invalid url']
+        maxLength: [300, 'không hợp lệl']
         }
     }
   ],
   category: {
     type: String,
-    required: [true, 'Please select category for this product'],
+    required: [true, 'Vui lòng chọn danh mục cho sản phẩm này'],
     enum: {
       values: CATEGORIES,
-      message: 'Please select correct category for product'
+      message: 'Vui lòng chọn trong danh mục có sẵn'
     }
   },
   stock: {
     type: Number,
-    required: [true, 'Please enter product\'s stock'],
-    max: [1000, 'Product\'s stock can\'t not exceed 1000'],
-    min: [0, 'Product\'s stock can\'t below 0'],
+    required: [true, 'Vui lòng nhập số lượng sản phẩm'],
+    max: [1000, 'Số lượng của sản phẩm không được vượt quá 1000'],
+    min: [0, 'Số lượng của sản phẩm không thể dưới 0'],
     default: 0
   },
   supplier: {

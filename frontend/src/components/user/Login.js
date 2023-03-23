@@ -1,17 +1,16 @@
 import React, { Fragment, useState, useEffect } from 'react'
 import MetaData from '../layout/MetaData';
 import { useDispatch, useSelector } from 'react-redux';
-import { useAlert } from 'react-alert';
 import { PreLoader } from '../layout/PreLoader';
 import { login, clearErrors } from '../../actions/userActions'
 import { Link, useNavigate } from "react-router-dom";
+import { toast } from 'react-toastify';
 
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   let history = useNavigate();
-  const alert = useAlert();
   const dispatch = useDispatch();
 
   const { isAuthenticated, error, loading } = useSelector(state => state.auth);
@@ -19,12 +18,17 @@ const Login = () => {
   useEffect(() => {
     if (isAuthenticated) {
       history('/');
+      toast.success("Đăng nhập thành công", {
+        theme: "colored"
+      });
     }
     if(error) {
-      alert.error(error);
+      toast.error(error, {
+        theme: "colored"
+      });
       dispatch(clearErrors());
     }
-  }, [dispatch, alert, isAuthenticated, error, history]);
+  }, [dispatch, isAuthenticated, error, history]);
 
   const submitHandler = (e) => {
     e.preventDefault();

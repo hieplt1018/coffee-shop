@@ -1,17 +1,14 @@
 import React, { Fragment, useEffect } from 'react'
-import { getProductDetails } from '../../actions/productActions';
+import { getProductDetails, clearErrors } from '../../actions/productActions';
 import MetaData from '../layout/MetaData'
 import { PreLoader } from '../layout/PreLoader'
 import { Link, useParams } from 'react-router-dom';
 import { truncate } from '../../helpers/string_helpers';
-import { useAlert } from 'react-alert';
 import { useDispatch, useSelector } from 'react-redux';
 import ProductImages from './ProductImages';
-
-
+import { toast } from 'react-toastify';
 
 const ProductDetails = () => {
-  const alert = useAlert();
   const dispatch = useDispatch();
   const { id } = useParams();
 
@@ -20,7 +17,10 @@ const ProductDetails = () => {
   useEffect(() => {
     dispatch(getProductDetails(id));
     if(error) {
-      alert.error(error);
+      toast.error(error, {
+        theme: "colored"
+      });
+      dispatch(clearErrors());
     };
   }, [dispatch, alert, error, id]);
 

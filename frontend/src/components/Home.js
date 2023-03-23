@@ -5,13 +5,12 @@ import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { getProducts } from '../actions/productActions';
+import { getProducts, clearErrors } from '../actions/productActions';
 import Product from './product/Product';
 import { Link } from 'react-router-dom';
-import { useAlert } from 'react-alert';
+import { toast } from 'react-toastify';
 
 const Home = () => {
-  const alert = useAlert();
   const dispatch = useDispatch();
 
   const { products, error } = useSelector(state => state.products);
@@ -19,9 +18,12 @@ const Home = () => {
   useEffect(() => {
     dispatch(getProducts());
     if(error) {
-      alert.error(error);
+      toast.error(error, {
+        theme: "colored"
+      });
+      dispatch(clearErrors());
     };
-  }, [dispatch, alert, error]);
+  }, [dispatch, error]);
 
   return (
     <Fragment>
