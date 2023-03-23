@@ -358,7 +358,7 @@ ol {
   color: #111111;
 }
 .header__top__left ul li:hover ul {
-  top: 24px;
+  top: 2.3em;
   opacity: 1;
   visibility: visible;
 }
@@ -378,7 +378,7 @@ ol {
 }
 .header__top__left ul li ul li {
   list-style: none;
-  font-size: 13px;
+  font-size: 14px;
   color: #ffffff;
   padding: 2px 15px;
   cursor: pointer;
@@ -483,6 +483,11 @@ ol {
   display: inline-block;
   position: relative;
   margin-right: -5px;
+}
+.header__menu ul li:before {
+  content: '';
+  height: y;
+  width: x;
 }
 .header__menu ul li.active a {
   background: #8E6861;

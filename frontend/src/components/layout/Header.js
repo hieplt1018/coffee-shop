@@ -1,7 +1,19 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from 'react-redux';
+import { logout } from '../../actions/userActions';
+import { useAlert } from 'react-alert';
 
 const Header = () => {
+  const{ user, loading } = useSelector(state => state.auth);
+  const dispatch = useDispatch();
+  const alert = useAlert();
+
+  const logoutHandler = () => {
+    dispatch(logout());
+    alert.success('Logged out successfully');
+  }
+
   return (
     <header className="header">
       <div className="header__top">
@@ -20,12 +32,42 @@ const Header = () => {
                     <li>VN<span className="fa-solid fa-chevron-down"></span>
                       <ul>
                         <li>VN</li>
-                        <a href="./index.html">
+                        <Link to="./index.html">
                           <li>EN</li>
-                        </a>
+                        </Link>
                       </ul>
                     </li>
-                    <li><Link to="#">Đăng nhập</Link> <span className="arrow_carrot-down"></span></li>
+                    { user ? (
+                    <li>
+                      <img
+                      src={user.avatar && user.avatar.url}
+                      alt={user && user.name}
+                      className="rounded-circle"
+                      width="32"
+                      height="32"
+                      /> {user && user.name}<span className="fa-solid fa-chevron-down"></span>
+                      <ul>
+                        { user && !['admin','staff'].includes(user.role) ? (
+                          <Link to="/orders/me">
+                            <li>Đơn hàng</li>
+                          </Link>
+                        ) : (
+                          <Link to="/dashboard">
+                            <li>Thống kê</li>
+                          </Link>
+                        )}
+                        <Link to="/me">
+                          <li>Tài khoản</li>
+                        </Link>
+                        <Link to="/" onClick={logoutHandler}>
+                          <li>
+                            Đăng xuất
+                          </li>
+                        </Link>
+                      </ul>
+                    </li>
+                    ) : !loading && <li><Link to="/login">Đăng nhập</Link> <span className="arrow_carrot-down"></span></li> }
+                    
                   </ul>
                 </div>
                 <div className="header__logo">
