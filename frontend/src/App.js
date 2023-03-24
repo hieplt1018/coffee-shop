@@ -12,6 +12,7 @@ import store from './store';
 import Register from './components/user/Register';
 import Profile from './components/user/Profile';
 import ProtectedRoute from './components/route/ProtectedRoute';
+import UpdateProfile from './components/user/UpdateProfile';
 
 function App() {
   useEffect(() => {
@@ -20,20 +21,25 @@ function App() {
   
   return (
     <BrowserRouter >
-      <div className="App">
+      <div className='App'>
         <Fragment>
           <CanvasMenu /> 
           <Header />
           <Routes>
-            <Route path="/" element={<Home />} /> 
-            <Route path="/search/:keyword" element={<Menu />} /> 
+            <Route path='/' element={<Home />} /> 
+            <Route path='/search/:keyword' element={<Menu />} /> 
             <Route path='/product/:id' element={<ProductDetails />} />
             <Route path='/products' element={<Menu />} />
             <Route path='/login' element={<Login />} />
             <Route path='/register' element={<Register />} />
-            <Route path="/me" element={
+            <Route path='/me' element={
               <ProtectedRoute>
                 <Profile />
+              </ProtectedRoute>
+            } />
+            <Route path='/me/update' element={
+              <ProtectedRoute>
+                <UpdateProfile />
               </ProtectedRoute>
             } />
           </Routes>
