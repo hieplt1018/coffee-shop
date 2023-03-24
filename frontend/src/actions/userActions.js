@@ -76,7 +76,8 @@ export const loadUser = () => async(dispatch) => {
     dispatch({
       type: LOGIN_USER_FAIL,
       payload: error.response.data.message
-    })
+    });
+    dispatch({ type: CLEAR_ERRORS });
   }
 }
 

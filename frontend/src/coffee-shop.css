@@ -4167,3 +4167,30 @@ ol {
 #register-hero {
   height: 90%;
 }
+.profile {
+  color: #5D453F;
+  font-weight: bold;
+}
+.btn-primary,
+.btn-primary:visited {
+  background-color: #fff;
+  border-color: #5D453F;
+  color: #5D453F;
+  font-weight: bold;
+}
+
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:focus {
+    background-color: #5D453F;
+    border-color: #fff;
+    color: #fff;
+}
+
+#main-profile {
+  position: relative;
+  z-index: 3;
+  margin: 2em 5em 5em 5em;
+  border-radius: 6px;
+  box-shadow: 0 16px 24px 2px rgba(0,0,0,.14), 0 6px 30px 5px rgba(0,0,0,.12), 0 8px 10px -5px rgba(0,0,0,.2);
+}
