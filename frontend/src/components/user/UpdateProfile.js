@@ -54,7 +54,7 @@ const UpdateProfile = () => {
             <div className='breadcrumb-option'>
               <div className='container'>
                 <div className='row'>
-                  <div className='col-lg-6 col-md-6 col-sm-6'>
+                  <div className='col-lg-6 col-md-6 col-sm-6 offset-md-4'>
                     <div className='breadcrumb__text'>
                       <h2>Cập nhật hồ sơ</h2>
                     </div>
@@ -62,52 +62,59 @@ const UpdateProfile = () => {
                 </div>
                 <div id='main-profile'>
                   <div className='row justify-content-center'>
-                    <div className='col-12 col-md-3 border-right'>
-                      <div className='d-flex flex-column align-items-center text-center p-3 py-5'>
+                    <div className="col-12 border-right">
+                      <div className="d-flex flex-column align-items-center text-center">
                         <figure>
-                          <img className='rounded-circle mt-5' width='150px' src={user.avatar.url} alt={user.name}
+                          <img className="rounded-circle mt-5" width="200px" src={user.avatar.url} alt={user.name}
                           />
                         </figure>
-                        <button type='submit' className='btn btn-primary btn-block my-2'>
-                          Cập nhật
-                        </button>
+                        
                       </div>
                     </div>
-                    <div className='col-md-5 border-right'>
-                      <div className='p-3 py-5'>
-                        <div className='row mt-3'>
-                          <div className='col-md-12'><h4><label className='labels profile'>Tên</label></h4>
-                            <input 
-                              type='text' 
-                              placeholder={user.name}
-                              name='name'
-                              required
-                              maxLength='100'
-                              minLength='0'
-                              value={name}
-                              onChange={(e) => setName(e.target.value)} 
-                              id='register-name' 
-                              className='form-control mt-2 mb-2'
-                            />
+                    <div className='col-md-12 border-right offset-md-7'>
+                      <div className='p-3'>
+                        <div className="col-md-5 border-right">
+                          <div className="p-3 pb-4">
+                            <div className="row mt-3">
+                              <div className='col-md-12'><h4><label className='labels profile'>Tên</label></h4>
+                                <input 
+                                  type='text' 
+                                  placeholder={user.name}
+                                  name='name'
+                                  required
+                                  maxLength='100'
+                                  minLength='0'
+                                  value={name}
+                                  onChange={(e) => setName(e.target.value)} 
+                                  id='register-name' 
+                                  className='form-control mt-2 mb-2'
+                                />
+                              </div>
+                              <div className='col-md-12'><h4><label className='labels profile'>Email</label></h4>
+                                <input 
+                                  type='email' 
+                                  placeholder={user.email} 
+                                  name='email'
+                                  maxLength='100'
+                                  minLength='0'
+                                  required
+                                  value={email} 
+                                  onChange={(e) => setEmail(e.target.value)} 
+                                  id='register-email' 
+                                  className='form-control mt-2 mb-2' 
+                                />
+                              </div>
+                              <div className='col-md-12'><h4><label className='labels profile'>Ngày đăng ký</label></h4>
+                                <p className='font-weight-bold mt-2 mb-2'>{String(user.createdAt).substring(0, 10)}</p>
+                              </div>
+                              <div class="col-md-12 offset-md-2">
+                                <button type='submit' className='btn btn-primary btn-block my-2 offset-md-2'>
+                                Cập nhật
+                                </button>
+                              </div>
+                            </div>   
                           </div>
-                          <div className='col-md-12'><h4><label className='labels profile'>Email</label></h4>
-                            <input 
-                              type='email' 
-                              placeholder={user.email} 
-                              name='email'
-                              maxLength='100'
-                              minLength='0'
-                              required
-                              value={email} 
-                              onChange={(e) => setEmail(e.target.value)} 
-                              id='register-email' 
-                              className='form-control mt-2 mb-2' 
-                            />
-                          </div>
-                          <div className='col-md-12'><h4><label className='labels profile'>Ngày đăng ký</label></h4>
-                            <p className='font-weight-bold mt-2 mb-2'>{String(user.createdAt).substring(0, 10)}</p>
-                          </div>
-                        </div>              
+                        </div>
                       </div>
                     </div>
                   </div>

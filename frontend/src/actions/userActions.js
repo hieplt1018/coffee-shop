@@ -13,7 +13,10 @@ import {
   REGISTER_USER_FAIL,
   UPDATE_PROFILE_REQUEST,
   UPDATE_PROFILE_SUCCESS,
-  UPDATE_PROFILE_FAIL
+  UPDATE_PROFILE_FAIL,
+  UPDATE_PASSWORD_REQUEST,
+  UPDATE_PASSWORD_SUCCESS,
+  UPDATE_PASSWORD_FAIL
 } from '../constants/userConstants';
 
 export const login = (email, password) => async(dispatch) => {
@@ -117,6 +120,30 @@ export const updateProfile = (name, email) => async(dispatch) => {
   } catch (error) {
     dispatch({
       type: UPDATE_PROFILE_FAIL,
+      payload: error.response.data.message
+    })
+  }
+}
+
+export const updatePassword = (oldPassword, password) => async(dispatch) => {
+  try {
+    dispatch({ type: UPDATE_PASSWORD_REQUEST });
+
+    const config = {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }
+    
+    const { data } = await axios.put('/api/v1/password/update', { oldPassword, password } , config);
+
+    dispatch({
+      type: UPDATE_PASSWORD_SUCCESS,
+      payload: data.success
+    })
+  } catch (error) {
+    dispatch({
+      type: UPDATE_PASSWORD_FAIL,
       payload: error.response.data.message
     })
   }
