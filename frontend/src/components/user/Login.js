@@ -2,7 +2,7 @@ import React, { Fragment, useState, useEffect } from 'react'
 import MetaData from '../layout/MetaData';
 import { useDispatch, useSelector } from 'react-redux';
 import { PreLoader } from '../layout/PreLoader';
-import { login } from '../../actions/userActions'
+import { login, clearErrors } from '../../actions/userActions'
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from 'react-toastify';
 
@@ -21,6 +21,12 @@ const Login = () => {
       toast.success("Đăng nhập thành công", {
         theme: "colored"
       });
+    }
+    if(error) {
+      toast.error(error, {
+        theme: "colored"
+      });
+      dispatch(clearErrors());
     }
   }, [dispatch, isAuthenticated, error, history]);
 
