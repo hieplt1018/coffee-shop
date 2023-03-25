@@ -1,8 +1,8 @@
-import React, { Fragment } from 'react'
-import { useSelector } from 'react-redux'
-import { Link } from 'react-router-dom'
-import MetaData from '../layout/MetaData'
-import { PreLoader } from '../layout/PreLoader'
+import React, { Fragment } from "react"
+import { useSelector } from "react-redux"
+import { Link } from "react-router-dom"
+import MetaData from "../layout/MetaData"
+import { PreLoader } from "../layout/PreLoader"
 
 const Profile = () => {
   const { user, loading } = useSelector(state => state.auth);
@@ -11,7 +11,7 @@ const Profile = () => {
     <Fragment>
       { loading ? <PreLoader /> : (
         <Fragment>
-          <MetaData title={'Hồ sơ người dùng'} />
+          <MetaData title={"Hồ sơ người dùng"} />
           <div className="breadcrumb-option">
             <div className="container">
               <div className="row">
