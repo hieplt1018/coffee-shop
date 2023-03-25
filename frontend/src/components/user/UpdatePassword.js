@@ -68,7 +68,7 @@ const UpdatePassword = () => {
                     </div>
                   </div>
                 </div>
-                <div id='main-profile'>
+                <div id='update-password-main'>
                   <div className='row justify-content-center'>
                     <div className='col-md-5 border-right'>
                       <div className='p-3'>
