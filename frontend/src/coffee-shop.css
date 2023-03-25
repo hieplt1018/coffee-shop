@@ -4201,3 +4201,8 @@ ol {
   margin-right: 2em;
   margin-bottom: 12em;
 }
+
+.login-link:hover {
+  text-decoration: underline;
+  color: #5D453F;
+}
