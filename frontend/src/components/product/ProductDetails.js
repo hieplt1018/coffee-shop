@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect } from 'react'
+import React, { Fragment, useEffect, useState } from 'react'
 import { getProductDetails, clearErrors } from '../../actions/productActions';
 import MetaData from '../layout/MetaData'
 import { PreLoader } from '../layout/PreLoader'
@@ -11,7 +11,7 @@ import { toast } from 'react-toastify';
 const ProductDetails = () => {
   const dispatch = useDispatch();
   const { id } = useParams();
-
+  const [quantity, setQuantity] = useState(1);
   const { loading, product, error } = useSelector(state => state.productDetails);
 
   useEffect(() => {
@@ -23,6 +23,25 @@ const ProductDetails = () => {
       dispatch(clearErrors());
     };
   }, [dispatch, alert, error, id]);
+
+  const increaseQty = () => {
+    const count = document.querySelector('.count');
+
+    if(count.valueAsNumber >= product.stock) return;
+
+    const qty = count.valueAsNumber + 1;
+    
+    setQuantity(qty);
+  }
+
+  const decreaseQty = () => {
+    const count = document.querySelector('.count');
+
+    if(count.valueAsNumber <= 1) return;
+
+    const qty = count.valueAsNumber -1;
+    setQuantity(qty);
+  }
 
   return (
     <Fragment>
@@ -77,7 +96,9 @@ const ProductDetails = () => {
                       <div className="product__details__option">
                         <div className="quantity">
                           <div className="pro-qty">
-                            <input type="text" defaultValue={1} />
+                            <span className="dec qtybtn" onClick={decreaseQty}>-</span>
+                            <input className="count" type="number" value={quantity} readOnly />
+                            <span className="inc qtybtn" onClick={increaseQty}>+</span>
                           </div>
                         </div>
                         <Link to="#" className="primary-btn">Thêm vào giỏ hàng</Link>
