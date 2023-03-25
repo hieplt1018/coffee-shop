@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
 import { clearErrors, logout } from '../../actions/userActions';
 import { toast } from 'react-toastify';
+import NavBar from './NavBar';
 
 const Header = () => {
   const{ user, loading } = useSelector(state => state.auth);
@@ -98,13 +99,7 @@ const Header = () => {
         <div className="row">
           <div className="col-lg-12">
             <nav className="header__menu mobile-menu">
-              <ul>
-                <li className="active"><Link to="/">Trang chủ</Link></li>
-                <li><Link to="./about.html">Giới thiệu</Link></li>
-                <li><Link to="/products">Thực đơn</Link></li>
-                <li><Link to="./blog.html">Tin tức</Link></li>
-                <li><Link to="./contact.html">Liên hệ</Link></li>
-              </ul>
+              <NavBar />
             </nav>
           </div>
         </div>
