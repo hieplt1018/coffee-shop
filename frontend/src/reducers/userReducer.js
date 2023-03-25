@@ -27,7 +27,7 @@ import {
   NEW_PASSWORD_FAIL
 } from "../constants/userConstants";
 
-export const authReducer = (state = { user: {}}, action) => {
+export const authReducer = (state = { user: {} }, action) => {
   switch(action.type) {
     case LOGIN_USER_REQUEST:
     case LOAD_USER_REQUEST:

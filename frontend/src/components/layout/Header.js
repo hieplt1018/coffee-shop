@@ -71,7 +71,7 @@ const Header = () => {
                         </Link>
                       </ul>
                     </li>
-                    ) : !loading && <li><Link to="/login" onClick={handleClick}>Đăng nhập</Link> <span className="arrow_carrot-down"></span></li> }
+                    ) : !loading && <li><Link to="/login" disabled={loading ? true : false} onClick={handleClick}>Đăng nhập</Link> <span className="arrow_carrot-down"></span></li> }
                     
                   </ul>
                 </div>
