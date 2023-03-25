@@ -55,9 +55,9 @@ const UpdatePassword = () => {
 
   return (
     <Fragment>
+      <MetaData title={'Cập nhật mật khẩu'} />
       { loading ? <PreLoader /> : (
         <Fragment>
-          <MetaData title={'Cập nhật mật khẩu'} />
           <form onSubmit={submitHandler} >
             <div className='breadcrumb-option'>
               <div className='container'>

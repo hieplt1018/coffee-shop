@@ -47,9 +47,9 @@ const UpdateProfile = () => {
 
   return (
     <Fragment>
+      <MetaData title={'Cập nhật hồ sơ'} />
       { loading ? <PreLoader /> : (
         <Fragment>
-          <MetaData title={'Cập nhật hồ sơ'} />
           <form onSubmit={submitHandler} >
             <div className='breadcrumb-option'>
               <div className='container'>

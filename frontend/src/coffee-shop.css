@@ -101,13 +101,15 @@ textarea:focus {
 
 a {
   text-decoration: none;
+  color: #fff;
+  font-weight: bold;
 }
 
 a:hover,
 a:focus {
   text-decoration: none;
   outline: none;
-  color: #ffffff;
+  color: #5D453F;
 }
 
 ul,
@@ -175,7 +177,7 @@ ol {
   text-transform: uppercase;
   padding: 14px 30px;
   color: #ffffff;
-  background: #f08632;
+  background: #5D453F;
   letter-spacing: 2px;
 }
 
@@ -355,7 +357,8 @@ ol {
   cursor: pointer;
 }
 .header__top__left ul li a {
-  color: #111111;
+  color: #000;
+  font-weight: 300;
 }
 .header__top__left ul li:hover ul {
   top: 2.3em;
@@ -829,7 +832,7 @@ ol {
 .team__btn .primary-btn {
   border: 2px solid #b7b7b7;
   background: transparent;
-  color: #111111;
+  color: #5D453F;
 }
 
 .team__item {
@@ -1371,7 +1374,6 @@ ol {
 }
 .breadcrumb__links span {
   font-size: 16px;
-  color: #888888;
   display: inline-block;
 }
 
@@ -1689,7 +1691,7 @@ ol {
 }
 .product__details__option .pro-qty {
   height: 50px;
-  width: 140px;
+  width: 160px;
   border: 1px solid #e1e1e1;
   padding: 0 20px;
 }
@@ -1819,6 +1821,7 @@ ol {
   font-weight: 600;
   text-transform: uppercase;
   padding-bottom: 25px;
+  text-align: center;
 }
 .shopping__cart__table table tbody tr {
   border-bottom: 1px solid #f2f2f2;
@@ -1854,7 +1857,7 @@ ol {
   width: 175px;
 }
 .shopping__cart__table table tbody tr td.quantity__item .quantity .pro-qty {
-  width: 90px;
+  width: 150px;
 }
 .shopping__cart__table table tbody tr td.quantity__item .quantity .pro-qty input {
   width: 65px;
@@ -1862,15 +1865,9 @@ ol {
   text-align: center;
   color: #111111;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: bold;
 }
-.shopping__cart__table table tbody tr td.quantity__item .quantity .pro-qty .qtybtn {
-  font-size: 16px;
-  color: #888888;
-  width: 10px;
-  cursor: pointer;
-  font-weight: 500;
-}
+
 .shopping__cart__table table tbody tr td.cart__price {
   color: #111111;
   font-size: 16px;
@@ -1894,8 +1891,13 @@ ol {
 }
 .continue__btn.update__btn a {
   color: #ffffff;
-  background: #111111;
-  border-color: #111111;
+  background: #5D453F;
+  border-color: #fff;
+}
+.continue__btn.update__btn a:hover{
+  color: #5D453F;
+  background-color: #fff;
+  border: 1px solid #5D453F;
 }
 .continue__btn.update__btn a i {
   margin-right: 5px;
@@ -1952,9 +1954,9 @@ ol {
   font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
-  background: #111111;
+  background: #5D453F;
   padding: 0 30px;
-  border: none;
+  border: 1px solid #5D453F;
   position: absolute;
   right: 0;
   top: 0;
@@ -1962,7 +1964,7 @@ ol {
 }
 
 .cart__total {
-  background: #fdf3ea;
+  background: #efdacb;
   padding: 35px 40px 40px;
 }
 .cart__total h6 {
@@ -1989,13 +1991,18 @@ ol {
 }
 .cart__total .primary-btn {
   display: block;
-  background: #111111;
+  background: #5D453F;
   color: #ffffff;
   padding: 12px 10px;
   text-align: center;
   letter-spacing: 2px;
+  border-color: #fff;
 }
-
+.cart__total .primary-btn:hover {
+  background-color: #fff;
+  color: #5D453F;
+  border: 1px solid #5d453F;
+}
 /*---------------------
   Checkout
 -----------------------*/
@@ -2250,7 +2257,7 @@ ol {
   width: 190px;
 }
 .wishlist__cart__table table tbody tr td.cart__btn .primary-btn {
-  background: #111111;
+  background: #5D453F;
   color: #ffffff;
 }
 .wishlist__cart__table table tbody tr td.cart__close {
@@ -2887,7 +2894,7 @@ ol {
 .blog__details__print .primary-btn {
   background: transparent;
   border: 1px solid #f08632;
-  color: #111111;
+  color: #5D453F;
 }
 .blog__details__print .primary-btn i {
   font-size: 18px;
@@ -3016,7 +3023,7 @@ ol {
 }
 .blog__details__comment .primary-btn {
   background: rgba(226, 108, 12, 0.2);
-  color: #111111;
+  color: #fff;
   position: absolute;
   right: 0;
   top: -12px;
@@ -4173,18 +4180,19 @@ ol {
 }
 .btn-primary,
 .btn-primary:visited {
-  background-color: #fff;
-  border-color: #5D453F;
-  color: #5D453F;
+  background-color: #5D453F;
+  border-color: #fff;
+  color: #fff;
   font-weight: bold;
 }
 
 .btn-primary:hover,
 .btn-primary:active,
 .btn-primary:focus {
-    background-color: #5D453F;
-    border-color: #fff;
-    color: #fff;
+  border-color: #5D453F;
+  background-color: #fff;
+  border-color: #5D453F;
+  color: #5D453F;
 }
 
 #main-profile {
@@ -4204,5 +4212,25 @@ ol {
 
 .login-link:hover {
   text-decoration: underline;
+  color: #5D453F;
+}
+
+#icon-cart {
+  color: #5D453F;
+}
+
+#cart_count {
+  background: #e26b0c;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  color: #fff;
+  display: inline-block;
+  font-weight: bold;
+  line-height: 30px;
+  text-align: center;
+  width: 30px;
+}
+.icon-trash {
   color: #5D453F;
 }
