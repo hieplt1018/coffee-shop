@@ -83,7 +83,7 @@ const Login = () => {
                             />
                             </div>
                             <div className="pt-1 mb-4">
-                              <button className="btn btn-dark btn-lg btn-block" type="submit">Đăng nhập</button>
+                              <button disabled={loading ? true : false} className="btn btn-dark btn-lg btn-block" type="submit">Đăng nhập</button>
                             </div>
                             <Link className="login-link" to="/password/forgot">Quên mật khẩu?</Link>
                             <p className="mb-5 pb-lg-2">Bạn chưa có tài khoản? <Link to="/register" className="login-link">Đăng ký tại đây</Link></p>

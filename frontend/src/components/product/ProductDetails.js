@@ -7,6 +7,7 @@ import { truncate } from '../../helpers/string_helpers';
 import { useDispatch, useSelector } from 'react-redux';
 import ProductImages from './ProductImages';
 import { toast } from 'react-toastify';
+import { addItemToCart } from '../../actions/cartAction';
 
 const ProductDetails = () => {
   const dispatch = useDispatch();
@@ -41,6 +42,13 @@ const ProductDetails = () => {
 
     const qty = count.valueAsNumber -1;
     setQuantity(qty);
+  }
+
+  const addToCart = () => {
+    dispatch(addItemToCart(id, quantity));
+    toast.success('Đã thêm sản phẩm vào giỏ hàng', {
+      theme: "colored"
+    });
   }
 
   return (
@@ -101,8 +109,13 @@ const ProductDetails = () => {
                             <span className="inc qtybtn" onClick={increaseQty}>+</span>
                           </div>
                         </div>
-                        <Link to="#" className="primary-btn">Thêm vào giỏ hàng</Link>
-                        <Link to="#" className="heart__btn"><span className="icon_heart_alt" /></Link>
+                        <span 
+                          type="button" 
+                          id="cart-btn"
+                          className="primary-btn"
+                          disabled={product.stock === 0}
+                          onClick={addToCart}
+                        >Thêm vào giỏ hàng</span>
                       </div>
                     </div>
                   </div>
