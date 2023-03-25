@@ -14,10 +14,10 @@ const Product = ({ product }) => {
           </div>
         </div>
         <div className="product__item__text">
-          <h6><Link href={`/product/${product._id}`}>{product.name}</Link></h6>
+          <h6><Link to={`/product/${product._id}`}>{product.name}</Link></h6>
           <div className="product__item__price">{new Intl.NumberFormat().format(product.price)} &#8363;</div>
           <div className="cart_add">
-            <Link href="#">Thêm vào giỏ hàng</Link>
+            <Link to="#">Thêm vào giỏ hàng</Link>
           </div>
         </div>
       </div>
