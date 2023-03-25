@@ -9,9 +9,9 @@ const Profile = () => {
 
   return (
     <Fragment>
+      <MetaData title={"Hồ sơ người dùng"} />
       { loading ? <PreLoader /> : (
         <Fragment>
-          <MetaData title={"Hồ sơ người dùng"} />
           <div className="breadcrumb-option">
             <div className="container">
               <div className="row">

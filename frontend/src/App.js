@@ -16,7 +16,7 @@ import UpdateProfile from "./components/user/UpdateProfile";
 import UpdatePassword from "./components/user/UpdatePassword";
 import ForgotPassword from "./components/user/ForgotPassword";
 import NewPassword from "./components/user/NewPassword";
-
+import Cart from "./components/cart/Cart";
 
 function App() {
   useEffect(() => {
@@ -38,6 +38,8 @@ function App() {
             <Route path="/register" element={<Register />} />
             <Route path="/password/forgot" element={<ForgotPassword />} />
             <Route path="/password/reset/:token" element={<NewPassword />} />
+            <Route path="/cart" element={<Cart />} />
+
 
             <Route element={<ProtectedRoute />}>
               <Route path="/me" element={<Profile />} />

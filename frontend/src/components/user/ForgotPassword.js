@@ -33,9 +33,9 @@ const ForgotPassword = () => {
 
   return (
     <Fragment>
+      <MetaData title={'Quên mật khẩu'} />
       { loading ? <PreLoader /> : (
         <Fragment>
-          <MetaData title={'Quên mật khẩu'} />
           <form onSubmit={submitHandler} >
             <div className='breadcrumb-option'>
               <div className='container'>
