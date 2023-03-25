@@ -1,25 +1,23 @@
 import React, { Fragment, useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
-import { clearErrors, updatePassword } from '../../actions/userActions';
-import { UPDATE_PASSWORD_RESET } from '../../constants/userConstants';
+import { clearErrors, resetPassword } from '../../actions/userActions';
 import MetaData from '../layout/MetaData';
 import { PreLoader } from '../layout/PreLoader';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 
 const UpdatePassword = () => {
-  const [oldPassword, setOldPassword] = useState('');
   const [newPassword, setNewPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const params = useParams();
 
-  const { error, isUpdated, loading } = useSelector(state => state.user)
+  const { error, success, loading } = useSelector(state => state.forgotPassword)
 
   useEffect(() => {
-
     if(error) {
       toast.error(error, {
         theme: 'colored'
@@ -27,44 +25,33 @@ const UpdatePassword = () => {
       dispatch(clearErrors());
     }
 
-    if (isUpdated) {
+    if (success) {
       toast.success('Cập nhật thành công!', {
         theme: 'colored'
       });
-
-      navigate('/me', {replace: true});
-
-      dispatch({
-          type: UPDATE_PASSWORD_RESET
-      })
+      navigate('/login', {replace: true});
     }
 
-  }, [dispatch, error, navigate, isUpdated])
+  }, [dispatch, error, navigate, success])
 
   const submitHandler = (e) => {
       e.preventDefault();
-
-      if (newPassword !== confirmPassword) {
-        toast.error("Mật khẩu chưa trùng khớp", {
-          theme: "colored"
-        });
-      }
       
-      dispatch(updatePassword(oldPassword, newPassword));
+      dispatch(resetPassword(params.token, newPassword, confirmPassword));
   }
 
   return (
     <Fragment>
       { loading ? <PreLoader /> : (
         <Fragment>
-          <MetaData title={'Cập nhật mật khẩu'} />
+          <MetaData title={'Tạo mật khẩu mới'} />
           <form onSubmit={submitHandler} >
             <div className='breadcrumb-option'>
               <div className='container'>
                 <div className='row'>
                   <div className='col-lg-6 col-md-6 col-sm-6  offset-md-4'>
                     <div className='breadcrumb__text'>
-                      <h2>Cập nhật mật khẩu</h2>
+                      <h2>Tạo mật khẩu mới</h2>
                     </div>
                   </div>
                 </div>
@@ -73,18 +60,6 @@ const UpdatePassword = () => {
                     <div className='col-md-5 border-right'>
                       <div className='p-3'>
                         <div className='row mt-3'>
-                          <div className='col-md-12'><h4><label className='labels profile'>Mật khẩu cũ</label></h4>
-                            <input 
-                              type='password' 
-                              name='oldpassword'
-                              required
-                              maxLength='100'
-                              minLength='6'
-                              onChange={(e) => setOldPassword(e.target.value)} 
-                              id='old-password' 
-                              className='form-control mt-2 mb-2'
-                            />
-                          </div>
                           <div className='col-md-12'><h4><label className='labels profile'>Mật khẩu mới</label></h4>
                             <input 
                               type='password' 

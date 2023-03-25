@@ -52,20 +52,20 @@ exports.forgotPassword = catchAsyncErrors(async (req, res, next) => {
 
   await user.save({ validateBeforeSave: false });
 
-  const resetUrl = `${req.protocol}://${req.get('host')}/api/v1/reset/${resetToken}`;
-  const message = `Your password reset token is as follow:\n\n${resetUrl}\n\n
-    If you have not requested this email, the ignore it.`
+  const resetUrl = `${process.env.FRONTEND_URL}/password/reset/${resetToken}`;
+  const message = `Mã token đặt lại mật khẩu của bạn như sau:\n\n${resetUrl}\n\n
+  Nếu bạn chưa yêu cầu email này, hãy bỏ qua nó.`
 
   try {
     await sendEmail({
       email: user.email,
-      subject: 'Catata Coffee Password Recovery',
+      subject: 'Catata Coffee khôi phục mật khẩu ',
       message
     });
 
     res.status(200).json({
       success: true,
-      message: `Email sent to: ${user.email}`
+      message: `Email đã gửi tới: ${user.email}`
     })
   } catch (error) {
     user.resetPasswordToken = undefined;
