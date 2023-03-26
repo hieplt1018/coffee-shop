@@ -98,7 +98,7 @@ const Cart = () => {
                             <li id="total">Tổng thanh toán <span>{new Intl.NumberFormat().format(cartItems
                               .reduce((acc, item) => acc + item.quantity * item.price, 0))} &#8363;</span></li>
                           </ul>
-                          <Link to="#" className="primary-btn">Tiến hành thanh toán</Link>
+                          <Link to="/checkout" className="primary-btn">Tiến hành thanh toán</Link>
                         </div>
                       </div>
                     </div>
