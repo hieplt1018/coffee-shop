@@ -4209,10 +4209,12 @@ ol {
   margin-right: 2em;
   margin-bottom: 12em;
 }
+.login-link {
+  color: #5D453F;
+}
 
 .login-link:hover {
   text-decoration: underline;
-  color: #5D453F;
 }
 
 #icon-cart {
@@ -4233,4 +4235,7 @@ ol {
 }
 .icon-trash {
   color: #5D453F;
+}
+.profile-text {
+  font-size: 18px;
 }
