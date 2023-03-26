@@ -6,8 +6,8 @@ const sendEmail = require('../utils/sendEmail');
 const crypto = require('crypto');
 
 exports.registerUser = catchAsyncErrors(async (req, res, next) => {
-  const { name, email, password } = req.body;
-  
+  const { name, email, password, shippingInfo } = req.body;
+
   const user = await User.create({
     name,
     email,
@@ -15,7 +15,8 @@ exports.registerUser = catchAsyncErrors(async (req, res, next) => {
     avatar: {
       public_id: 'avatars/defaultuser',
       url: 'https://imageio.forbes.com/specials-images/imageserve/5c76bcaaa7ea43100043c836/0x0.jpg'
-    }
+    },
+    shippingInfo
   });
 
   sendToken(user, 200, res);
@@ -149,7 +150,8 @@ exports.updateUser = catchAsyncErrors(async (req, res, next) => {
   const newUserData = {
     name: req.body.name,
     email: req.body.email,
-    role: req.body.role
+    role: req.body.role,
+    shippingInfo: req.body.shippingInfo
   };
 
   const user = await User.findByIdAndUpdate(req.user.id, newUserData, {
@@ -183,7 +185,8 @@ exports.deleteUser = catchAsyncErrors(async (req, res, next) => {
 exports.updateProfile = catchAsyncErrors(async (req, res, next) => {
   const newUserData = {
     name: req.body.name,
-    email: req.body.email
+    email: req.body.email,
+    shippingInfo: req.body.shippingInfo
   };
 
   const user = await User.findByIdAndUpdate(req.user.id, newUserData, {

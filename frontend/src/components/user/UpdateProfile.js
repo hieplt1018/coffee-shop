@@ -10,6 +10,8 @@ import { useNavigate } from 'react-router-dom';
 const UpdateProfile = () => {
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
+  const [address, setAddress] = useState('');
+  const [telNum, setTelNum] = useState('');
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { error, isUpdated, loading } = useSelector(state => state.user)
@@ -19,6 +21,8 @@ const UpdateProfile = () => {
     if(user) {
       setName(user.name);
       setEmail(user.email);
+      setAddress(user.shippingInfo.address);
+      setTelNum(user.shippingInfo.telNum)
     }
 
     if(error) {
@@ -71,9 +75,9 @@ const UpdateProfile = () => {
                         
                       </div>
                     </div>
-                    <div className='col-md-12 border-right offset-md-7'>
+                    <div className='col-md-12 border-right offset-md-5'>
                       <div className='p-3'>
-                        <div className="col-md-5 border-right">
+                        <div className="col-md-7 border-right">
                           <div className="p-3 pb-4">
                             <div className="row mt-3">
                               <div className='col-md-12'><h4><label className='labels profile'>Tên</label></h4>
@@ -87,7 +91,35 @@ const UpdateProfile = () => {
                                   value={name}
                                   onChange={(e) => setName(e.target.value)} 
                                   id='register-name' 
-                                  className='form-control mt-2 mb-2'
+                                  className='form-control mt-3 mb-3'
+                                />
+                              </div>
+                              <div className='col-md-12'><h4><label className='labels profile'>Địa chỉ giao hàng</label></h4>
+                                <input 
+                                  type="text" 
+                                  placeholder="Địa chỉ giao hàng" 
+                                  name="address"
+                                  maxLength="300"
+                                  minLength="0"
+                                  required
+                                  value={address} 
+                                  onChange={(e) => setAddress(e.target.value)} 
+                                  id="register-adress" 
+                                  className='form-control mt-3 mb-3'
+                                />
+                              </div>
+                              <div className='col-md-12'><h4><label className='labels profile'>Số điện thoại nhận hàng</label></h4>
+                                <input 
+                                  type="text" 
+                                  placeholder="Số điện thoại nhận hàng" 
+                                  name="telNum"
+                                  maxLength="11"
+                                  minLength="6"
+                                  required
+                                  value={telNum} 
+                                  onChange={(e) => setTelNum(e.target.value)} 
+                                  id="register-telNum" 
+                                  className='form-control mt-3 mb-3'
                                 />
                               </div>
                               <div className='col-md-12'><h4><label className='labels profile'>Email</label></h4>
@@ -101,7 +133,7 @@ const UpdateProfile = () => {
                                   value={email} 
                                   onChange={(e) => setEmail(e.target.value)} 
                                   id='register-email' 
-                                  className='form-control mt-2 mb-2' 
+                                  className='form-control mt-3 mb-3' 
                                 />
                               </div>
                               <div className='col-md-12'><h4><label className='labels profile'>Ngày đăng ký</label></h4>

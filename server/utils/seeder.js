@@ -3,6 +3,7 @@ const dotenv = require('dotenv');
 const connectDatabase = require('../config/database');
 const products = require('../data/products');
 const { connect } = require('mongoose');
+const User = require('../models/user');
 
 dotenv.config({ path: 'server/config/config.env'});
 
@@ -10,20 +11,21 @@ connectDatabase();
 
 const seedDatabase = async () => {
   try {
-    await Product.deleteMany();
-    console.log('All products are deleted!');
-    await Product.insertMany(products);
-    await Product.insertMany(products);
-    await Product.insertMany(products);
-    await Product.insertMany(products);
-    await Product.insertMany(products);
-    await Product.insertMany(products);
-    await Product.insertMany(products);
-    await Product.insertMany(products);
-    await Product.insertMany(products);
-    await Product.insertMany(products);
-    await Product.insertMany(products);
-    console.log('Products inserted!');
+    // await Product.deleteMany();
+    // console.log('All products are deleted!');
+    // await Product.insertMany(products);
+    // await Product.insertMany(products);
+    // await Product.insertMany(products);
+    // await Product.insertMany(products);
+    // await Product.insertMany(products);
+    // await Product.insertMany(products);
+    // await Product.insertMany(products);
+    // await Product.insertMany(products);
+    // await Product.insertMany(products);
+    // await Product.insertMany(products);
+    // await Product.insertMany(products);
+    // console.log('Products inserted!');
+    await User.deleteMany();
   } catch(error) {
     console.log(error.message);
     process.exit();
