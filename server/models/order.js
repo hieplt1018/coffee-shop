@@ -1,49 +1,40 @@
 const mongoose = require('mongoose');
 
-const PAYMENT_METHOD = ['Card', 'Cash', 'COD', 'Internet Banking'];
+const PAYMENT_METHOD = ['Card', 'Cash', 'COD', 'Banking'];
 const ORDER_STATUS = ['Processing', 'Paid', 'Cancelled', 'Delivering'];
 
 const orderSchema = mongoose.Schema({
   shippingInfo: {
     address: {
       type: String,
-      required: true,
+      required: [true, 'Hãy nhập địa chỉ giao hàng'],
       trim: true,
-      maxLength: [100, 'Vượt quá 100 ký tự']
+      maxLength: [300, 'Vượt quá 300 ký tự']
     },
-    city: {
+    telNum: {
       type: String,
-      required: true,
+      required: [true, 'Hãy nhập số điện thoại'], 
       trim: true,
-      maxLength: [50, 'Vượt quá 50 ký tự']
-    },
-    district: {
-      type: String,
-      required: true,
-      trim: true,
-      maxLength: [50, 'Vượt quá 50 ký tự']
-    },
-    ward: {
-      type: String,
-      required: true,
-      trim: true,
-      maxLength: [50, 'Vượt quá 50 ký tự']
-    },
-    street: {
-      type: String,
-      required: true,
-      trim: true,
-      maxLength: [50, 'Vượt quá 50 ký tự']
+      validate: {
+        validator: function(telNum) {
+          var regex = /(0[3|5|7|8|9])+([0-9]{8})\b/g;
+          return (!telNum || !telNum.trim().length) || regex.test(telNum);
+        },
+        message: 'Số điện thoại đã cung cấp không hợp lệ'
+      }
     }
+  },
+  notes: {
+    type: String,
+    trim: true,
+    maxLength: [300, 'Vượt quá 300 ký tự']
   },
   customer: {
     type: mongoose.Schema.Types.ObjectId,
-    required: true,
     ref: 'User'
   },
   seller: {
     type: mongoose.Schema.Types.ObjectId,
-    required: true,
     ref: 'User'
   },
   orderItems: [
@@ -81,13 +72,8 @@ const orderSchema = mongoose.Schema({
   totalItemsPrice: {
     type: Number,
     required: true,
-    default: 0.0
-  },
-  taxPrice: {
-    type: Number,
-    required: true,
-    max: [1000000000, 'Không thể vượt quá 1.000.000.000'],
     min: [0, 'Không thể dưới 0'],
+    max: [1000000000, 'Không thể vượt quá 1.000.000.000'],
     default: 0
   },
   shippingPrice: {
@@ -105,7 +91,9 @@ const orderSchema = mongoose.Schema({
     default: 0
   }, 
   paidAt: {
-    type: Date
+    type: Date,
+    default: Date.now,
+    required: [true, 'Hãy nhập ngày thanh toán']
   },
   orderStatus: {
     type: String,
@@ -117,7 +105,9 @@ const orderSchema = mongoose.Schema({
     default: ORDER_STATUS[0]
   },
   deliveredAt: {
-    type: Date
+    type: Date,
+    required: [true, 'Hãy nhập ngày vận chuyển'],
+    default: Date.now
   },
   createdAt: {
     type: Date,

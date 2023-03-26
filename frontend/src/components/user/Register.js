@@ -1,5 +1,5 @@
 import React, { Fragment, useState, useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import MetaData from '../layout/MetaData';
 import { useDispatch, useSelector } from 'react-redux';
 import { register, clearErrors } from '../../actions/userActions'
@@ -42,7 +42,7 @@ const Register = () => {
       address: address,
       telNum: telNum
     }
-    console.log(shippingInfo);
+
     dispatch(register(name, email, password, shippingInfo));
   }
 
