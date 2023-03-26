@@ -7,30 +7,7 @@ const { authorizeRoles } = require('../middleware/auth');
 const order = require('../models/order');
 
 exports.newOrder = catchAsyncErrors(async (req, res, next) => {
-  const {
-    orderItems,
-    shippingInfo,
-    paymentInfo,
-    taxPrice,
-    shippingPrice,
-    totalOrder,
-    totalItemsPrice,
-    seller,
-    customer
-  } = req.body;
-
-  const order = await Order.create({
-    orderItems,
-    shippingInfo,
-    paymentInfo,
-    taxPrice,
-    shippingPrice,
-    totalOrder,
-    totalItemsPrice,
-    paidAt: Date.now(),
-    customer,
-    seller
-  });
+  const order = await Order.create(req.body);
 
   res.status(200).json({
     success: true,

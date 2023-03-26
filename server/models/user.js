@@ -48,6 +48,26 @@ const userSchema = new mongoose.Schema({
     type: Date,
     default: Date.now
   },
+  shippingInfo: {
+    address: {
+      type: String,
+      required: [true, 'Hãy nhập địa chỉ giao hàng'],
+      trim: true,
+      maxLength: [300, 'Vượt quá 300 ký tự']
+    },
+    telNum: {
+      type: String,
+      required: [true, 'Hãy nhập số điện thoại'], 
+      trim: true,
+      validate: {
+        validator: function(telNum) {
+          var regex = /(0[3|5|7|8|9])+([0-9]{8})\b/g;
+          return (!telNum || !telNum.trim().length) || regex.test(telNum);
+        },
+        message: 'Số điện thoại đã cung cấp không hợp lệ'
+      }
+    }
+  }
   resetPasswordToken: String,
   resetPasswordExpire: Date
 });

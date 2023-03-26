@@ -2023,7 +2023,7 @@ ol {
 
 .checkout__title {
   color: #111111;
-  font-weight: 600;
+  font-weight: 1000;
   text-transform: uppercase;
   border-bottom: 1px solid #e1e1e1;
   padding-bottom: 25px;
@@ -2035,7 +2035,7 @@ ol {
 }
 .checkout__input p {
   color: #444444;
-  font-weight: 500;
+  font-weight: 600;
   margin-bottom: 12px;
 }
 .checkout__input p span {
@@ -2071,7 +2071,7 @@ ol {
   color: #444444;
   position: relative;
   padding-left: 30px;
-  font-weight: 500;
+  font-weight: bold;
   cursor: pointer;
   margin-bottom: 16px;
   display: block;
@@ -2123,7 +2123,7 @@ ol {
 }
 .checkout__order .order__title {
   color: #111111;
-  font-weight: 600;
+  font-weight: 1000;
   text-transform: uppercase;
   border-bottom: 1px solid #d7d7d7;
   padding-bottom: 25px;
@@ -2144,7 +2144,7 @@ ol {
   color: #111111;
   overflow: hidden;
   margin-bottom: 18px;
-  font-weight: 600;
+  font-weight: 1000;
 }
 .checkout__order__products span {
   float: right;
