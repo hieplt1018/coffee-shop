@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const PAYMENT_METHOD = ['Card', 'Cash', 'COD', 'Banking'];
-const ORDER_STATUS = ['Processing', 'Paid', 'Cancelled', 'Delivering'];
+const ORDER_STATUS = ['Paid', 'Cancelled', 'Delivering'];
 
 const orderSchema = mongoose.Schema({
   shippingInfo: {
@@ -102,7 +102,7 @@ const orderSchema = mongoose.Schema({
       values: ORDER_STATUS,
       message: 'Vui lòng chọn trạng thái đơn hàng sẵn có'
     },
-    default: ORDER_STATUS[0]
+    default: ORDER_STATUS[2]
   },
   deliveredAt: {
     type: Date,

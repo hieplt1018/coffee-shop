@@ -1,19 +1,20 @@
-const Product =require('../models/product');
-const User = require('../models/user');
-const Order = require('../models/order');
+const Product = require('../models/product');
 const ErrorHandler = require('../utils/errorHandler');
 const catchAsyncErrors = require('../middleware/catchAsyncErrors');
-const { authorizeRoles } = require('../middleware/auth');
-const order = require('../models/order');
+const Order = require('../models/order');
 
 exports.newOrder = catchAsyncErrors(async (req, res, next) => {
   const order = await Order.create(req.body);
+  const cartItems = req.body.orderItems;
+  cartItems.forEach(async item => {
+    await updateStock(item.product, item.quantity, 'Delivering');
+  });
 
   res.status(200).json({
     success: true,
     message: 'Đơn hàng tạo thành công!',
     order
-  })
+  });
 });
 
 exports.getMySingleOrder = catchAsyncErrors(async (req, res, next) => {
@@ -71,10 +72,14 @@ exports.updateProcessOrder = catchAsyncErrors(async (req, res, next) => {
   });
 });
 
-async function updateStock(id, quantity) {
+async function updateStock(id, quantity, status) {
   const product = await Product.findById(id);
-
-  product.stock = product.stock - quantity;
+  if(['Delivering', 'Paid'].includes(status)) {
+    product.stock = product.stock - quantity;
+  } else {
+    product.stock = product.stock + quantity;
+  }
+  
   await product.save();
 };
 
