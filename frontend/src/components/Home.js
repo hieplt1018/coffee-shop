@@ -12,7 +12,6 @@ import { toast } from 'react-toastify';
 
 const Home = () => {
   const dispatch = useDispatch();
-
   const { products, error } = useSelector(state => state.products);
 
   useEffect(() => {
@@ -39,14 +38,12 @@ const Home = () => {
 
       <section className="about spad">
         <div className="container">
-          <div className="">
-            <div className="about__text">
-              <div className="section-title">
-                <span>Về Cantata Coffee</span>
-                <h2>Chúng tôi tin vào</h2>
-              </div>
-              <p> &ldquo;<b><i>Cantata Coffee</i></b>&rdquo; được lấy cảm hứng từ Coffee Cantata - BWV211 của nhà soạn nhạc vĩ đại Johann Sebastian Bach. Chúng tôi tin vào tình yêu, tuổi trẻ, sự nhiệt huyết và các chuẩn mực. Bởi qua thời gian, mọi thứ sẽ biến mất, chỉ có những giá trị thực mới trường tồn cùng thời gian. Giống âm nhạc của J.Bach vậy.</p>
+          <div className="about__text">
+            <div className="section-title">
+              <span>Về Cantata Coffee</span>
+              <h2>Chúng tôi tin vào</h2>
             </div>
+            <p> &ldquo;<b><i>Cantata Coffee</i></b>&rdquo; được lấy cảm hứng từ Coffee Cantata - BWV211 của nhà soạn nhạc vĩ đại Johann Sebastian Bach. Chúng tôi tin vào tình yêu, tuổi trẻ, sự nhiệt huyết và các chuẩn mực. Bởi qua thời gian, mọi thứ sẽ biến mất, chỉ có những giá trị thực mới trường tồn cùng thời gian. Giống âm nhạc của J.Bach vậy.</p>
           </div>
         </div>
       </section>
@@ -91,6 +88,13 @@ const Home = () => {
       </div>
 
       <section className="product spad">
+          <div className="container">
+            <div className="about__text">
+              <div className="section-title">
+                <h2>Sản phẩm nổi bật</h2>
+              </div>
+            </div>
+          </div>
       <div className="container">
         <div className="row">
           {products && products.slice(0,8).map(product => (
@@ -173,7 +177,6 @@ const Home = () => {
                   <span>Thợ làm bánh</span>
                   <div className="team__item__social">
                     <Link to="https://www.facebook.com/cantatacakecoffee" target="_blank" rel="noopener noreferrer"><i className="fa fa-facebook"></i></Link>
-
                     <Link to="https://www.instagram.com/cantatacoffee_/" target="_blank" rel="noopener noreferrer"><i className="fa fa-instagram"></i></Link>
                     <Link to="https://www.youtube.com/channel/UCtPIrX2a2A09hfmJ4hoEZzA" target="_blank" rel="noopener noreferrer"><i className="fa fa-youtube-play"></i></Link>
                   </div>
@@ -187,7 +190,6 @@ const Home = () => {
                   <span>Người pha chế</span>
                   <div className="team__item__social">
                     <Link to="https://www.facebook.com/cantatacakecoffee" target="_blank" rel="noopener noreferrer"><i className="fa fa-facebook"></i></Link>
-
                     <Link to="https://www.instagram.com/cantatacoffee_/" target="_blank" rel="noopener noreferrer"><i className="fa fa-instagram"></i></Link>
                     <Link to="https://www.youtube.com/channel/UCtPIrX2a2A09hfmJ4hoEZzA" target="_blank" rel="noopener noreferrer"><i className="fa fa-youtube-play"></i></Link>
                   </div>
@@ -201,7 +203,6 @@ const Home = () => {
                   <span>Người làm màu</span>
                   <div className="team__item__social">
                     <Link to="https://www.facebook.com/cantatacakecoffee" target="_blank" rel="noopener noreferrer"><i className="fa fa-facebook"></i></Link>
-
                     <Link to="https://www.instagram.com/cantatacoffee_/" target="_blank" rel="noopener noreferrer"><i className="fa fa-instagram"></i></Link>
                     <Link to="https://www.youtube.com/channel/UCtPIrX2a2A09hfmJ4hoEZzA" target="_blank" rel="noopener noreferrer"><i className="fa fa-youtube-play"></i></Link>
                   </div>
@@ -215,7 +216,6 @@ const Home = () => {
                   <span>Cố vấn tài chính</span>
                   <div className="team__item__social">
                     <Link to="https://www.facebook.com/cantatacakecoffee" target="_blank" rel="noopener noreferrer"><i className="fa fa-facebook"></i></Link>
-
                     <Link to="https://www.instagram.com/cantatacoffee_/" target="_blank" rel="noopener noreferrer"><i className="fa fa-instagram"></i></Link>
                     <Link to="https://www.youtube.com/channel/UCtPIrX2a2A09hfmJ4hoEZzA" target="_blank" rel="noopener noreferrer"><i className="fa fa-youtube-play"></i></Link>
                   </div>

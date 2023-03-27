@@ -7,19 +7,15 @@ const CartItem = ({ item }) => {
   const dispatch = useDispatch();
 
   const decreaseQty = (id, quantity) => {
-    const newQty = quantity - 1;
+    if (quantity <= 1) return;
 
-    if (newQty < 1) return;
-
-    dispatch(addItemToCart(id, newQty));
+    dispatch(addItemToCart(id, -1));
   }
 
   const increaseQty = (id, quantity, stock) => {
-    const newQty = quantity + 1;
+    if (quantity >= stock) return;
 
-    if (newQty > stock) return;
-
-    dispatch(addItemToCart(id, newQty));
+    dispatch(addItemToCart(id, 1));
   }
 
   const removeCartItemHandler = (id) => {
@@ -44,7 +40,7 @@ const CartItem = ({ item }) => {
       <td className="quantity__item">
         <div className="quantity">
           <div className="pro-qty">
-            <span className="btn" onClick={() => decreaseQty(item.product, item.quantity)}>
+            <span className="btn" onClick={() => decreaseQty(item.product, item.quantity, item.stock)}>
               <i className="fa-solid fa-minus qtybtn"></i>
             </span>
             <input className="count" type="text" value={item.quantity} readOnly />
