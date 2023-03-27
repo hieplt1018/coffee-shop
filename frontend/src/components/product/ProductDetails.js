@@ -14,6 +14,9 @@ const ProductDetails = () => {
   const { id } = useParams();
   const [quantity, setQuantity] = useState(1);
   const { loading, product, error } = useSelector(state => state.productDetails);
+  const { cartItems } = useSelector(state => state.cart);
+  const isItemExit = cartItems.find(i => i.product === product._id)
+  const maxQuantity = isItemExit ? (product.stock - isItemExit.quantity) : product.stock
 
   useEffect(() => {
     dispatch(getProductDetails(id));
@@ -28,8 +31,12 @@ const ProductDetails = () => {
   const increaseQty = () => {
     const count = document.querySelector('.count');
 
-    if(count.valueAsNumber >= product.stock) return;
-
+    if (count.valueAsNumber >= maxQuantity) {
+      toast.error('Đã vượt quá số lượng có thể đặt', {
+        theme: "colored"
+      });
+      return;
+    }
     const qty = count.valueAsNumber + 1;
     
     setQuantity(qty);
@@ -97,7 +104,7 @@ const ProductDetails = () => {
                       <h5>{new Intl.NumberFormat().format(product.price)} &#8363;</h5>
                       <p>{product.description && truncate(product.description, 200)}</p>
                       <ul>
-                        <li>Số lượng còn lại: <span>{new Intl.NumberFormat("de-DE").format(product.stock)}</span></li>
+                        <li>Số lượng có thể đặt: <span>{new Intl.NumberFormat("de-DE").format(maxQuantity)}</span></li>
                         <li>Danh mục: <span>{product.category}</span></li>
                         <li>Nhà cung cấp: <span>{product.supplier}</span></li>
                       </ul>

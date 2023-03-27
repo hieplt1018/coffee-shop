@@ -7,9 +7,11 @@ export const cartReducer = (state = { cartItems: [], shippingInfo: {} }, action)
       const isItemExit = state.cartItems.find(i => i.product === item.product)
 
       if (isItemExit) {
+        item.quantity += isItemExit.quantity;
+
         return {
           ...state,
-          cartItems: state.cartItems.map(i => i.product === isItemExit.product ? item : i)
+          cartItems: state.cartItems.map(i => i.product === isItemExit.product ? item : i),
         }
       } else {
         return {
