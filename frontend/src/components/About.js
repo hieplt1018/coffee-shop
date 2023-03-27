@@ -1,9 +1,8 @@
-import React, { Fragment, useEffect, useRef } from 'react'
+import React, { Fragment } from 'react'
 import { Link } from 'react-router-dom'
 
 
 const About = () => {
-
   return (
     <Fragment>
       <div>
