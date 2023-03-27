@@ -18,6 +18,9 @@ import ForgotPassword from "./components/user/ForgotPassword";
 import NewPassword from "./components/user/NewPassword";
 import Cart from "./components/cart/Cart";
 import Checkout from "./components/cart/Checkout";
+import About from "./components/About";
+import Contact from "./components/Contact";
+
 
 function App() {
   useEffect(() => {
@@ -39,7 +42,8 @@ function App() {
             <Route path="/register" element={<Register />} />
             <Route path="/password/forgot" element={<ForgotPassword />} />
             <Route path="/password/reset/:token" element={<NewPassword />} />
-
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
             <Route element={<ProtectedRoute />}>
               <Route path="/cart" element={<Cart />} />
               <Route path="/me" element={<Profile />} />

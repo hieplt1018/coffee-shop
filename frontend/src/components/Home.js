@@ -29,10 +29,10 @@ const Home = () => {
       <MetaData title={'Trang chủ'} />
       <Carousel>
         <Carousel.Item>
-          <img className="d-block w-100" src="https://i.ibb.co/Lt0rph0/hero-1.jpg" alt="hero-1" />
+          <img className="d-block w-100" src="https://i.ibb.co/vHbLW35/hero-2.jpg" alt="hero-2" />
         </Carousel.Item>
         <Carousel.Item>
-          <img className="d-block w-100" src="https://i.ibb.co/vHbLW35/hero-2.jpg" alt="hero-2" />
+          <img className="d-block w-100" src="https://i.ibb.co/Lt0rph0/hero-1.jpg" alt="hero-1" />
         </Carousel.Item>
       </Carousel>
 
@@ -176,8 +176,8 @@ const Home = () => {
                   <h6>Lã Ngọc Anh</h6>
                   <span>Thợ làm bánh</span>
                   <div className="team__item__social">
-                    <Link to="https://www.facebook.com/cantatacakecoffee" target="_blank" rel="noopener noreferrer"><i className="fa fa-facebook"></i></Link>
-                    <Link to="https://www.instagram.com/cantatacoffee_/" target="_blank" rel="noopener noreferrer"><i className="fa fa-instagram"></i></Link>
+                    <Link to="https://www.facebook.com/cantatacakecoffee" target="_blank" rel="noopener noreferrer"><i className="fa fa-brands fa-facebook-f"></i></Link>
+                    <Link to="https://www.instagram.com/cantatacoffee_/" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-instagram"></i></Link>
                     <Link to="https://www.youtube.com/channel/UCtPIrX2a2A09hfmJ4hoEZzA" target="_blank" rel="noopener noreferrer"><i className="fa fa-youtube-play"></i></Link>
                   </div>
                 </div>
@@ -189,8 +189,8 @@ const Home = () => {
                   <h6>Trịnh Quang Hưng</h6>
                   <span>Người pha chế</span>
                   <div className="team__item__social">
-                    <Link to="https://www.facebook.com/cantatacakecoffee" target="_blank" rel="noopener noreferrer"><i className="fa fa-facebook"></i></Link>
-                    <Link to="https://www.instagram.com/cantatacoffee_/" target="_blank" rel="noopener noreferrer"><i className="fa fa-instagram"></i></Link>
+                    <Link to="https://www.facebook.com/cantatacakecoffee" target="_blank" rel="noopener noreferrer"><i className="fa fa-brands fa-facebook-f"></i></Link>
+                    <Link to="https://www.instagram.com/cantatacoffee_/" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-instagram"></i></Link>
                     <Link to="https://www.youtube.com/channel/UCtPIrX2a2A09hfmJ4hoEZzA" target="_blank" rel="noopener noreferrer"><i className="fa fa-youtube-play"></i></Link>
                   </div>
                 </div>
@@ -202,8 +202,8 @@ const Home = () => {
                   <h6>Nguyễn Khánh Toàn</h6>
                   <span>Người làm màu</span>
                   <div className="team__item__social">
-                    <Link to="https://www.facebook.com/cantatacakecoffee" target="_blank" rel="noopener noreferrer"><i className="fa fa-facebook"></i></Link>
-                    <Link to="https://www.instagram.com/cantatacoffee_/" target="_blank" rel="noopener noreferrer"><i className="fa fa-instagram"></i></Link>
+                    <Link to="https://www.facebook.com/cantatacakecoffee" target="_blank" rel="noopener noreferrer"><i className="fa fa-brands fa-facebook-f"></i></Link>
+                    <Link to="https://www.instagram.com/cantatacoffee_/" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-instagram"></i></Link>
                     <Link to="https://www.youtube.com/channel/UCtPIrX2a2A09hfmJ4hoEZzA" target="_blank" rel="noopener noreferrer"><i className="fa fa-youtube-play"></i></Link>
                   </div>
                 </div>
@@ -215,8 +215,8 @@ const Home = () => {
                   <h6>Lê Tuấn Hiệp</h6>
                   <span>Cố vấn tài chính</span>
                   <div className="team__item__social">
-                    <Link to="https://www.facebook.com/cantatacakecoffee" target="_blank" rel="noopener noreferrer"><i className="fa fa-facebook"></i></Link>
-                    <Link to="https://www.instagram.com/cantatacoffee_/" target="_blank" rel="noopener noreferrer"><i className="fa fa-instagram"></i></Link>
+                    <Link to="https://www.facebook.com/cantatacakecoffee" target="_blank" rel="noopener noreferrer"><i className="fa fa-brands fa-facebook-f"></i></Link>
+                    <Link to="https://www.instagram.com/cantatacoffee_/" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-instagram"></i></Link>
                     <Link to="https://www.youtube.com/channel/UCtPIrX2a2A09hfmJ4hoEZzA" target="_blank" rel="noopener noreferrer"><i className="fa fa-youtube-play"></i></Link>
                   </div>
                 </div>

@@ -74,8 +74,8 @@ const ProductDetails = () => {
                   </div>
                   <div className="col-lg-6 col-md-6 col-sm-6">
                     <div className="breadcrumb__links">
-                      <Link to="./index.html">Trang chủ</Link>
-                      <Link to="./shop.html">Thực đơn</Link>
+                      <Link to="/">Trang chủ</Link>
+                      <Link to="/products">Thực đơn</Link>
                       <span>{product.name}</span>
                     </div>
                   </div>

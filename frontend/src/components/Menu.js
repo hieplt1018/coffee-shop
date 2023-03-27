@@ -8,6 +8,7 @@ import { PreLoader } from './layout/PreLoader';
 import Search from './common/Search';
 import { useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import { Link } from 'react-router-dom';
 
 const Menu = () => {
   const dispatch = useDispatch();
@@ -45,7 +46,7 @@ const Menu = () => {
                 </div>
                 <div className="col-lg-6 col-md-6 col-sm-6">
                   <div className="breadcrumb__links">
-                    <a href="./index.html">Trang chủ</a>
+                    <Link to="/">Trang chủ</Link>
                     <span>Thực đơn</span>
                   </div>
                 </div>

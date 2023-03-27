@@ -5,10 +5,9 @@ export default function NavBar() {
   return (
     <ul>
         <CustomLink to="/">Trang chủ</CustomLink>
-        <CustomLink to="./about.html">Giới thiệu</CustomLink>
+        <CustomLink to="./about">Giới thiệu</CustomLink>
         <CustomLink to="/products">Thực đơn</CustomLink>
-        <CustomLink to="./blog.html">Tin tức</CustomLink>
-        <CustomLink to="./contact.html">Liên hệ</CustomLink>
+        <CustomLink to="./contact">Liên hệ</CustomLink>
     </ul>
   )
 }
