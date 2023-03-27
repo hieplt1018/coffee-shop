@@ -1,5 +1,5 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { addItemToCart } from '../../actions/cartAction';
@@ -7,8 +7,17 @@ import { addItemToCart } from '../../actions/cartAction';
 
 const Product = ({ product }) => {
   const dispatch = useDispatch();
+  const { cartItems } = useSelector(state => state.cart);
+  const isItemExit = cartItems.find(i => i.product === product._id)
+  const maxQuantity = isItemExit ? (product.stock - isItemExit.quantity) : product.stock
 
   const addToCart = (id, quantity) => {
+    if (maxQuantity <= 0) {
+      toast.error('Đã vượt quá số lượng có thể thêm vào giỏ hàng', {
+        theme: "colored"
+      });
+      return;
+    }
     dispatch(addItemToCart(id, quantity));
     toast.success('Đã thêm sản phẩm vào giỏ hàng', {
       theme: "colored"

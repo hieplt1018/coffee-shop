@@ -112,7 +112,7 @@ const ProductDetails = () => {
                         <div className="quantity">
                           <div className="pro-qty">
                             <i className="fa-solid fa-minus qtybtn" onClick={decreaseQty}></i>
-                            <input className="count" type="number" value={quantity} readOnly />
+                            <input className="count" type="number" value={maxQuantity > 0 ? quantity : 0} readOnly />
                             <i className="fa-solid fa-plus qtybtn" onClick={increaseQty}></i>
                           </div>
                         </div>
