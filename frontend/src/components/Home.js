@@ -29,10 +29,10 @@ const Home = () => {
       <MetaData title={'Trang chủ'} />
       <Carousel>
         <Carousel.Item>
-          <img className="d-block w-100" src="https://i.ibb.co/vHbLW35/hero-2.jpg" alt="hero-2" />
+          <img className="d-block w-100" src={require("../images/hero/hero-2.jpg")} alt="hero-2" />
         </Carousel.Item>
         <Carousel.Item>
-          <img className="d-block w-100" src="https://i.ibb.co/Lt0rph0/hero-1.jpg" alt="hero-1" />
+          <img className="d-block w-100" src={require("../images/hero/hero-1.jpg")} alt="hero-1" />
         </Carousel.Item>
       </Carousel>
 
@@ -54,31 +54,31 @@ const Home = () => {
             <OwlCarousel items={5} autoplay={true}>
               <div className="categories__item">
                 <div className="categories__item__icon">
-                  <span><img className="image_categories" src="https://i.ibb.co/DRxJzr8/coffee-bean.png" alt="coffee-bean" /></span>
+                  <span><img className="image_categories" src={require('../images/categories/coffee_bean.svg')} alt="coffee-bean" /></span>
                   <h5>Cà phê hạt</h5>
                 </div>
               </div>
               <div className="categories__item">
                 <div className="categories__item__icon">
-                  <span><img className="image_categories" src="https://i.ibb.co/2WsRs8r/cup.png" alt="cup" /></span>
+                  <span><img className="image_categories" src={require('../images/categories/cup.svg')} alt="cup" /></span>
                   <h5>Cà phê</h5>
                 </div>
               </div>
               <div className="categories__item">
                 <div className="categories__item__icon">
-                  <span><img className="image_categories" src="https://i.ibb.co/3fdqpYj/pastries.png" alt="pastries" /></span>
+                  <span><img className="image_categories" src={require('../images/categories/bread.svg')} alt="pastries" /></span>
                   <h5>Bánh mì</h5>
                 </div>
               </div>
               <div className="categories__item">
                 <div className="categories__item__icon">
-                  <span><img className="image_categories" src="https://i.ibb.co/SfXkvjf/bread.png" alt="bread" /></span>
+                  <span><img className="image_categories" src={require('../images/categories/pastries.svg')} alt="bread" /></span>
                   <h5>Bánh</h5>
                 </div>
               </div>
               <div className="categories__item">
                 <div className="categories__item__icon">
-                  <span><img className="image_categories" src="https://i.ibb.co/3fdqpYj/pastries.png" alt="pastries"/></span>
+                  <span><img className="image_categories" src={require('../images/categories/croissant.svg')} alt="pastries"/></span>
                   <h5>Bánh ngọt</h5>
                 </div>
               </div>
@@ -119,7 +119,7 @@ const Home = () => {
                     <tbody>
                       <tr>
                         <th>
-                          <img src="https://i.ibb.co/Q6gYHwG/Coffee-bean.png" alt="Coffee-bean"  />
+                          <img src={require("../images/product/Coffee_bean.png")} alt="Coffee-bean"  />
                         </th>
                         <th>
                           <span>100% Coffee(nghĩ cái title gì hay ho)</span>
@@ -128,7 +128,7 @@ const Home = () => {
                       </tr>
                       <tr>
                         <th>
-                          <img src="https://i.ibb.co/zHVCLh2/pastries.png" alt="pastries"  />
+                          <img src={require("../images/product/pastries.png")} alt="pastries"  />
                         </th>
                         <th>
                           <span>100% Coffee(nghĩ cái title gì hay ho)</span>
@@ -137,7 +137,7 @@ const Home = () => {
                       </tr>
                       <tr>
                         <th>
-                          <img src="https://i.ibb.co/VW1DHWp/delivery.png" alt="delivery"  /> 
+                          <img src={require("../images/product/delivery.png")} alt="delivery"  /> 
                         </th>
                         <th>
                           <span>100% Coffee(nghĩ cái title gì hay ho)</span>
@@ -154,8 +154,6 @@ const Home = () => {
                 </div>
               </div>
             </div>
-          </div>
-          <div className="class__video set-bg" style={{'--background': "url('img/Cake-product.png')"}}>
           </div>
         </div>
       </section>
@@ -238,22 +236,22 @@ const Home = () => {
                   <ul>
                     <li>
                       <Link to="https://www.facebook.com/cantatacakecoffee" target="_blank" rel="noopener noreferrer">
-                        <img src="https://i.ibb.co/DwKcSz1/icon-fb.png" alt="icon-fb" />
+                        <img src={require("../images/icon/icon_fb.svg")} alt="icon-fb" />
                       </Link>
                     </li>
                     <li>
                       <Link to="https://www.instagram.com/cantatacoffee_/" target="_blank" rel="noopener noreferrer">
-                      <img src="https://i.ibb.co/HBZyBGc/icon-ins.png" alt="icon-ins" />
+                      <img src={require("../images/icon/icon_ins.svg")} alt="icon-ins" />
                       </Link>
                     </li>
                     <li>
                       <Link to="https://www.facebook.com/cantatacakecoffee" target="_blank" rel="noopener noreferrer">
-                        <img src="https://i.ibb.co/ZVvxbwd/icon-tiktok.png" alt="icon-tiktok" />
+                        <img src={require("../images/icon/icon_tiktok.svg")} alt="icon-tiktok" />
                       </Link>
                     </li>
                     <li>
                       <Link to="https://www.youtube.com/channel/UCtPIrX2a2A09hfmJ4hoEZzA" target="_blank" rel="noopener noreferrer">
-                        <img src="https://i.ibb.co/68ky4d8/icon-youtube.png" alt="icon-youtube" />
+                        <img src={require("../images/icon/icon_youtube.svg")} alt="icon-youtube" />
                       </Link>
                     </li>
                   </ul>
@@ -267,32 +265,32 @@ const Home = () => {
               <div className="row">
                 <div className="col-lg-4 col-md-4 col-sm-4 col-6">
                   <div className="instagram__pic">
-                    <img src="https://i.ibb.co/K0rgngh/instagram-6.jpg" alt="instagram-6" />
+                    <img src={require("../images/instagram/instagram-1.jpg")} alt="instagram-6" />
                   </div>
                 </div>
                 <div className="col-lg-4 col-md-4 col-sm-4 col-6">
                   <div className="instagram__pic middle__pic">
-                    <img src="https://i.ibb.co/W01fw9q/instagram-5.jpg" alt="instagram-5" />
+                    <img src={require("../images/instagram/instagram-2.jpg")} alt="instagram-5" />
                   </div>
                 </div>
                 <div className="col-lg-4 col-md-4 col-sm-4 col-6">
                   <div className="instagram__pic">
-                    <img src="https://i.ibb.co/p1hQnpf/instagram-4.jpg" alt="instagram-4" />
+                    <img src={require("../images/instagram/instagram-3.jpg")} alt="instagram-4" />
                   </div>
                 </div>
                 <div className="col-lg-4 col-md-4 col-sm-4 col-6">
                   <div className="instagram__pic">
-                    <img src="https://i.ibb.co/gTFMWsy/instagram-3.jpg" alt="instagram-3" /> 
+                    <img src={require("../images/instagram/instagram-4.jpg")} alt="instagram-3" /> 
                   </div>
                 </div>
                 <div className="col-lg-4 col-md-4 col-sm-4 col-6">
                   <div className="instagram__pic middle__pic">
-                    <img src="https://i.ibb.co/X2DHYpN/instagram-2.jpg" alt="instagram-2" />
+                    <img src={require("../images/instagram/instagram-5.jpg")} alt="instagram-2" />
                   </div>
                 </div>
                 <div className="col-lg-4 col-md-4 col-sm-4 col-6">
                   <div className="instagram__pic">
-                    <img src="https://i.ibb.co/y5DcttB/instagram-1.jpg" alt="instagram-1" />
+                    <img src={require("../images/instagram/instagram-6.jpg")} alt="instagram-1" />
                   </div>
                 </div>
               </div>
