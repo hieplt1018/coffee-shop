@@ -39,7 +39,7 @@ const Header = () => {
                     <li>VN<span className="fa-solid fa-chevron-down"></span>
                       <ul>
                         <li>VN</li>
-                        <Link to="./index.html">
+                        <Link to="/index.html">
                           <li>EN</li>
                         </Link>
                       </ul>

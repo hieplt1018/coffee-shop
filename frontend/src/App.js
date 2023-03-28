@@ -21,7 +21,7 @@ import Checkout from "./components/cart/Checkout";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import ListOrders from "./components/order/ListOrders";
-
+import OrderDetails from "./components/order/OrderDetails";
 
 function App() {
   useEffect(() => {
@@ -52,6 +52,7 @@ function App() {
               <Route path="/password/update" element={<UpdatePassword />} />
               <Route path="/checkout" element={<Checkout />} />
               <Route path="/orders/me" element={<ListOrders />} />
+              <Route path="/order/:id" element={<OrderDetails />} />
             </Route>
           </Routes>
           <Footer />

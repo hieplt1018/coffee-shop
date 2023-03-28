@@ -26,7 +26,7 @@ const Cart = () => {
                     </div>
                     <div className="col-lg-6 col-md-6 col-sm-6">
                       <div className="breadcrumb__links">
-                        <Link to="./index.html">Trang chủ</Link>
+                        <Link to="/index">Trang chủ</Link>
                         <span>Giỏ hàng</span>
                       </div>
                     </div>

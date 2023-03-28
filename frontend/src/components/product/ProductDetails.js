@@ -7,7 +7,7 @@ import { truncate } from '../../helpers/string_helpers';
 import { useDispatch, useSelector } from 'react-redux';
 import ProductImages from './ProductImages';
 import { toast } from 'react-toastify';
-import { addItemToCart } from '../../actions/cartAction';
+import { addItemToCart } from '../../actions/cartActions';
 
 const ProductDetails = () => {
   const dispatch = useDispatch();
@@ -26,7 +26,7 @@ const ProductDetails = () => {
       });
       dispatch(clearErrors());
     };
-  }, [dispatch, alert, error, id]);
+  }, [dispatch, error, id]);
 
   const increaseQty = () => {
     const count = document.querySelector('.count');

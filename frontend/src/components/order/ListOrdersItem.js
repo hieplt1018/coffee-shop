@@ -22,8 +22,8 @@ const ListOrdersItem = (item) => {
           {
             {
               'Delivering': <h5><MDBBadge color='primary' pill>Đang giao</MDBBadge></h5>,
-              'Completed':  <h5><MDBBadge color='success' pill>Hoàn tất</MDBBadge></h5>,
-              'Canccelled':  <h5><MDBBadge color='alert' pill>Đã hủy</MDBBadge></h5>
+              'Completed': <h5><MDBBadge color='success' pill>Hoàn tất</MDBBadge></h5>,
+              'Canccelled': <h5><MDBBadge color='alert' pill>Đã hủy</MDBBadge></h5>
             }[order.orderStatus]
           }
         </td>
