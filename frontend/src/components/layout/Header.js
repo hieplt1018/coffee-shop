@@ -79,11 +79,11 @@ const Header = () => {
                   </ul>
                 </div>
                 <div className="header__logo">
-                  <Link to="/"><img src="https://i.ibb.co/T4zW2Qm/logo.png" alt="logo" /></Link>
+                  <Link to="/"><img src={require("../../images/logo.png")} alt="logo" /></Link>
                 </div>
                 <div className="header__top__right">
                   <div className="header__top__right__links">
-                    <Link to="/products" id="cart-item" className="search-switch"><img src="https://i.ibb.co/2SK2sbX/search.png" alt="search" /></Link>
+                    <Link to="/products" id="cart-item" className="search-switch"><img src={require("../../images/icon/search.png")} alt="search" /></Link>
                     <Link to="/cart" id="cart_item">
                       <i className="fa-solid fa-cart-shopping fa-xl me-3" id="icon-cart" />
                       <span id="cart_count">{cartItems.length}</span>

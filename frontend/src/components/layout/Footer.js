@@ -19,7 +19,7 @@ const Footer = () => {
           <div className="col-lg-4 col-md-6 col-sm-6">
             <div className="footer__about">
               <div className="footer__logo">
-                <Link to="#"><img src="https://i.ibb.co/8bFY6sw/footer-logo.png" alt="footer-logo" /></Link>
+                <Link to="#"><img src={require("../../images/footer-logo.png")} alt="footer-logo" /></Link>
               </div>
               <p>Luôn phục vụ những thứ tốt nhất</p>
 
@@ -27,22 +27,22 @@ const Footer = () => {
                 <ul>
                   <li>
                     <Link to="https://shopee.vn/shop/55494347/" target="_blank" rel="noopener noreferrer">
-                      <img src="https://i.ibb.co/3dCtWWm/shopee.png" alt="shopee" />
+                      <img src={require("../../images/icon/shopee.png")} alt="shopee" />
                     </Link>
                   </li>
                   <li>
                     <Link to="https://shopee.vn/shop/55494347/" target="_blank" rel="noopener noreferrer">
-                      <img src="https://i.ibb.co/0nGh56Q/shopeefood.png" alt="shopeefood" />
+                      <img src={require("../../images/icon/shopeefood.png")} alt="shopeefood" />
                     </Link>
                   </li>
                   <li>
                     <Link to="#" target="_blank" rel="noopener noreferrer">
-                      <img src="https://i.ibb.co/n0XRJr0/grabfood.png" alt="grabfood" />
+                      <img src={require("../../images/icon/grabfood.png")} alt="grabfood" />
                     </Link>
                   </li>
                   <li>
                     <Link to="#" target="_blank" rel="noopener noreferrer">
-                      <img src="https://i.ibb.co/KGxrzY0/tiki.png" alt="tiki" />
+                      <img src={require("../../images/icon/tiki.png")} alt="tiki" />
                     </Link>
                   </li>
                 </ul>

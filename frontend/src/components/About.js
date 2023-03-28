@@ -28,7 +28,7 @@ const About = () => {
             <div className="row">
               <div className="col-lg-12">
                 <div className="about__video ">
-                  <Link to="https://www.youtube.com/watch?v=s4PpNlO_ZCs" class="play-btn video-popup"><i class="fa fa-play"></i></Link>
+                  <Link to="https://www.youtube.com/watch?v=s4PpNlO_ZCs" className="play-btn video-popup"><i className="fa fa-play"></i></Link>
                 </div>
               </div>
             </div>
