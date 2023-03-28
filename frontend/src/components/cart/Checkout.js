@@ -3,9 +3,9 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom';
 import MetaData from '../layout/MetaData';
 import { PreLoader } from '../layout/PreLoader';
-import { createOrder, clearErrors } from '../../actions/orderAction';
+import { createOrder, clearErrors } from '../../actions/orderActions';
 import { toast } from 'react-toastify';
-import { removeAllCart } from '../../actions/cartAction';
+import { removeAllCart } from '../../actions/cartActions';
 import { CREATE_ORDER_RESET } from '../../constants/orderConstant';
 
 
@@ -43,6 +43,7 @@ const Checkout = () => {
       totalOrder: totalOrder,
       customer: user._id
     }
+    console.log(orderData)
 
     dispatch(createOrder(orderData));
   }
@@ -86,7 +87,7 @@ const Checkout = () => {
                   </div>
                   <div className="col-lg-6 col-md-6 col-sm-6">
                     <div className="breadcrumb__links">
-                      <a href="./index.html">Trang chủ</a>
+                      <a href="/index.html">Trang chủ</a>
                       <span>Thanh toán</span>
                     </div>
                   </div>
@@ -134,7 +135,7 @@ const Checkout = () => {
                             />
                         </div>
                         <div className="checkout__input">
-                          <p>Số điện thoại<span>*</span></p>
+                          <p>Số điện thoại giao hàng<span>*</span></p>
                           <input 
                             type="text" 
                             className="checkout__input__add" 
@@ -155,7 +156,7 @@ const Checkout = () => {
                           </label>
                         </div>
                         <div className="checkout__input">
-                          <p>Order notes<span>*</span></p>
+                          <p>Ghi chú đặt hàng</p>
                           <input type="text" placeholder="Lưu ý về đơn đặt hàng của bạn" />
                         </div>
                       </div>

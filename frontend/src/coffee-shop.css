@@ -4182,8 +4182,8 @@ ol {
 }
 
 .edit_profile_btn {
-  width: 12em;
-  height: 2.2em;
+  width: 16em;
+  height: 3.3em;
   margin-right: 2em;
   margin-bottom: 12em;
 }
@@ -4233,4 +4233,12 @@ ol {
   margin: 0;
   box-shadow: none;
   padding: 0;
+}
+.order__details__info h4{
+  color: #5D453F;
+  font-weight: bold;
+}
+.order__details__info p {
+  font-size: 18px;
+  color: #000;
 }

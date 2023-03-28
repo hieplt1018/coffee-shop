@@ -17,7 +17,7 @@ exports.newOrder = catchAsyncErrors(async (req, res, next) => {
   });
 });
 
-exports.getMySingleOrder = catchAsyncErrors(async (req, res, next) => {
+exports.getSingleOrder = catchAsyncErrors(async (req, res, next) => {
   const order = await Order.findById(req.params.id);
 
   if( !order || order.customer.valueOf() !== req.user.id ) {

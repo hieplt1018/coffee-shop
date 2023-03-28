@@ -13,7 +13,7 @@ const CanvasMenu = () => {
           </div>
         </div>
         <div className="offcanvas__logo">
-          <Link to="./index-VI.html"><img src="https://i.ibb.co/T4zW2Qm/logo.png" alt="logo" /></Link>
+          <Link to="/index-VI.html"><img src="https://i.ibb.co/T4zW2Qm/logo.png" alt="logo" /></Link>
         </div>
         <div id="mobile-menu-wrap"></div>
         <div className="offcanvas__option">
@@ -27,7 +27,7 @@ const CanvasMenu = () => {
             <li>VN <span className="arrow_carrot-down"></span>
               <ul>
                 <li>VN</li>
-                <Link to="./index.html">
+                <Link to="/index.html">
                   <li>EN</li>
                 </Link>
               </ul>

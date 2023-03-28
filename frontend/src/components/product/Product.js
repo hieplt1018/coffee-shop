@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import { addItemToCart } from '../../actions/cartAction';
+import { addItemToCart } from '../../actions/cartActions';
 
 
 const Product = ({ product }) => {
