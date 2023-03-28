@@ -64,7 +64,7 @@ const ForgotPassword = () => {
                             />
                           </div>
                           <div className='col-md-12 offset-md-4'>
-                            <button disabled={loading ? true : false} type='submit' className='btn btn-primary btn-block my-2'>
+                            <button disabled={loading ? true : false} type='submit' className='btn btn-cantata btn-block my-2'>
                               Gửi email
                             </button>
                           </div>

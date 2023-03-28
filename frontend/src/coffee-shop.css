@@ -1822,7 +1822,6 @@ ol {
   font-weight: 600;
   text-transform: uppercase;
   padding-bottom: 25px;
-  text-align: center;
 }
 .shopping__cart__table table tbody tr {
   border-bottom: 1px solid #f2f2f2;
@@ -4173,13 +4172,6 @@ ol {
   color: #5D453F;
   font-weight: bold;
 }
-.btn-primary,
-.btn-primary:visited {
-  background-color: #5D453F;
-  border-color: #fff;
-  color: #fff;
-  font-weight: bold;
-}
 
 #main-profile {
   position: relative;
@@ -4224,4 +4216,21 @@ ol {
 }
 .profile-text {
   font-size: 18px;
+}
+.btn-cantata,
+.btn-cantata:visited,
+.btn-cantata:hover {
+  color: #fff;
+  background: #5D453F;
+  margin: 0;
+}
+
+.btn-cantata a:hover {
+  color: #fff;
+}
+
+.btn-add-minus {
+  margin: 0;
+  box-shadow: none;
+  padding: 0;
 }
