@@ -140,7 +140,7 @@ const UpdateProfile = () => {
                                 <p className='font-weight-bold mt-2 mb-2'>{String(user.createdAt).substring(0, 10)}</p>
                               </div>
                               <div className="col-md-12 offset-md-2">
-                                <button disabled={loading ? true : false} type='submit' className='btn btn-primary btn-block my-2 offset-md-2'>
+                                <button disabled={loading ? true : false} type='submit' className='btn btn-cantata btn-block my-2 offset-md-2'>
                                 Cập nhật
                                 </button>
                               </div>

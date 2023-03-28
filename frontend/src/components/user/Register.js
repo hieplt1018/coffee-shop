@@ -162,7 +162,7 @@ const Register = () => {
                                 </div>
                               </div>
                               <div className="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                                <button disabled={loading ? true : false} type="submit" className="btn btn-primary btn-lg">Đăng ký</button>
+                                <button disabled={loading ? true : false} type="submit" className="btn btn-cantata btn-lg">Đăng ký</button>
                               </div>
                             </form>
                           </div>

@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const PAYMENT_METHOD = ['Card', 'Cash', 'COD', 'Banking'];
-const ORDER_STATUS = ['Paid', 'Cancelled', 'Delivering'];
+const ORDER_STATUS = ['Completed', 'Cancelled', 'Delivering'];
 
 const orderSchema = mongoose.Schema({
   shippingInfo: {

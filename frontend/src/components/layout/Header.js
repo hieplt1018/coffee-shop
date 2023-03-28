@@ -53,7 +53,7 @@ const Header = () => {
                       width="32"
                       height="32"
                       /> {user && user.name}<span className="fa-solid fa-chevron-down"></span>
-                      <ul>
+                      <ul className="dropdown-profile-header">
                         { user && !['admin','staff'].includes(user.role) ? (
                           <Link to="/orders/me">
                             <li>Đơn hàng</li>
@@ -73,7 +73,8 @@ const Header = () => {
                         </Link>
                       </ul>
                     </li>
-                    ) : !loading && <li><Link to="/login" disabled={loading ? true : false} onClick={handleClick}>Đăng nhập</Link> <span className="arrow_carrot-down"></span></li> }
+                    ) : !loading && <li><Link to="/login" disabled={loading ? true : false} onClick={handleClick}>Đăng nhập</Link> 
+                    <span className="arrow_carrot-down"></span></li> }
                     
                   </ul>
                 </div>

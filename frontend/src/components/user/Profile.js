@@ -55,12 +55,12 @@ const Profile = () => {
                               </div>
                               <div className="row justify-content-evenly pt-5 pb-3">
                                 <div className="col-md-4">
-                                  <Link to="/me/update" id="edit_profile" className="btn btn-primary btn-block my-2 edit_profile_btn">
+                                  <Link to="/me/update" id="edit_profile" className="btn btn-cantata btn-block my-2 edit_profile_btn">
                                     Chỉnh sửa hồ sơ
                                   </Link>
                                 </div>
                                 <div className="col-md-4">
-                                  <Link to="/password/update" id="update-password" className="btn btn-primary btn-block my-2 edit_profile_btn">
+                                  <Link to="/password/update" id="update-password" className="btn btn-cantata btn-block my-2 edit_profile_btn">
                                     Thay đổi mật khẩu
                                   </Link>
                                 </div>

@@ -39,7 +39,7 @@ const Cart = () => {
                   <div className="row">
                     <div className="col-lg-8">
                       <h3>Hiện tại chưa có sản phẩm nào</h3>
-                      <div className="btn-primary btn btn-lg mt-5">
+                      <div className="btn-cantata btn btn-lg mt-5">
                         <Link to="/products">Tiếp tục mua sắm</Link>
                       </div>
                     </div>
@@ -72,7 +72,7 @@ const Cart = () => {
                         <div className="row">
                           <div className="col-lg-6 col-md-6 col-sm-6">
                             <div className="continue__btn">
-                              <Link to="/products" className="btn btn-primary">Tiếp tục mua sắm</Link>
+                              <Link to="/products" className="btn btn-cantata">Tiếp tục mua sắm</Link>
                             </div>
                           </div>
                           <div className="col-lg-6 col-md-6 col-sm-6">
@@ -87,7 +87,7 @@ const Cart = () => {
                           <h6>Mã giảm giá</h6>
                           <form action="#">
                             <input type="text" placeholder="Coupon code" />
-                            <button className="btn btn-primary" type="submit">Áp dụng</button>
+                            <button className="btn btn-cantata" type="submit">Áp dụng</button>
                           </form>
                         </div>
                         <div className="cart__total">

@@ -40,11 +40,11 @@ const CartItem = ({ item }) => {
       <td className="quantity__item">
         <div className="quantity">
           <div className="pro-qty">
-            <span className="btn" onClick={() => decreaseQty(item.product, item.quantity, item.stock)}>
+            <span className="btn btn-add-minus" onClick={() => decreaseQty(item.product, item.quantity, item.stock)}>
               <i className="fa-solid fa-minus qtybtn"></i>
             </span>
             <input className="count" type="text" value={item.quantity} readOnly />
-            <span className="btn" onClick={() => increaseQty(item.product, item.quantity, item.stock)}>
+            <span className="btn btn-add-minus" onClick={() => increaseQty(item.product, item.quantity, item.stock)}>
               <i className="fa-solid fa-plus qtybtn"></i>
             </span>
           </div>

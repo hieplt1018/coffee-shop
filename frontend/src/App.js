@@ -20,6 +20,7 @@ import Cart from "./components/cart/Cart";
 import Checkout from "./components/cart/Checkout";
 import About from "./components/About";
 import Contact from "./components/Contact";
+import ListOrders from "./components/order/ListOrders";
 
 
 function App() {
@@ -50,6 +51,7 @@ function App() {
               <Route path="/me/update" element={<UpdateProfile />} />
               <Route path="/password/update" element={<UpdatePassword />} />
               <Route path="/checkout" element={<Checkout />} />
+              <Route path="/orders/me" element={<ListOrders />} />
             </Route>
           </Routes>
           <Footer />
