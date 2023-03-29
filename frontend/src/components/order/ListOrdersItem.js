@@ -2,7 +2,6 @@ import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import { MDBBadge } from 'mdbreact'
 
-
 const ListOrdersItem = (item) => {
   const { order } = item;
 
@@ -23,13 +22,13 @@ const ListOrdersItem = (item) => {
             {
               'Delivering': <h5><MDBBadge color='primary' pill>Đang giao</MDBBadge></h5>,
               'Completed': <h5><MDBBadge color='success' pill>Hoàn tất</MDBBadge></h5>,
-              'Canccelled': <h5><MDBBadge color='alert' pill>Đã hủy</MDBBadge></h5>
+              'Cancelled': <h5><MDBBadge color='danger' pill>Đã hủy</MDBBadge></h5>
             }[order.orderStatus]
           }
         </td>
         <td>
-          <Link to={`/order/${order._id}`} className="btn-floating">
-            <i className="fa-solid fa-eye"></i>
+          <Link to={`/order/${order._id}`} className="btn-floating btn-view">
+            <i className="fa-solid fa-eye fa-xl"></i>
           </Link>
         </td>
           
