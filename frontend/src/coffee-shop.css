@@ -4250,3 +4250,18 @@ ol {
   font-size: 18px;
   color: #000;
 }
+#admin_dashboard_income {
+  background-color: #1E3D73;
+}
+#admin_dasboard_users {
+  background-color: #FE517E;
+}
+#admin_dashboard_products {
+  background-color: #F6653C;
+}
+#admin_dashboard_blogs {
+  background-color: #9F71CB;
+}
+#admin_dashboard_orders {
+  background-color: #28A745;
+}

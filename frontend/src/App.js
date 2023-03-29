@@ -22,6 +22,7 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import ListOrders from "./components/order/ListOrders";
 import OrderDetails from "./components/order/OrderDetails";
+import Dashboard from "./components/admin/Dashboard";
 
 function App() {
   useEffect(() => {
@@ -53,6 +54,7 @@ function App() {
               <Route path="/checkout" element={<Checkout />} />
               <Route path="/orders/me" element={<ListOrders />} />
               <Route path="/order/:id" element={<OrderDetails />} />
+              <Route path="/dashboard" element={<Dashboard />} />
             </Route>
           </Routes>
           <Footer />
