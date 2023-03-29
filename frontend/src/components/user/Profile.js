@@ -15,7 +15,7 @@ const Profile = () => {
           <div className="breadcrumb-option">
             <div className="container">
               <div className="row">
-                <div className="col-lg-6 col-md-6 col-sm-6 offset-md-4">
+                <div className="col-12 text-center">
                   <div className="breadcrumb__text">
                     <h2>Hồ sơ người dùng</h2>
                   </div>
@@ -71,7 +71,7 @@ const Profile = () => {
                       </div>
                     </div>
                   </div>
-                </div>
+              </div>
             </div>
           </div>
         </Fragment>

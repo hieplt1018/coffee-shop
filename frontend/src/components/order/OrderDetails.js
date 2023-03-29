@@ -73,11 +73,15 @@ const OrderDetails = () => {
                   </div>
                   <div className="col-lg-4">
                     <div className="cart__total mb-4">
-                      <h6>Tất cả đơn hàng: {new Intl.NumberFormat().format(order.orderItems
-                        .reduce((acc, item) => acc + item.quantity, 0))} sản phẩm </h6>
+                      <h6>Đơn hàng của bạn</h6>
                       <ul>
-                        <li id="subtotal">Phí giao hàng<span>{new Intl.NumberFormat().format(0)} &#8363; </span></li>
-                        <li id="total">Tổng thanh toán <span>{new Intl.NumberFormat().format(order.totalOrder, 0)} &#8363;</span></li>
+                        <li>Số sản phẩm:
+                          <span>{new Intl.NumberFormat().format(order.orderItems
+                            .reduce((acc, item) => acc + item.quantity, 0))} sản phẩm
+                          </span>
+                        </li>
+                        <li id="subtotal">Phí giao hàng:<span>{new Intl.NumberFormat().format(0)} &#8363; </span></li>
+                        <li id="total">Tổng thanh toán: <span>{new Intl.NumberFormat().format(order.totalOrder, 0)} &#8363;</span></li>
                       </ul>
                     </div>
                     <div className="order__details__info">

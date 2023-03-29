@@ -1,13 +1,26 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { Link, useMatch, useResolvedPath } from 'react-router-dom'
 
-export default function NavBar() {
+export default function NavBar(user) {
   return (
     <ul>
-        <CustomLink to="/">Trang chủ</CustomLink>
-        <CustomLink to="./about">Giới thiệu</CustomLink>
-        <CustomLink to="/products">Thực đơn</CustomLink>
-        <CustomLink to="./contact">Liên hệ</CustomLink>
+      {user.role === 'admin' ? 
+        <Fragment>
+          <CustomLink to="/">Trang chủ</CustomLink>
+          <CustomLink to="/about">Giới thiệu</CustomLink>
+          <CustomLink to="/products">Thực đơn</CustomLink>
+          <CustomLink to="/blog">Tin tức</CustomLink>
+          <CustomLink to="/contact">Liên hệ</CustomLink>
+        </Fragment> 
+      : 
+        <Fragment>
+          <CustomLink to="/dashboard">Tổng quan</CustomLink>
+          <CustomLink to="/admin/users">Người dùng</CustomLink>
+          <CustomLink to="/admin/products">Sản phẩm</CustomLink>
+          <CustomLink to="/admin/blogs">Tin tức</CustomLink>
+          <CustomLink to="/admin/orders">Đơn hàng</CustomLink>
+        </Fragment>
+      }
     </ul>
   )
 }
