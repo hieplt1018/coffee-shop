@@ -23,6 +23,7 @@ import Contact from "./components/Contact";
 import ListOrders from "./components/order/ListOrders";
 import OrderDetails from "./components/order/OrderDetails";
 import Dashboard from "./components/admin/Dashboard";
+import ListProduct from "./components/admin/ListProducts";
 
 function App() {
   useEffect(() => {
@@ -55,6 +56,7 @@ function App() {
               <Route path="/orders/me" element={<ListOrders />} />
               <Route path="/order/:id" element={<OrderDetails />} />
               <Route path="/dashboard" element={<Dashboard />} />
+              <Route path="/admin/products" element={<ListProduct />} />
             </Route>
           </Routes>
           <Footer />
