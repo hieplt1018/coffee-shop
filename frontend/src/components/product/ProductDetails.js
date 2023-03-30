@@ -14,6 +14,7 @@ const ProductDetails = () => {
   const { id } = useParams();
   const [quantity, setQuantity] = useState(1);
   const { loading, product, error } = useSelector(state => state.productDetails);
+  const { user } = useSelector(state => state.auth);
   const { cartItems } = useSelector(state => state.cart);
   const isItemExit = cartItems.find(i => i.product === product._id)
   const maxQuantity = isItemExit ? (product.stock - isItemExit.quantity) : product.stock
@@ -106,24 +107,34 @@ const ProductDetails = () => {
                       <ul>
                         <li>Số lượng có thể đặt: <span>{new Intl.NumberFormat("de-DE").format(maxQuantity)}</span></li>
                         <li>Danh mục: <span>{product.category}</span></li>
-                        <li>Nhà cung cấp: <span>{product.supplier}</span></li>
+                        <li>Nhà cung cấp: <span>{product.supplier ? product.supplier : "Cantata Coffee"}</span></li>
                       </ul>
-                      <div className="product__details__option">
-                        <div className="quantity">
-                          <div className="pro-qty">
-                            <i className="fa-solid fa-minus qtybtn" onClick={decreaseQty}></i>
-                            <input className="count" type="number" value={maxQuantity > 0 ? quantity : 0} readOnly />
-                            <i className="fa-solid fa-plus qtybtn" onClick={increaseQty}></i>
-                          </div>
+                      { user && user.role === 'admin' ? (
+                        <div className="product__details__edit">
+                          <Link
+                            to={`/admin/product/${user.id}`} 
+                            id="cart-btn"
+                            className="primary-btn"
+                          >Chỉnh sửa sản phẩm</Link>
                         </div>
-                        <span 
-                          type="button" 
-                          id="cart-btn"
-                          className="primary-btn"
-                          disabled={product.stock === 0}
-                          onClick={addToCart}
-                        >Thêm vào giỏ hàng</span>
-                      </div>
+                      ) : (
+                        <div className="product__details__option">
+                          <div className="quantity">
+                            <div className="pro-qty">
+                              <i className="fa-solid fa-minus qtybtn" onClick={decreaseQty}></i>
+                              <input className="count" type="number" value={maxQuantity > 0 ? quantity : 0} readOnly />
+                              <i className="fa-solid fa-plus qtybtn" onClick={increaseQty}></i>
+                            </div>
+                          </div>
+                          <span 
+                            type="button" 
+                            id="cart-btn"
+                            className="primary-btn"
+                            disabled={product.stock === 0}
+                            onClick={addToCart}
+                          >Thêm vào giỏ hàng</span>
+                        </div>
+                      ) }
                     </div>
                   </div>
                 </div>

@@ -30,7 +30,7 @@ const ListProductItems = (item) => {
           <Link to={`/product/${product._id}`} className="btn-view">
             <i className="fa-solid fa-eye fa-xl"></i>
           </Link>
-          <Link to={`/product/${product._id}`} className="btn-edit">
+          <Link to={`/admin/product/${product._id}`} className="btn-edit">
             <i className="fa-solid fa-pen-to-square fa-xl"></i>
           </Link>
         </td>

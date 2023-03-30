@@ -1,10 +1,13 @@
 import React, { Fragment } from 'react';
+import { useSelector } from 'react-redux';
 import { Link, useMatch, useResolvedPath } from 'react-router-dom'
 
-export default function NavBar(user) {
+export default function NavBar() {
+  const { user } = useSelector(state => state.auth);
+  
   return (
     <ul>
-      {user.role === 'admin' ? 
+      {user && user.role !== 'admin' ? 
         <Fragment>
           <CustomLink to="/">Trang chủ</CustomLink>
           <CustomLink to="/about">Giới thiệu</CustomLink>

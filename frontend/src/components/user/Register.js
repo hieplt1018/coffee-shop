@@ -166,9 +166,6 @@ const Register = () => {
                               </div>
                             </form>
                           </div>
-                          {/* <div className="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
-                            <img id="register-hero"src="https://i.ibb.co/1QBnJJT/pexels-saliha-sevim-7819309.jpg" className="img-fluid" alt="register" />
-                          </div> */}
                         </div>
                       </div>
                     </div>
