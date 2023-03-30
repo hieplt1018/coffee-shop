@@ -80,7 +80,7 @@ const UpdateProfile = () => {
                         <div className="col-md-7 border-right">
                           <div className="p-3 pb-4">
                             <div className="row mt-3">
-                              <div className='col-md-12'><h4><label className='labels profile'>Tên</label></h4>
+                              <div className='col-md-12'><h4><label className='labels profile'>Họ tên</label></h4>
                                 <input 
                                   type='text' 
                                   placeholder={user.name}

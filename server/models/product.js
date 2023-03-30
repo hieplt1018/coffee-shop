@@ -51,8 +51,11 @@ const productSchema = new mongoose.Schema({
     default: 0
   },
   supplier: {
-    type: mongoose.Schema.ObjectId,
-    ref: 'User'
+    type: String,
+    required: [true, 'Vui lòng nhập nhà cung cấp'],
+    trim: true,
+    maxLength: [300, 'Tên sản phẩm không được vượt quá 300 ký tự'],
+    default: "Cantata Coffee"
   },
   createdAt: {
     type: Date,

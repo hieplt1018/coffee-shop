@@ -55,7 +55,12 @@ const Menu = () => {
           </div>
           <section className="shop spad">
             <div className="container">
-              <Search />
+              <div className="shop__option">
+                <div className="row">
+                  <Search />
+                </div>
+              </div>
+              
               <div className='row'>
                 {products && products.map(product => (
                   <Product key={product._id} product={product} />

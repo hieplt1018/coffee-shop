@@ -28,7 +28,7 @@ const seedDatabase = async () => {
     // await Product.insertMany(products);
     // console.log('Products inserted!');
     // await User.deleteMany();
-    await Order.deleteMany();
+    await Product.deleteMany();
   } catch(error) {
     console.log(error.message);
     process.exit();
