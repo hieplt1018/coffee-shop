@@ -81,15 +81,25 @@ const Header = () => {
                 <div className="header__logo">
                   <Link to="/"><img src={require("../../images/logo.png")} alt="logo" /></Link>
                 </div>
-                <div className="header__top__right">
-                  <div className="header__top__right__links">
-                    <Link to="/products" id="cart-item" className="search-switch"><img src={require("../../images/icon/search.png")} alt="search" /></Link>
-                    <Link to="/cart" id="cart_item">
-                      <i className="fa-solid fa-cart-shopping fa-xl me-3" id="icon-cart" />
-                      <span id="cart_count">{cartItems.length}</span>
-                    </Link>
-                  </div>
-                </div>
+                {
+                  (user && user.role) ===  'admin' ? (
+                    <div className="header__top__right">
+                      <div className="header__top__right__links">
+                      <Link to="/products" id="cart-item" className="search-switch"><img src={require("../../images/icon/search.png")} alt="search" /></Link>
+                      </div> 
+                    </div>
+                  ) : (
+                    <div className="header__top__right">
+                      <div className="header__top__right__links">
+                        <Link to="/products" id="cart-item" className="search-switch"><img src={require("../../images/icon/search.png")} alt="search" /></Link>
+                        <Link to="/cart" id="cart_item">
+                          <i className="fa-solid fa-cart-shopping fa-xl me-3" id="icon-cart" />
+                          <span id="cart_count">{cartItems.length}</span>
+                        </Link>
+                      </div>
+                    </div>
+                  )
+                }
               </div>
             </div>
           </div>

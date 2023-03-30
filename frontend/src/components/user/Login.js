@@ -47,7 +47,7 @@ const Login = () => {
                   <div className="card" id="login-card">
                     <div className="row g-0">
                       <div className="col-md-6 col-lg-5 d-none d-md-block">
-                        <img src="https://i.ibb.co/FJxz4LM/pexels-viktoria-alipatova-2668498.jpg" alt="login form" className="img-fluid" style={{borderRadius: '1rem 0 0 1rem'}} />
+                        <img src={require('../../images/register.jpg')} alt="login form" className="img-fluid" style={{borderRadius: '1rem 0 0 1rem'}} />
                       </div>
                       <div className="col-md-6 col-lg-7 d-flex align-items-center">
                         <div className="card-body p-4 p-lg-5 text-black">

@@ -181,6 +181,10 @@ ol {
   letter-spacing: 2px;
 }
 
+.primary-btn:hover {
+  color: #fff;
+}
+
 .site-btn {
   margin-top: 13px;
   width: 200px;
