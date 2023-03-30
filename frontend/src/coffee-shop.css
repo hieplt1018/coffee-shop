@@ -4279,3 +4279,8 @@ ol {
   color: #28A745;
   margin-left: 1em;
 }
+.product-images-preview {
+  width: 173px;
+  height: 173px;
+  margin-right: 2em;
+}

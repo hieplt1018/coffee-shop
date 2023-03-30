@@ -9,6 +9,8 @@ import { getAdminProducts, clearErrors } from '../../actions/productActions';
 import Pagination from 'react-js-pagination';
 import ListProductItem from './ListProductItem';
 import { useParams } from 'react-router-dom';
+import Search from '../common/Search';
+
 
 
 const ProductList = () => {
@@ -68,6 +70,16 @@ const ProductList = () => {
         loading ? <PreLoader /> : (
           <section className="shop spad">
             <div className="container">
+              <div className="shop__option">
+                <div className="row">
+                  <Search />
+                  <div className="col-3 offset-md-2">
+                    <Link to={"/admin/product/new"} className="primary-btn" >
+                      Tạo sản phẩm mới
+                    </Link>
+                  </div>
+                </div>
+              </div>
               <MDBTable className="align-middle hover">
                 <MDBTableHead>
                   <tr>

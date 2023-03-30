@@ -16,23 +16,19 @@ const Search = () => {
 
   return (
     <Fragment>
-      <div className="shop__option">
-        <div className="row">
-          <div className="col-lg-7 col-md-7">
-            <div className="shop__option__search">
-              <form onSubmit={submitHandler} >
-                <input 
-                  type="text"
-                  placeholder={
-                    window.location.href.split('/').includes('products') ?
-                    "Tìm kiếm" : window.location.href.split('/').pop() }
-                  value={keyword}
-                  onChange={(e) => setKeyword(e.target.value)}
-                />
-                <button type="submit"><i className="fa fa-search" /></button>
-              </form>
-            </div>
-          </div>
+      <div className="col-lg-7 col-md-7">
+        <div className="shop__option__search">
+          <form onSubmit={submitHandler} >
+            <input 
+              type="text"
+              placeholder={
+                window.location.href.split('/').includes('products') ?
+                "Tìm kiếm" : window.location.href.split('/').pop() }
+              value={keyword}
+              onChange={(e) => setKeyword(e.target.value)}
+            />
+            <button type="submit"><i className="fa fa-search" /></button>
+          </form>
         </div>
       </div>
     </Fragment>
