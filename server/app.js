@@ -8,8 +8,8 @@ const dotenv = require('dotenv');
 dotenv.config({ path: 'server/config/config.env' }); 
 
 
-app.use(express.json({ limit: '25mb' }));
-app.use(bodyParser.urlencoded({ extended: true, limit: '25mb' }));
+app.use(express.json({ limit: '50mb' }));
+app.use(bodyParser.urlencoded({ extended: true, limit: '50mb' }));
 app.use(cookieParser());
 
 cloudinary.config({

@@ -4270,6 +4270,10 @@ ol {
   background-color: #28A745;
 }
 
+#btn-cancel {
+  color: #fff;
+  background-color: #6C757D !important;
+}
 .btn-view i {
   color: #1E3D73;
   height: 15px;
@@ -4278,6 +4282,15 @@ ol {
 .btn-edit i {
   color: #28A745;
   margin-left: 1em;
+}
+.btn-delete i {
+  color: #e3242b;
+  margin-left: 0.6em;
+}
+.btn-delete {
+  border: none;
+  padding: 0;
+  background-color: white;
 }
 .product-images-preview {
   width: 173px;
