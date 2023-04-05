@@ -119,8 +119,8 @@ const NewProduct = () => {
                               type="number" 
                               name="price"
                               max="1000000"
-                              min="1"
-                              step="1"
+                              min="0"
+                              step="1000"
                               required
                               value={price} 
                               onChange={(e) => setPrice(e.target.value)} 

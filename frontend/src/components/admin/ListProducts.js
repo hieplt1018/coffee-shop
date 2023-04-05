@@ -10,6 +10,7 @@ import Pagination from 'react-js-pagination';
 import ListProductItem from './ListProductItem';
 import { useParams } from 'react-router-dom';
 import Search from '../common/Search';
+import { DELETE_PRODUCT_RESET } from '../../constants/productConstants';
 
 
 
@@ -18,10 +19,11 @@ const ProductList = () => {
   const { loading, products, error, productsCount, resPerPage } = useSelector(state => state.products);
   const [currentPage, setCurrentPage] = useState(1);
   const { keyword } = useParams();
+  const { error: deleteError, isDeleted } = useSelector(state => state.product);
 
   const navigator = useNavigate();
   const dispatch = useDispatch();
-
+  
   useEffect(() => {
     if(user.role !== 'admin') {
       navigator('/');
@@ -32,6 +34,12 @@ const ProductList = () => {
 
     dispatch(getAdminProducts(keyword, currentPage));
 
+    if(isDeleted) {
+      toast.success('Đã xóa sản phẩm thành công', {
+        theme: "colored"
+      });
+      dispatch({ type: DELETE_PRODUCT_RESET});
+    }
 
     if(error) {
       toast.error(error, {
@@ -39,7 +47,7 @@ const ProductList = () => {
       });
       dispatch(clearErrors());
     };
-  }, [dispatch, keyword, currentPage, error]);
+  }, [dispatch, keyword, currentPage, error, deleteError, isDeleted]);
 
   function setCurrentPageNo(pageNumber) {
     setCurrentPage(pageNumber);
@@ -92,7 +100,7 @@ const ProductList = () => {
                 </MDBTableHead>
                 <MDBTableBody>
                   {products && products.map(product => (
-                    <ListProductItem key={product._id} product={product} />
+                    <ListProductItem key={product._id} product={product}/>
                   ))}
                 </MDBTableBody>
               </MDBTable>

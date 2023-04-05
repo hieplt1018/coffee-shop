@@ -9,7 +9,11 @@ import {
   CLEAR_ERRORS,
   PRODUCT_DETAILS_REQUEST,
   PRODUCT_DETAILS_SUCCESS,
-  PRODUCT_DETAILS_FAIL
+  PRODUCT_DETAILS_FAIL,
+  DELETE_PRODUCTS_FAIL,
+  DELETE_PRODUCTS_REQUEST,
+  DELETE_PRODUCTS_SUCCESS,
+  DELETE_PRODUCT_RESET
 } from '../constants/productConstants';
 
 export const productsReducer = (state = { products: [] }, action) => {
@@ -92,6 +96,39 @@ export const newProductReducer = (state = { product: {} }, action) => {
       return {
         ...state,
         success: false
+      }
+    case CLEAR_ERRORS:
+      return {
+        ...state,
+        error: null
+      }
+    default:
+      return state
+  }
+}
+
+export const productReducer = (state = {}, action) => {
+  switch(action.type) {
+    case DELETE_PRODUCTS_REQUEST: 
+      return {
+        ...state,
+        loading: true
+      }
+    case DELETE_PRODUCTS_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+        isDeleted: action.payload
+      }
+    case DELETE_PRODUCTS_FAIL:
+      return {
+        ...state,
+        error: action.payload
+      }
+    case DELETE_PRODUCT_RESET:
+      return {
+        ...state,
+        isDeleted: false
       }
     case CLEAR_ERRORS:
       return {
