@@ -7,15 +7,7 @@ export default function NavBar() {
   
   return (
     <ul>
-      {user && user.role !== 'admin' ? 
-        <Fragment>
-          <CustomLink to="/">Trang chủ</CustomLink>
-          <CustomLink to="/about">Giới thiệu</CustomLink>
-          <CustomLink to="/products">Thực đơn</CustomLink>
-          <CustomLink to="/blog">Tin tức</CustomLink>
-          <CustomLink to="/contact">Liên hệ</CustomLink>
-        </Fragment> 
-      : 
+      {user && user.role === 'admin' ? 
         <Fragment>
           <CustomLink to="/dashboard">Tổng quan</CustomLink>
           <CustomLink to="/admin/users">Người dùng</CustomLink>
@@ -23,6 +15,14 @@ export default function NavBar() {
           <CustomLink to="/admin/blogs">Tin tức</CustomLink>
           <CustomLink to="/admin/orders">Đơn hàng</CustomLink>
         </Fragment>
+      : 
+        <Fragment>
+          <CustomLink to="/">Trang chủ</CustomLink>
+          <CustomLink to="/about">Giới thiệu</CustomLink>
+          <CustomLink to="/products">Thực đơn</CustomLink>
+          <CustomLink to="/blog">Tin tức</CustomLink>
+          <CustomLink to="/contact">Liên hệ</CustomLink>
+        </Fragment> 
       }
     </ul>
   )
