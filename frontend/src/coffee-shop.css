@@ -210,6 +210,7 @@ ol {
   left: 0;
   z-index: 999999;
   background: #000;
+  text-align: center;
 }
 
 .loader {
@@ -217,12 +218,16 @@ ol {
   height: 40px;
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 49%;
   margin-top: -13px;
   margin-left: -13px;
   border-radius: 60px;
   animation: loader 0.8s linear infinite;
   -webkit-animation: loader 0.8s linear infinite;
+}
+#preloader-text{
+  margin-top: 14em;
+  color: white;
 }
 
 @keyframes loader {

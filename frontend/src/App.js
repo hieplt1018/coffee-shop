@@ -25,6 +25,8 @@ import OrderDetails from "./components/order/OrderDetails";
 import Dashboard from "./components/admin/Dashboard";
 import ListProduct from "./components/admin/ListProducts";
 import NewProduct from "./components/product/NewProduct";
+import UpdateProduct from "./components/product/UpdateProduct";
+
 
 function App() {
   useEffect(() => {
@@ -59,6 +61,7 @@ function App() {
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/admin/products" element={<ListProduct />} />
               <Route path="/admin/product/new" element={<NewProduct />} />
+              <Route path="/admin/product/:id" element={<UpdateProduct />} />
             </Route>
           </Routes>
           <Footer />

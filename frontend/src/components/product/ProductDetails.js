@@ -112,7 +112,7 @@ const ProductDetails = () => {
                       { user && user.role === 'admin' ? (
                         <div className="product__details__edit">
                           <Link
-                            to={`/admin/product/${user.id}`} 
+                            to={`/admin/product/${product._id}`} 
                             id="cart-btn"
                             className="primary-btn"
                           >Chỉnh sửa sản phẩm</Link>
