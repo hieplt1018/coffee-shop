@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 const Search = () => {
   const [keyword, setKeyword] = useState('');
   let history = useNavigate();
+  const searchPlaceholder = ["orders", "products"];
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -22,7 +23,7 @@ const Search = () => {
             <input 
               type="text"
               placeholder={
-                window.location.href.split('/').includes('products') ?
+                searchPlaceholder.some(el => window.location.href.split('/').includes(el)) ?
                 "Tìm kiếm" : window.location.href.split('/').pop() }
               value={keyword}
               onChange={(e) => setKeyword(e.target.value)}

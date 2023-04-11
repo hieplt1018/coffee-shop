@@ -19,16 +19,12 @@ const seedDatabase = async () => {
     // await Product.insertMany(products);
     // await Product.insertMany(products);
     // await Product.insertMany(products);
-    // await Product.insertMany(products);
-    // await Product.insertMany(products);
-    // await Product.insertMany(products);
-    // await Product.insertMany(products);
-    // await Product.insertMany(products);
-    // await Product.insertMany(products);
-    // await Product.insertMany(products);
     // console.log('Products inserted!');
     // await User.deleteMany();
-    await Product.deleteMany();
+    // await Product.deleteMany();
+    console.log('Orders inserted!');
+
+    // await Order.deleteMany();
   } catch(error) {
     console.log(error.message);
     process.exit();

@@ -20,13 +20,13 @@ import Cart from "./components/cart/Cart";
 import Checkout from "./components/cart/Checkout";
 import About from "./components/About";
 import Contact from "./components/Contact";
-import ListOrders from "./components/order/ListOrders";
+import ListMyOrders from "./components/order/ListMyOrders";
 import OrderDetails from "./components/order/OrderDetails";
 import Dashboard from "./components/admin/Dashboard";
 import ListProduct from "./components/admin/ListProducts";
 import NewProduct from "./components/product/NewProduct";
 import UpdateProduct from "./components/product/UpdateProduct";
-
+import ListOrders from "./components/admin/ListOrders";
 
 function App() {
   useEffect(() => {
@@ -56,12 +56,13 @@ function App() {
               <Route path="/me/update" element={<UpdateProfile />} />
               <Route path="/password/update" element={<UpdatePassword />} />
               <Route path="/checkout" element={<Checkout />} />
-              <Route path="/orders/me" element={<ListOrders />} />
+              <Route path="/orders/me" element={<ListMyOrders />} />
               <Route path="/order/:id" element={<OrderDetails />} />
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/admin/products" element={<ListProduct />} />
               <Route path="/admin/product/new" element={<NewProduct />} />
               <Route path="/admin/product/:id" element={<UpdateProduct />} />
+              <Route path="/admin/orders" element={<ListOrders />} />
             </Route>
           </Routes>
           <Footer />

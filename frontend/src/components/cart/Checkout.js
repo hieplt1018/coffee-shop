@@ -53,7 +53,7 @@ const Checkout = () => {
       toast.success('Đặt hàng thành công!', {
         theme: 'colored'
       });
-      navigate('/');
+      navigate('/orders/me');
       dispatch(removeAllCart);
       dispatch({
         type: CREATE_ORDER_RESET
