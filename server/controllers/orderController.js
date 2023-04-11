@@ -1,6 +1,7 @@
 const Product = require('../models/product');
 const ErrorHandler = require('../utils/errorHandler');
 const catchAsyncErrors = require('../middleware/catchAsyncErrors');
+const APIFeatures = require('../utils/apiFeatures');
 const Order = require('../models/order');
 
 exports.newOrder = catchAsyncErrors(async (req, res, next) => {
@@ -34,12 +35,26 @@ exports.getSingleOrder = catchAsyncErrors(async (req, res, next) => {
 });
 
 exports.getAllOrders = catchAsyncErrors(async (req, res, next) => {
-  const orders = await Order.find();
+  const resPerPage = 8;
+  const keyword = req.query.keyword ? {
+    name: {
+      $regex: req.query.keyword,
+      $options: 'i'
+    }
+  } : {}
+
+  const apiFeatures = new APIFeatures(Order.find({ ...keyword }), req.query)
+    .search().filter().pagination(resPerPage);  
+  const orders = await apiFeatures.query;
+  const totalOrders = await Order.find({...keyword});
+  const ordersCount = totalOrders.length;
 
   res.status(200).json({
     success: true,
-    orders
-  });
+    ordersCount,
+    orders,
+    resPerPage
+  })
 });
 
 exports.getMyOrders = catchAsyncErrors(async (req, res, next) => {

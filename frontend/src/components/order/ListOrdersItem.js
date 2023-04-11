@@ -5,6 +5,11 @@ import { MDBBadge } from 'mdbreact'
 const ListOrdersItem = (item) => {
   const { order } = item;
 
+  let totalAmount = 0;
+  order.orderItems.forEach(item => {
+    totalAmount += item.quantity
+  });
+
   return (
     <Fragment>
       <tr>
@@ -12,7 +17,7 @@ const ListOrdersItem = (item) => {
           <p className='fw-normal mb-1'>{order._id}</p>
         </td>
         <td>
-          <p className='fw-normal mb-1'>{order.orderItems.length}</p>
+          <p className='fw-normal mb-1'>{totalAmount}</p>
         </td>
         <td>
           <p className='fw-normal mb-1'>{new Intl.NumberFormat().format(order.totalOrder)} &#8363;</p>

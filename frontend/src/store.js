@@ -4,7 +4,7 @@ import { composeWithDevTools } from 'redux-devtools-extension'
 import { newProductReducer, productDetailsReducer, productReducer, productsReducer } from './reducers/productReducer';
 import { authReducer, forgotPasswordReducer, userReducer } from './reducers/userReducer';
 import { cartReducer } from './reducers/cartReducer';
-import { newOrderReducer, myOrdersReducer, orderDetailsReducer } from './reducers/orderReducer';
+import { newOrderReducer, myOrdersReducer, orderDetailsReducer, allOrdersReducer } from './reducers/orderReducer';
 
 const reducer = combineReducers({
   products: productsReducer,
@@ -17,7 +17,8 @@ const reducer = combineReducers({
   cart: cartReducer,
   newOrder: newOrderReducer,
   myOrders: myOrdersReducer,
-  orderDetails: orderDetailsReducer
+  orderDetails: orderDetailsReducer,
+  allOrders: allOrdersReducer
 });
 
 let initialState = {
