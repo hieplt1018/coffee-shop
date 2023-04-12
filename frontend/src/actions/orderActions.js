@@ -12,7 +12,10 @@ import {
   ORDER_DETAILS_FAIL,
   ALL_ORDERS_FAIL,
   ALL_ORDERS_REQUEST,
-  ALL_ORDERS_SUCCESS
+  ALL_ORDERS_SUCCESS,
+  DELETE_ORDER_REQUEST,
+  DELETE_ORDER_SUCCESS,
+  DELETE_ORDER_FAIL
 } from '../constants/orderConstant'
 
 export const createOrder = (orderData) => async(dispatch) => {
@@ -89,6 +92,24 @@ export const allOrders = (keyword=' ', currentPage = 1) => async(dispatch) => {
       type: ALL_ORDERS_FAIL,
       payload: error.response.data.message
     });
+  }
+}
+
+export const deleteOrder = (id) => async (dispatch) => {
+  try {
+    dispatch({ type: DELETE_ORDER_REQUEST });
+
+    const { data } = await axios.delete(`/api/v1/admin/order/${id}`);
+
+    dispatch({
+      type: DELETE_ORDER_SUCCESS,
+      payload: data.success
+    });
+  } catch (error) {
+    dispatch({
+      type: DELETE_ORDER_FAIL,
+      payload: error.response.data.message
+    })
   }
 }
 

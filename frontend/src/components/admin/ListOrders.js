@@ -10,6 +10,7 @@ import ListOrdersItem from '../order/ListOrdersItem';
 import { useParams } from 'react-router-dom';
 import Search from '../common/Search';
 import { allOrders, clearErrors } from '../../actions/orderActions';
+import { DELETE_ORDER_RESET } from '../../constants/orderConstant';
 
 
 
@@ -18,6 +19,7 @@ const ProductList = () => {
   const { loading, orders, error, ordersCount, resPerPage } = useSelector(state => state.allOrders);
   const [currentPage, setCurrentPage] = useState(1);
   const { keyword } = useParams();
+  const { error: deleteError, isDeleted } = useSelector(state => state.order);
 
   const navigator = useNavigate();
   const dispatch = useDispatch();
@@ -32,13 +34,20 @@ const ProductList = () => {
 
     dispatch(allOrders(keyword, currentPage));
 
+    if(isDeleted) {
+      toast.success('Đã xóa đơn hàng thành công', {
+        theme: "colored"
+      });
+      dispatch({ type: DELETE_ORDER_RESET});
+    }
+
     if(error) {
       toast.error(error, {
         theme: "colored"
       });
       dispatch(clearErrors());
     };
-  }, [dispatch, keyword, currentPage, error]);
+  }, [dispatch, keyword, currentPage, error, deleteError, isDeleted]);
 
   function setCurrentPageNo(pageNumber) {
     setCurrentPage(pageNumber);
@@ -91,7 +100,7 @@ const ProductList = () => {
                 </MDBTableHead>
                 <MDBTableBody>
                   {orders && orders.map(order => (
-                    <ListOrdersItem key={order._id} order={order} />
+                    <ListOrdersItem key={order._id} order={order} user={user}/>
                   ))}
                 </MDBTableBody>
               </MDBTable>
