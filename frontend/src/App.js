@@ -63,6 +63,7 @@ function App() {
               <Route path="/admin/product/new" element={<NewProduct />} />
               <Route path="/admin/product/:id" element={<UpdateProduct />} />
               <Route path="/admin/orders" element={<ListOrders />} />
+              <Route path="/admin/order/:id" element={<OrderDetails />} />
             </Route>
           </Routes>
           <Footer />

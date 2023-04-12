@@ -47,7 +47,8 @@ const ListOrdersItem = (item) => {
           }
         </td>
         <td>
-          <Link to={`/order/${order._id}`} className="btn-floating btn-view">
+          <Link to={user.role !== 'admin' ? `/order/${order._id}` : `/admin/order/${order._id}`}
+            className="btn-floating btn-view">
             <i className="fa-solid fa-eye fa-xl"></i>
           </Link>
           {user.role === 'admin' ?

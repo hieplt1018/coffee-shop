@@ -22,9 +22,25 @@ exports.getSingleOrder = catchAsyncErrors(async (req, res, next) => {
   const order = await Order.findById(req.params.id).populate({
     path: 'orderItems',
     populate: {path: 'product'}
-    });;
+  });
 
   if( !order || order.customer.valueOf() !== req.user.id ) {
+    return next(new ErrorHandler('Không tìm thấy đơn đặt hàng', 404));
+  };
+
+  res.status(200).json({
+    success: true,
+    order
+  })
+});
+
+exports.getSingleOrderAdmin = catchAsyncErrors(async (req, res, next) => {
+  const order = await Order.findById(req.params.id).populate({
+    path: 'orderItems',
+    populate: {path: 'product'}
+  });
+
+  if( !order) {
     return next(new ErrorHandler('Không tìm thấy đơn đặt hàng', 404));
   };
 

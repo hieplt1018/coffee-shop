@@ -77,6 +77,23 @@ export const getOrderDetails = (id) => async (dispatch) => {
   }
 };
 
+export const getOrderDetailsAdmin = (id) => async (dispatch) => {
+  try {
+    dispatch({ type: ORDER_DETAILS_REQUEST });
+    const { data } = await axios.get(`/api/v1/admin/order/${id}`);
+
+    dispatch({
+      type: ORDER_DETAILS_SUCCESS,
+      payload: data.order
+    });
+  } catch (error) {
+    dispatch({
+      type: ORDER_DETAILS_FAIL,
+      payload: error.response.data.message
+    });
+  }
+};
+
 export const allOrders = (keyword=' ', currentPage = 1) => async(dispatch) => {
   try {
     dispatch({ type: ALL_ORDERS_REQUEST });
