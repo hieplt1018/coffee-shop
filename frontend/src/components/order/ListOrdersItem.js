@@ -1,9 +1,24 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { MDBBadge } from 'mdbreact'
+import Modal from 'react-bootstrap/Modal';
+import Button from 'react-bootstrap/Button'
+import { useDispatch, useSelector } from 'react-redux';
+import { deleteOrder } from '../../actions/orderActions';
 
 const ListOrdersItem = (item) => {
   const { order } = item;
+  const { user } = useSelector(state => state.auth);
+  const dispatch = useDispatch();
+  const [show, setShow] = useState(false);
+  
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+  const deleteOrderHandler = (id) => {
+    dispatch(deleteOrder(id));
+    handleClose();
+  }
 
   let totalAmount = 0;
   order.orderItems.forEach(item => {
@@ -35,6 +50,28 @@ const ListOrdersItem = (item) => {
           <Link to={`/order/${order._id}`} className="btn-floating btn-view">
             <i className="fa-solid fa-eye fa-xl"></i>
           </Link>
+          {user.role === 'admin' ?
+            (
+              <Fragment>
+                <button to={`/admin/order/${order._id}`} className="btn-delete" onClick={handleShow}>
+                  <i className="fa-solid fa-trash-can fa-xl"></i>
+                </button>
+                <Modal show={show} onHide={handleClose}>
+                  <Modal.Header closeButton>
+                    <Modal.Title>Bạn có chắc chắn muốn xóa đơn hàng này?</Modal.Title>
+                  </Modal.Header>
+                  <Modal.Footer>
+                    <Button id="btn-cancel" onClick={handleClose}>
+                      Hủy bỏ
+                    </Button>
+                    <Button onClick={() => deleteOrderHandler(order._id)}>
+                      Tiếp tục
+                    </Button>
+                  </Modal.Footer>
+                </Modal>
+              </Fragment>
+            ) : null
+            }
         </td>
           
       </tr>
