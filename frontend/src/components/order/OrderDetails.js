@@ -3,18 +3,24 @@ import { useDispatch, useSelector } from 'react-redux'
 import MetaData from '../layout/MetaData'
 import { PreLoader } from '../layout/PreLoader'
 import { Link, useParams } from 'react-router-dom'
-import { getOrderDetails, clearErrors } from '../../actions/orderActions'
+import { getOrderDetails, clearErrors, getOrderDetailsAdmin } from '../../actions/orderActions'
 import { toast } from 'react-toastify';
 import OrderDetailsItems from './OrderDetailsItems'
 
 
 const OrderDetails = () => {
   const dispatch = useDispatch();
+  const { user } = useSelector(state => state.auth);
   const { id } = useParams();
   const { loading, order, error } = useSelector(state => state.orderDetails);
 
   useEffect(() => {
-    dispatch(getOrderDetails(id));
+    console.log(user.role);
+    if(user.role === 'admin') {
+      dispatch(getOrderDetailsAdmin(id));
+    } else {
+      dispatch(getOrderDetails(id))
+    }
 
     if(error) {
       toast.error(error, {
