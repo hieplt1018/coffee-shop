@@ -25,7 +25,7 @@ const ListUsers = () => {
   const dispatch = useDispatch();
   
   useEffect(() => {
-    if(user.role !== 'admin') {
+    if(!['staff', 'admin'].includes(user.role)) {
       navigator('/');
       toast.error('Bạn không có quyền truy cập', {
         theme: "colored"
@@ -81,11 +81,15 @@ const ListUsers = () => {
               <div className="shop__option">
                 <div className="row">
                   <Search />
-                  <div className="col-3 offset-md-2">
-                    <Link to={"/admin/user/new"} className="primary-btn" >
-                    Tạo tài khoản mới
-                    </Link>
-                  </div>
+                  {
+                    user.role === 'admin' ? (
+                      <div className="col-3 offset-md-2">
+                        <Link to={"/admin/user/new"} className="primary-btn" >
+                        Tạo tài khoản mới
+                        </Link>
+                      </div>
+                    ) : null
+                  }
                 </div>
               </div>
               <MDBTable className="align-middle hover">

@@ -1,12 +1,13 @@
 import React, { Fragment, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { MDBBadge } from 'mdbreact'
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { deleteProduct } from '../../actions/productActions';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button'
 
 const ListProductItems = (item) => {
+  const { user } = useSelector(state => state.auth);
   const { product } = item;
   const dispatch = useDispatch();
   const [show, setShow] = useState(false);
@@ -47,22 +48,29 @@ const ListProductItems = (item) => {
           <Link to={`/admin/product/${product._id}`} className="btn-edit">
             <i className="fa-solid fa-pen-to-square fa-xl"></i>
           </Link>
-          <button to={`/admin/product/${product._id}`} className="btn-delete" onClick={handleShow}>
-            <i className="fa-solid fa-trash-can fa-xl"></i>
-          </button>
-          <Modal show={show} onHide={handleClose}>
-            <Modal.Header closeButton>
-              <Modal.Title>Bạn có chắc chắn muốn xóa sản phẩm này?</Modal.Title>
-            </Modal.Header>
-            <Modal.Footer>
-              <Button id="btn-cancel" onClick={handleClose}>
-                Hủy bỏ
-              </Button>
-              <Button onClick={() => deleteProductHandler(product._id)}>
-                Tiếp tục
-              </Button>
-            </Modal.Footer>
-          </Modal>
+          {
+            user.role === 'admin' ? (
+              <Fragment>
+                <button to={`/admin/product/${product._id}`} className="btn-delete" onClick={handleShow}>
+                  <i className="fa-solid fa-trash-can fa-xl"></i>
+                </button>
+                <Modal show={show} onHide={handleClose}>
+                  <Modal.Header closeButton>
+                    <Modal.Title>Bạn có chắc chắn muốn xóa sản phẩm này?</Modal.Title>
+                  </Modal.Header>
+                  <Modal.Footer>
+                    <Button id="btn-cancel" onClick={handleClose}>
+                      Hủy bỏ
+                    </Button>
+                    <Button onClick={() => deleteProductHandler(product._id)}>
+                      Tiếp tục
+                    </Button>
+                  </Modal.Footer>
+                </Modal>
+              </Fragment>
+            ) : null
+          }
+          
         </td>
       </tr>
     </Fragment>

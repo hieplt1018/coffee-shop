@@ -7,9 +7,11 @@ export default function NavBar() {
   
   return (
     <ul>
-      {user && user.role === 'admin' ? 
+      { user && ['admin', 'staff'].includes(user.role) ? 
         <Fragment>
-          <CustomLink to="/dashboard">Tổng quan</CustomLink>
+          {
+            user.role === 'admin' ? <CustomLink to="/dashboard">Tổng quan</CustomLink> : null
+          }
           <CustomLink to="/admin/users">Tài khoản</CustomLink>
           <CustomLink to="/admin/products">Sản phẩm</CustomLink>
           <CustomLink to="/admin/blogs">Tin tức</CustomLink>

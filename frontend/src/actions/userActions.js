@@ -27,7 +27,11 @@ import {
   ALL_USERS_SUCCESS,
   ALL_USERS_FAIL,
   DELETE_USERS_REQUEST,
-  DELETE_USERS_SUCCESS
+  DELETE_USERS_SUCCESS,
+  USER_DETAILS_REQUEST,
+  USER_DETAILS_SUCCESS,
+  USER_DETAILS_FAIL,
+  DELETE_USERS_FAIL
 } from '../constants/userConstants';
 
 export const login = (email, password) => async(dispatch) => {
@@ -237,9 +241,28 @@ export const deleteAccount = (id) => async (dispatch) => {
     });
   } catch (error) {
     dispatch({
-      type: DELETE_PRODUCTS_FAIL,
+      type: DELETE_USERS_FAIL,
       payload: error.response.data.message
     })
+  }
+}
+
+export const getSingleUser = (id) => async(dispatch) => {
+  try {
+    dispatch({ type: USER_DETAILS_REQUEST});
+    
+    const { data } = await axios.get(`/api/v1/admin/user/${id}`);
+    
+    dispatch({
+      type: USER_DETAILS_SUCCESS,
+      payload: data.user
+    })
+  } catch (error) {
+    dispatch({
+      type: USER_DETAILS_FAIL,
+      payload: error.response.data.message
+    });
+    dispatch({ type: CLEAR_ERRORS });
   }
 }
 

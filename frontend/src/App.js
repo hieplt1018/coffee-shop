@@ -28,6 +28,7 @@ import NewProduct from "./components/product/NewProduct";
 import UpdateProduct from "./components/product/UpdateProduct";
 import ListOrders from "./components/admin/ListOrders";
 import ListUsers from "./components/admin/ListUsers";
+import UserDetails from "./components/user/UserDetails";
 
 
 function App() {
@@ -67,6 +68,7 @@ function App() {
               <Route path="/admin/orders" element={<ListOrders />} />
               <Route path="/admin/order/:id" element={<OrderDetails />} />
               <Route path="/admin/users" element={<ListUsers />} />
+              <Route path="/admin/user/:id" element={<UserDetails />} />
             </Route>
           </Routes>
           <Footer />
