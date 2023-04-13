@@ -15,7 +15,6 @@ const OrderDetails = () => {
   const { loading, order, error } = useSelector(state => state.orderDetails);
 
   useEffect(() => {
-    console.log(user.role);
     if(user.role === 'admin') {
       dispatch(getOrderDetailsAdmin(id));
     } else {

@@ -4,6 +4,7 @@ const catchAsyncErrors = require('../middleware/catchAsyncErrors');
 const sendToken = require('../utils/jwtToken');
 const sendEmail = require('../utils/sendEmail');
 const crypto = require('crypto');
+const APIFeatures = require('../utils/apiFeatures');
 
 exports.registerUser = catchAsyncErrors(async (req, res, next) => {
   const { name, email, password, shippingInfo } = req.body;
@@ -124,11 +125,25 @@ exports.updatePassword = catchAsyncErrors(async (req, res, next) => {
 });
 
 exports.getAllUsers = catchAsyncErrors(async (req, res, next) => {
-  const users = await User.find();
+  const resPerPage = 8;
+  const keyword = req.query.keyword ? {
+    name: {
+      $regex: req.query.keyword,
+      $options: 'i'
+    }
+  } : {}
+
+  const apiFeatures = new APIFeatures(User.find({ ...keyword }), req.query)
+    .search().filter().pagination(resPerPage);  
+  const users = await apiFeatures.query;
+  const totalUsers = await User.find({...keyword});
+  const usersCount = totalUsers.length;
 
   res.status(200).json({
     success: true,
-    users
+    usersCount,
+    users,
+    resPerPage
   })
 });
 
@@ -199,6 +214,28 @@ exports.updateProfile = catchAsyncErrors(async (req, res, next) => {
     success: true,
     message: 'Cập nhật thành công!'
   });
+});
+
+exports.newUser = catchAsyncErrors(async (req, res, next) => {
+  const { name, email, password, shippingInfo, role } = req.body;
+
+  const user = await User.create({
+    name,
+    email,
+    password,
+    avatar: {
+      public_id: 'avatars/defaultuser',
+      url: 'https://imageio.forbes.com/specials-images/imageserve/5c76bcaaa7ea43100043c836/0x0.jpg'
+    },
+    shippingInfo,
+    role
+  });
+
+  res.status(201).json({
+    success: true,
+    message: 'Tạo mới tài khoản thành công',
+    user
+  })
 });
 
 exports.logout = catchAsyncErrors( async (req, res, next) => {

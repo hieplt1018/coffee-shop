@@ -24,7 +24,14 @@ import {
   FORGOT_PASSWORD_FAIL,
   NEW_PASSWORD_REQUEST,
   NEW_PASSWORD_SUCCESS,
-  NEW_PASSWORD_FAIL
+  NEW_PASSWORD_FAIL,
+  ALL_USERS_REQUETS,
+  ALL_USERS_SUCCESS,
+  ALL_USERS_FAIL,
+  DELETE_USERS_REQUEST,
+  DELETE_USERS_SUCCESS,
+  DELETE_USERS_RESET,
+  DELETE_USERS_FAIL
 } from "../constants/userConstants";
 
 export const authReducer = (state = { user: {} }, action) => {
@@ -87,9 +94,16 @@ export const userReducer = (state = {}, action) => {
   switch (action.type) {
     case UPDATE_PROFILE_REQUEST:
     case UPDATE_PASSWORD_REQUEST:
+    case DELETE_USERS_REQUEST:
       return {
         ...state,
         loading: true
+      }
+    case DELETE_USERS_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+        isDeleted: action.payload
       }
     case UPDATE_PROFILE_SUCCESS:
     case UPDATE_PASSWORD_SUCCESS:
@@ -104,8 +118,14 @@ export const userReducer = (state = {}, action) => {
         ...state,
         isUpdated: false
       }
+    case DELETE_USERS_RESET:
+      return {
+        ...state,
+        isDeleted: false
+      }
     case UPDATE_PROFILE_FAIL:
     case UPDATE_PASSWORD_FAIL:
+    case DELETE_USERS_FAIL:
       return {
         ...state,
         loading: false,
@@ -158,3 +178,33 @@ export const forgotPasswordReducer = (state = {}, action) => {
       return state;
   }
 }
+
+export const usersReducer = (state = { users: [] }, action) => {
+  switch(action.type) {
+    case ALL_USERS_REQUETS:
+      return {
+        loading: true,
+        users: []
+      }
+    case ALL_USERS_SUCCESS:
+      return {
+        loading: false,
+        users: action.payload.users,
+        usersCount: action.payload.usersCount,
+        resPerPage: action.payload.resPerPage
+      }
+    case ALL_USERS_FAIL:
+      return {
+        loading: false,
+        error: action.payload
+      }
+    case CLEAR_ERRORS:
+      return {
+        ...state,
+        error: null
+      }
+    
+    default:
+      return state;
+  }
+};

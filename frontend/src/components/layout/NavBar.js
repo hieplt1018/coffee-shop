@@ -10,7 +10,7 @@ export default function NavBar() {
       {user && user.role === 'admin' ? 
         <Fragment>
           <CustomLink to="/dashboard">Tổng quan</CustomLink>
-          <CustomLink to="/admin/users">Người dùng</CustomLink>
+          <CustomLink to="/admin/users">Tài khoản</CustomLink>
           <CustomLink to="/admin/products">Sản phẩm</CustomLink>
           <CustomLink to="/admin/blogs">Tin tức</CustomLink>
           <CustomLink to="/admin/orders">Đơn hàng</CustomLink>
