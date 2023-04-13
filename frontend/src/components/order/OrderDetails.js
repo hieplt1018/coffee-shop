@@ -29,7 +29,6 @@ const OrderDetails = () => {
     }
   }, [dispatch, error, id])
 
-
   return (
     <Fragment>
     <MetaData title={'Chi tiết đơn hàng'} />

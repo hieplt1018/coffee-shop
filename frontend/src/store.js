@@ -2,7 +2,13 @@
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension'
 import { newProductReducer, productDetailsReducer, productReducer, productsReducer } from './reducers/productReducer';
-import { authReducer, forgotPasswordReducer, userReducer, usersReducer } from './reducers/userReducer';
+import { 
+  authReducer, 
+  forgotPasswordReducer, 
+  userReducer, 
+  usersReducer,
+  userDetailsReducer
+} from './reducers/userReducer';
 import { cartReducer } from './reducers/cartReducer';
 import { 
   newOrderReducer, 
@@ -20,6 +26,7 @@ const reducer = combineReducers({
   auth: authReducer,
   user: userReducer,
   users: usersReducer,
+  userDetails: userDetailsReducer,
   forgotPassword: forgotPasswordReducer,
   cart: cartReducer,
   newOrder: newOrderReducer,

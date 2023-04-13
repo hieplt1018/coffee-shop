@@ -31,7 +31,10 @@ import {
   DELETE_USERS_REQUEST,
   DELETE_USERS_SUCCESS,
   DELETE_USERS_RESET,
-  DELETE_USERS_FAIL
+  DELETE_USERS_FAIL,
+  USER_DETAILS_REQUEST,
+  USER_DETAILS_SUCCESS,
+  USER_DETAILS_FAIL
 } from "../constants/userConstants";
 
 export const authReducer = (state = { user: {} }, action) => {
@@ -194,6 +197,34 @@ export const usersReducer = (state = { users: [] }, action) => {
         resPerPage: action.payload.resPerPage
       }
     case ALL_USERS_FAIL:
+      return {
+        loading: false,
+        error: action.payload
+      }
+    case CLEAR_ERRORS:
+      return {
+        ...state,
+        error: null
+      }
+    
+    default:
+      return state;
+  }
+};
+
+export const userDetailsReducer = (state = { account: {} }, action) => {
+  switch(action.type) {
+    case USER_DETAILS_REQUEST:
+      return {
+        ...state,
+        loading: true
+      }
+    case USER_DETAILS_SUCCESS:
+      return {
+        loading: false,
+        account: action.payload
+      }
+    case USER_DETAILS_FAIL:
       return {
         loading: false,
         error: action.payload

@@ -25,7 +25,7 @@ const ProductList = () => {
   const dispatch = useDispatch();
   
   useEffect(() => {
-    if(user.role !== 'admin') {
+    if(!['staff', 'admin'].includes(user.role)) {
       navigator('/');
       toast.error('Bạn không có quyền truy cập', {
         theme: "colored"

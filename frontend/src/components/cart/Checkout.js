@@ -43,7 +43,6 @@ const Checkout = () => {
       totalOrder: totalOrder,
       customer: user._id
     }
-    console.log(orderData)
 
     dispatch(createOrder(orderData));
   }

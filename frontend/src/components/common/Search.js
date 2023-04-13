@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 const Search = () => {
   const [keyword, setKeyword] = useState('');
   let history = useNavigate();
-  const searchPlaceholder = ["orders", "products"];
+  const searchPlaceholder = ["orders", "products", "users"];
 
   const submitHandler = (e) => {
     e.preventDefault();

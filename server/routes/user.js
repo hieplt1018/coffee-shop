@@ -28,9 +28,9 @@ router.route('/me').get(isAuthenticateUser, getCurrentUser);
 router.route('/me/update').put(isAuthenticateUser, updateProfile);
 router.route('/password/update').put(isAuthenticateUser, updatePassword);
 router.route('/admin/users').get(isAuthenticateUser, 
-  authorizeRoles('admin'), getAllUsers);
+  authorizeRoles('admin', 'staff'), getAllUsers);
 router.route('/admin/user/:id')
-  .get(isAuthenticateUser, authorizeRoles('admin'), getSingleUser)
+  .get(isAuthenticateUser, authorizeRoles('admin', 'staff'), getSingleUser)
   .put(isAuthenticateUser, authorizeRoles('admin'), updateUser)
   .delete(isAuthenticateUser, authorizeRoles('admin'), deleteUser);
 router.route('/admin/user/new')
