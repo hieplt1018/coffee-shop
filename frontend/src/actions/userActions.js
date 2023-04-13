@@ -22,7 +22,12 @@ import {
   FORGOT_PASSWORD_FAIL,
   NEW_PASSWORD_REQUEST,
   NEW_PASSWORD_SUCCESS,
-  NEW_PASSWORD_FAIL
+  NEW_PASSWORD_FAIL,
+  ALL_USERS_REQUETS,
+  ALL_USERS_SUCCESS,
+  ALL_USERS_FAIL,
+  DELETE_USERS_REQUEST,
+  DELETE_USERS_SUCCESS
 } from '../constants/userConstants';
 
 export const login = (email, password) => async(dispatch) => {
@@ -198,6 +203,41 @@ export const resetPassword = (token, password, confirmPassword) => async(dispatc
   } catch (error) {
     dispatch({
       type: NEW_PASSWORD_FAIL,
+      payload: error.response.data.message
+    })
+  }
+}
+
+export const getUsers = (keyword=' ', currentPage = 1) => async (dispatch) => {
+  try {
+    dispatch({ type: ALL_USERS_REQUETS });
+    const { data } = await axios.get(`/api/v1/admin/users?page=${currentPage}&keyword=${keyword}`);
+
+    dispatch({
+      type: ALL_USERS_SUCCESS,
+      payload: data
+    });
+  } catch (error) {
+    dispatch({
+      type: ALL_USERS_FAIL,
+      payload: error.response.data.message
+    });
+  }
+};
+
+export const deleteAccount = (id) => async (dispatch) => {
+  try {
+    dispatch({ type: DELETE_USERS_REQUEST });
+
+    const { data } = await axios.delete(`/api/v1/admin/user/${id}`);
+
+    dispatch({
+      type: DELETE_USERS_SUCCESS,
+      payload: data.success
+    });
+  } catch (error) {
+    dispatch({
+      type: DELETE_PRODUCTS_FAIL,
       payload: error.response.data.message
     })
   }
