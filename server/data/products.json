@@ -1,6 +1,17 @@
 [
   {
-    "name": "Americano",
+    "name": "Cake",
+    "price": 14000,
+    "description": "Americano is a type of coffee drink prepared by diluting an espresso with hot water, giving it a similar strength to, but different flavor from, traditionally brewed coffee. Its strength varies with the number of shots of espresso and amount of water added. The name is also spelled with varying capitalization and use of diacritics: e.g., café americano.",
+    "images": [{
+      "public_id": "products/americano",
+      "url": "https://i.ibb.co/B6nKVw5/product-3.jpg"
+    }],
+    "category": "Cake",
+    "stock": 20
+  },
+  {
+    "name": "Coffee",
     "price": 14000,
     "description": "Americano is a type of coffee drink prepared by diluting an espresso with hot water, giving it a similar strength to, but different flavor from, traditionally brewed coffee. Its strength varies with the number of shots of espresso and amount of water added. The name is also spelled with varying capitalization and use of diacritics: e.g., café americano.",
     "images": [{
@@ -11,25 +22,14 @@
     "stock": 20
   },
   {
-    "name": "Americano",
+    "name": "Coffee Bean",
     "price": 14000,
     "description": "Americano is a type of coffee drink prepared by diluting an espresso with hot water, giving it a similar strength to, but different flavor from, traditionally brewed coffee. Its strength varies with the number of shots of espresso and amount of water added. The name is also spelled with varying capitalization and use of diacritics: e.g., café americano.",
     "images": [{
       "public_id": "products/americano",
       "url": "https://i.ibb.co/B6nKVw5/product-3.jpg"
     }],
-    "category": "Coffee",
-    "stock": 20
-  },
-  {
-    "name": "Americano",
-    "price": 14000,
-    "description": "Americano is a type of coffee drink prepared by diluting an espresso with hot water, giving it a similar strength to, but different flavor from, traditionally brewed coffee. Its strength varies with the number of shots of espresso and amount of water added. The name is also spelled with varying capitalization and use of diacritics: e.g., café americano.",
-    "images": [{
-      "public_id": "products/americano",
-      "url": "https://i.ibb.co/B6nKVw5/product-3.jpg"
-    }],
-    "category": "Coffee",
+    "category": "Coffee Bean",
     "stock": 20
   },
   {
@@ -44,8 +44,30 @@
     "stock": 20
   },
   {
-    "name": "Leu leu",
-    "price": 55000,
+    "name": "Pastries",
+    "price": 30000,
+    "description": "Americano is a type of coffee drink prepared by diluting an espresso with hot water, giving it a similar strength to, but different flavor from, traditionally brewed coffee. Its strength varies with the number of shots of espresso and amount of water added. The name is also spelled with varying capitalization and use of diacritics: e.g., café americano.",
+    "images": [{
+      "public_id": "products/americano",
+      "url": "https://i.ibb.co/B6nKVw5/product-3.jpg"
+    }],
+    "category": "Pastries",
+    "stock": 20
+  },
+  {
+    "name": "Cake",
+    "price": 14000,
+    "description": "Americano is a type of coffee drink prepared by diluting an espresso with hot water, giving it a similar strength to, but different flavor from, traditionally brewed coffee. Its strength varies with the number of shots of espresso and amount of water added. The name is also spelled with varying capitalization and use of diacritics: e.g., café americano.",
+    "images": [{
+      "public_id": "products/americano",
+      "url": "https://i.ibb.co/B6nKVw5/product-3.jpg"
+    }],
+    "category": "Cake",
+    "stock": 20
+  },
+  {
+    "name": "Americano",
+    "price": 14000,
     "description": "Americano is a type of coffee drink prepared by diluting an espresso with hot water, giving it a similar strength to, but different flavor from, traditionally brewed coffee. Its strength varies with the number of shots of espresso and amount of water added. The name is also spelled with varying capitalization and use of diacritics: e.g., café americano.",
     "images": [{
       "public_id": "products/americano",
@@ -56,13 +78,134 @@
   },
   {
     "name": "Coffee Bean",
-    "price": 100000,
+    "price": 14000,
     "description": "Americano is a type of coffee drink prepared by diluting an espresso with hot water, giving it a similar strength to, but different flavor from, traditionally brewed coffee. Its strength varies with the number of shots of espresso and amount of water added. The name is also spelled with varying capitalization and use of diacritics: e.g., café americano.",
     "images": [{
       "public_id": "products/americano",
       "url": "https://i.ibb.co/B6nKVw5/product-3.jpg"
     }],
     "category": "Coffee Bean",
+    "stock": 20
+  },
+  {
+    "name": "Bread",
+    "price": 50000,
+    "description": "Americano is a type of coffee drink prepared by diluting an espresso with hot water, giving it a similar strength to, but different flavor from, traditionally brewed coffee. Its strength varies with the number of shots of espresso and amount of water added. The name is also spelled with varying capitalization and use of diacritics: e.g., café americano.",
+    "images": [{
+      "public_id": "products/americano",
+      "url": "https://i.ibb.co/B6nKVw5/product-3.jpg"
+    }],
+    "category": "Bread",
+    "stock": 20
+  },
+  {
+    "name": "Pastries",
+    "price": 30000,
+    "description": "Americano is a type of coffee drink prepared by diluting an espresso with hot water, giving it a similar strength to, but different flavor from, traditionally brewed coffee. Its strength varies with the number of shots of espresso and amount of water added. The name is also spelled with varying capitalization and use of diacritics: e.g., café americano.",
+    "images": [{
+      "public_id": "products/americano",
+      "url": "https://i.ibb.co/B6nKVw5/product-3.jpg"
+    }],
+    "category": "Pastries",
+    "stock": 20
+  },
+  {
+    "name": "Cake",
+    "price": 14000,
+    "description": "Americano is a type of coffee drink prepared by diluting an espresso with hot water, giving it a similar strength to, but different flavor from, traditionally brewed coffee. Its strength varies with the number of shots of espresso and amount of water added. The name is also spelled with varying capitalization and use of diacritics: e.g., café americano.",
+    "images": [{
+      "public_id": "products/americano",
+      "url": "https://i.ibb.co/B6nKVw5/product-3.jpg"
+    }],
+    "category": "Cake",
+    "stock": 20
+  },
+  {
+    "name": "Cappuccino",
+    "price": 14000,
+    "description": "Americano is a type of coffee drink prepared by diluting an espresso with hot water, giving it a similar strength to, but different flavor from, traditionally brewed coffee. Its strength varies with the number of shots of espresso and amount of water added. The name is also spelled with varying capitalization and use of diacritics: e.g., café americano.",
+    "images": [{
+      "public_id": "products/americano",
+      "url": "https://i.ibb.co/B6nKVw5/product-3.jpg"
+    }],
+    "category": "Coffee",
+    "stock": 20
+  },
+  {
+    "name": "Coffee Bean",
+    "price": 14000,
+    "description": "Americano is a type of coffee drink prepared by diluting an espresso with hot water, giving it a similar strength to, but different flavor from, traditionally brewed coffee. Its strength varies with the number of shots of espresso and amount of water added. The name is also spelled with varying capitalization and use of diacritics: e.g., café americano.",
+    "images": [{
+      "public_id": "products/americano",
+      "url": "https://i.ibb.co/B6nKVw5/product-3.jpg"
+    }],
+    "category": "Coffee Bean",
+    "stock": 20
+  },
+  {
+    "name": "Bread",
+    "price": 50000,
+    "description": "Americano is a type of coffee drink prepared by diluting an espresso with hot water, giving it a similar strength to, but different flavor from, traditionally brewed coffee. Its strength varies with the number of shots of espresso and amount of water added. The name is also spelled with varying capitalization and use of diacritics: e.g., café americano.",
+    "images": [{
+      "public_id": "products/americano",
+      "url": "https://i.ibb.co/B6nKVw5/product-3.jpg"
+    }],
+    "category": "Bread",
+    "stock": 20
+  },
+  {
+    "name": "Pastries",
+    "price": 30000,
+    "description": "Americano is a type of coffee drink prepared by diluting an espresso with hot water, giving it a similar strength to, but different flavor from, traditionally brewed coffee. Its strength varies with the number of shots of espresso and amount of water added. The name is also spelled with varying capitalization and use of diacritics: e.g., café americano.",
+    "images": [{
+      "public_id": "products/americano",
+      "url": "https://i.ibb.co/B6nKVw5/product-3.jpg"
+    }],
+    "category": "Pastries",
+    "stock": 20
+  },
+  {
+    "name": "Cake",
+    "price": 14000,
+    "description": "Americano is a type of coffee drink prepared by diluting an espresso with hot water, giving it a similar strength to, but different flavor from, traditionally brewed coffee. Its strength varies with the number of shots of espresso and amount of water added. The name is also spelled with varying capitalization and use of diacritics: e.g., café americano.",
+    "images": [{
+      "public_id": "products/americano",
+      "url": "https://i.ibb.co/B6nKVw5/product-3.jpg"
+    }],
+    "category": "Cake",
+    "stock": 20
+  },
+  {
+    "name": "Espresso",
+    "price": 14000,
+    "description": "Americano is a type of coffee drink prepared by diluting an espresso with hot water, giving it a similar strength to, but different flavor from, traditionally brewed coffee. Its strength varies with the number of shots of espresso and amount of water added. The name is also spelled with varying capitalization and use of diacritics: e.g., café americano.",
+    "images": [{
+      "public_id": "products/americano",
+      "url": "https://i.ibb.co/B6nKVw5/product-3.jpg"
+    }],
+    "category": "Coffee",
+    "stock": 20
+  },
+  {
+    "name": "Coffee Bean",
+    "price": 14000,
+    "description": "Americano is a type of coffee drink prepared by diluting an espresso with hot water, giving it a similar strength to, but different flavor from, traditionally brewed coffee. Its strength varies with the number of shots of espresso and amount of water added. The name is also spelled with varying capitalization and use of diacritics: e.g., café americano.",
+    "images": [{
+      "public_id": "products/americano",
+      "url": "https://i.ibb.co/B6nKVw5/product-3.jpg"
+    }],
+    "category": "Coffee Bean",
+    "stock": 20
+  },
+  {
+    "name": "Bread",
+    "price": 50000,
+    "description": "Americano is a type of coffee drink prepared by diluting an espresso with hot water, giving it a similar strength to, but different flavor from, traditionally brewed coffee. Its strength varies with the number of shots of espresso and amount of water added. The name is also spelled with varying capitalization and use of diacritics: e.g., café americano.",
+    "images": [{
+      "public_id": "products/americano",
+      "url": "https://i.ibb.co/B6nKVw5/product-3.jpg"
+    }],
+    "category": "Bread",
     "stock": 20
   },
   {

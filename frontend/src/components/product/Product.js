@@ -32,7 +32,15 @@ const Product = ({ product }) => {
             <img className='product__item__pic set-bg' src={product.images[0].url} alt="product-4" />
           </Link>
           <div className="product__label">
-            <span>{product.category}</span>
+            {
+              {
+                'Bread': <span>Bánh mì</span>,
+                'Coffee': <span>Cà phê</span>,
+                'Coffee Bean': <span>Hạt cà phê</span>,
+                'Cake': <span>Bánh ngọt</span>,
+                'Pastries': <span>Bánh mặn</span>
+              }[product.category]
+            }
           </div>
         </div>
         <div className="product__item__text">

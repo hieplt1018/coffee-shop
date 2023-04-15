@@ -38,24 +38,25 @@ exports.newProduct = catchAsyncErrors (async(req, res, next) => {
 
 exports.getProducts = catchAsyncErrors (async (req, res, next) => {
   const resPerPage = 8;
-  const keyword = req.query.keyword ? {
-    name: {
-      $regex: req.query.keyword,
-      $options: 'i'
-    }
-  } : {}
+  const productsCount = await Product.countDocuments();
 
-  const apiFeatures = new APIFeatures(Product.find({ ...keyword }), req.query)
-    .search().filter().pagination(resPerPage);  
-  const products = await apiFeatures.query;
-  const totalProducts = await Product.find({...keyword});
-  const productsCount = totalProducts.length;
+  let apiFeatures = new APIFeatures(Product.find(), req.query)
+    .search()
+    .filter()
+
+  let products = await apiFeatures.query;
+  let filteredProductsCount = products.length;
+
+  apiFeatures.pagination(resPerPage)
+  products = await apiFeatures.query.clone();
+
 
   res.status(200).json({
     success: true,
     productsCount,
-    products,
-    resPerPage
+    resPerPage,
+    filteredProductsCount,
+    products
   })
 });
 
