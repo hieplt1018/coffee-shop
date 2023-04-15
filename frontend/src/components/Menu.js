@@ -9,22 +9,52 @@ import Search from './common/Search';
 import { useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { Link } from 'react-router-dom';
+import Select from 'react-select'
+
+const categories = [
+  { value: '', label: 'Toàn bộ'},
+  { value: 'Bread', label: 'Bánh mì' },
+  { value: 'Coffee', label: 'Cà phê' },
+  { value: 'Coffee Bean', label: 'Hạt cà phê'},
+  { value: 'Cake', label: 'Bánh ngọt'},
+  { value: 'Pastries', label: 'Bánh mặn'}
+];
+
+const selectStyles = {
+  control: base => ({
+    ...base,
+    height: 47,
+    minHeight: 47
+  })
+};
 
 const Menu = () => {
   const dispatch = useDispatch();
   const [currentPage, setCurrentPage] = useState(1);
-  const { loading, products, error, productsCount, resPerPage } = useSelector(state => state.products);
+  const { 
+    loading, 
+    products, 
+    error, 
+    productsCount, 
+    resPerPage,
+    filteredProductsCount
+  } = useSelector(state => state.products);
   const { keyword } = useParams();
+  const [category, setCategory] = useState('');
+
+  const handleChange = (selectedOption) => {
+    setCategory(selectedOption);
+  };
 
   useEffect(() => {
-    dispatch(getProducts(keyword, currentPage));
+    dispatch(getProducts(keyword, currentPage, category));
     if(error) {
       toast.error(error, {
         theme: "colored"
       });
       dispatch(clearErrors());
     };
-  }, [dispatch, error, keyword, currentPage]);
+  }, [dispatch, error, keyword, currentPage, category]);
 
   function setCurrentPageNo(pageNumber) {
     setCurrentPage(pageNumber);
@@ -57,7 +87,18 @@ const Menu = () => {
             <div className="container">
               <div className="shop__option">
                 <div className="row">
-                  <Search />
+                  <div className="col-7">
+                    <Search />
+                  </div>
+                  <div className="col-3 offset-md-2">
+                    <Select
+                      styles={selectStyles}
+                      options={categories}
+                      placeholder={<div>Danh mục</div>}
+                      value={category}
+                      onChange={handleChange}
+                    />
+                  </div>
                 </div>
               </div>
               
@@ -74,7 +115,7 @@ const Menu = () => {
                         <Pagination 
                           activePage={currentPage}
                           itemsCountPerPage={resPerPage}
-                          totalItemsCount={productsCount}
+                          totalItemsCount={filteredProductsCount}
                           onChange={setCurrentPageNo}
                           nextPageText={'>'}
                           prevPageText={'<'}

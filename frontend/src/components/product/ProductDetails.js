@@ -100,13 +100,33 @@ const ProductDetails = () => {
                   </div>
                   <div className="col-lg-6">
                     <div className="product__details__text">
-                      <div className="product__label">{product.category}</div>
+                      <div className="product__label">
+                      {
+                        {
+                          'Bread': <span>Bánh mì</span>,
+                          'Coffee': <span>Cà phê</span>,
+                          'Coffee Bean': <span>Hạt cà phê</span>,
+                          'Cake': <span>Bánh ngọt</span>,
+                          'Pastries': <span>Bánh mặn</span>
+                        }[product.category]
+                      }
+                      </div>
                       <h4>{product.name}</h4>
                       <h5>{new Intl.NumberFormat().format(product.price)} &#8363;</h5>
                       <p>{product.description && truncate(product.description, 200)}</p>
                       <ul>
                         <li>Số lượng có thể đặt: <span>{new Intl.NumberFormat("de-DE").format(maxQuantity)}</span></li>
-                        <li>Danh mục: <span>{product.category}</span></li>
+                        <li>Danh mục: 
+                        {
+                          {
+                            'Bread': <span>Bánh mì</span>,
+                            'Coffee': <span>Cà phê</span>,
+                            'Coffee Bean': <span>Hạt cà phê</span>,
+                            'Cake': <span>Bánh ngọt</span>,
+                            'Pastries': <span>Bánh mặn</span>
+                          }[product.category]
+                        }
+                        </li>
                         <li>Nhà cung cấp: <span>{product.supplier ? product.supplier : "Cantata Coffee"}</span></li>
                       </ul>
                       { user && user.role === 'admin' ? (
