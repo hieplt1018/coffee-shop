@@ -4285,7 +4285,7 @@ ol {
 }
 .btn-edit i {
   color: #28A745;
-  margin-left: 1em;
+  margin-left: 0.7em;
 }
 .btn-delete i {
   color: #e3242b;
@@ -4312,4 +4312,23 @@ ol {
   color: #fff;
   padding: 5px 12px;
   z-index: 1;
+}
+#btn-update-orderStatus {
+  background-color: #5D453F;
+  color: #fff;
+  margin-top: 1.2em;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 14px 30px;
+  letter-spacing: 2px;
+  border-radius: 4px;
+  border: none;
+  height: 46px;
+}
+
+#list_products {
+  color: #5D453F;
+  font-weight: bold;
 }

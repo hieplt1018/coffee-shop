@@ -87,10 +87,6 @@ exports.getMyOrders = catchAsyncErrors(async (req, res, next) => {
 exports.updateProcessOrder = catchAsyncErrors(async (req, res, next) => {
   const order = await Order.findById(req.params.id);
 
-  if(order.orderStatus === 'Paid') {
-    return next(new ErrorHandler('Đơn đặt hàng này được thanh toán', 400));
-  };
-
   order.orderItems.forEach(async item => {
     await updateStock(item.product, item.quantity)
   });
@@ -108,7 +104,7 @@ exports.updateProcessOrder = catchAsyncErrors(async (req, res, next) => {
 
 async function updateStock(id, quantity, status) {
   const product = await Product.findById(id);
-  if(['Delivering', 'Paid'].includes(status)) {
+  if(status === 'Delivering') {
     product.stock = product.stock - quantity;
   } else {
     product.stock = product.stock + quantity;

@@ -15,7 +15,10 @@ import {
   ALL_ORDERS_SUCCESS,
   DELETE_ORDER_REQUEST,
   DELETE_ORDER_SUCCESS,
-  DELETE_ORDER_FAIL
+  DELETE_ORDER_FAIL,
+  UPDATE_ORDER_STATUS,
+  UPDATE_ORDER_STATUS_SUCCESS,
+  UPDATE_ORDER_STATUS_FAIL
 } from '../constants/orderConstant'
 
 export const createOrder = (orderData) => async(dispatch) => {
@@ -125,6 +128,30 @@ export const deleteOrder = (id) => async (dispatch) => {
   } catch (error) {
     dispatch({
       type: DELETE_ORDER_FAIL,
+      payload: error.response.data.message
+    })
+  }
+}
+
+export const updateOrderStatus = (id, orderStatus) => async (dispatch) => {
+  try {
+    dispatch({ type: UPDATE_ORDER_STATUS });
+
+    const config = {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }
+
+    const { data } = await axios.put(`/api/v1/admin/order/${id}`, { orderStatus }, config);
+
+    dispatch({
+      type: UPDATE_ORDER_STATUS_SUCCESS,
+      payload: data.success
+    });
+  } catch (error) {
+    dispatch({
+      type: UPDATE_ORDER_STATUS_FAIL,
       payload: error.response.data.message
     })
   }

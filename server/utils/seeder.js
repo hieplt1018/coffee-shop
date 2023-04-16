@@ -13,13 +13,14 @@ connectDatabase();
 
 const seedDatabase = async () => {
   try {
-    await Product.deleteMany();
+    // await Product.deleteMany();
+    await Order.deleteMany();
     // console.log('All products are deleted!');
-    await Product.insertMany(products);
-    await Product.insertMany(products);
-    await Product.insertMany(products);
-    await Product.insertMany(products);
-    await Product.insertMany(products);
+    // await Product.insertMany(products);
+    // await Product.insertMany(products);
+    // await Product.insertMany(products);
+    // await Product.insertMany(products);
+    // await Product.insertMany(products);
     // console.log('Products inserted!');
     // await User.deleteMany();
     console.log('Done!');
