@@ -5,6 +5,8 @@ const errorMiddleWare  = require('./middleware/errors');
 const cloudinary = require('cloudinary');
 const bodyParser = require('body-parser');
 const dotenv = require('dotenv');
+const path = require('path');
+
 dotenv.config({ path: 'server/config/config.env' }); 
 
 
@@ -26,6 +28,14 @@ const order = require('./routes/order');
 app.use('/api/v1', products);
 app.use('/api/v1', auth);
 app.use('/api/v1', order);
+
+if(process.env.NODE_ENV === 'PRODUCTION') {
+  app.use(express.static(path.join(__dirname, '../frontend/build')))
+
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, '../frontend/build/index.html'))
+  })
+}
 
 app.use(errorMiddleWare);
 
