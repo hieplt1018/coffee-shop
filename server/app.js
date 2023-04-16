@@ -29,7 +29,7 @@ app.use('/api/v1', products);
 app.use('/api/v1', auth);
 app.use('/api/v1', order);
 
-if(process.env.NODE_ENV === 'PRODUCTION') {
+if(process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '../frontend/build')))
 
   app.get('*', (req, res) => {
