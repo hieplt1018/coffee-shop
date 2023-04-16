@@ -51,9 +51,12 @@ const ListOrdersItem = (item) => {
             className="btn-floating btn-view">
             <i className="fa-solid fa-eye fa-xl"></i>
           </Link>
-          {user.role === 'admin' ?
+          {['staff', 'admin'].includes(user.role) ?
             (
               <Fragment>
+                <Link to={`/admin/update/order/${order._id}`} className="btn-edit">
+                  <i className="fa-solid fa-pen-to-square fa-xl"></i>
+                </Link>
                 <button to={`/admin/order/${order._id}`} className="btn-delete" onClick={handleShow}>
                   <i className="fa-solid fa-trash-can fa-xl"></i>
                 </button>

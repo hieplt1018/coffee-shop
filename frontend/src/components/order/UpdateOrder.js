@@ -1,24 +1,55 @@
-import React, { Fragment, useEffect } from 'react'
+import React, { Fragment, useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import MetaData from '../layout/MetaData'
 import { PreLoader } from '../layout/PreLoader'
-import { Link, useParams } from 'react-router-dom'
-import { getOrderDetails, clearErrors, getOrderDetailsAdmin } from '../../actions/orderActions'
+import { Link, useNavigate, useParams } from 'react-router-dom'
+import { clearErrors, getOrderDetailsAdmin, updateOrderStatus } from '../../actions/orderActions'
 import { toast } from 'react-toastify';
 import OrderDetailsItems from './OrderDetailsItems'
+import Select from 'react-select'
+import { MDBBadge } from 'mdbreact'
+import { UPDATE_ORDER_STATUS_RESET } from '../../constants/orderConstant'
 
+const orderStatuses = [
+  { value: 'Delivering', label: 'Đang giao' },
+  { value: 'Completed', label: 'Hoàn tất' },
+  { value: 'Cancelled', label: 'Đã hủy'}
+];
 
-const OrderDetails = () => {
+const selectStyles = {
+  control: base => ({
+    ...base,
+    height: 47,
+    minHeight: 47
+  })
+};
+
+const UpdateOrder = () => {
   const dispatch = useDispatch();
+  const navigator = useNavigate();
   const { user } = useSelector(state => state.auth);
   const { id } = useParams();
   const { loading, order, error } = useSelector(state => state.orderDetails);
+  const [orderStatus, setOrderStatus] = useState('');
+  const { error: updateError, isUpdated } = useSelector(state => state.order);
+
+  const handleChange = (selectedOption) => {
+    setOrderStatus(selectedOption);
+    dispatch(updateOrderStatus(order._id, selectedOption.value));
+  };
 
   useEffect(() => {
     if(['staff', 'admin'].includes(user.role)) {
       dispatch(getOrderDetailsAdmin(id));
-    } else {
-      dispatch(getOrderDetails(id))
+    }
+  },[]);
+
+  useEffect(() => {
+    if(updateError) {
+      toast.error(updateError, {
+        theme: "colored"
+      });
+      dispatch(clearErrors());
     }
 
     if(error) {
@@ -27,11 +58,21 @@ const OrderDetails = () => {
       });
       dispatch(clearErrors());
     }
-  }, [dispatch, error, id])
+
+    if(isUpdated) {
+      dispatch(getOrderDetailsAdmin(id));
+      setOrderStatus(order.orderStatus);
+
+      toast.success('Cập nhật trạng thái đơn hàng thành công!', {
+        theme: "colored"
+      });
+      dispatch({ type: UPDATE_ORDER_STATUS_RESET });
+    }
+  }, [dispatch, error, id, loading, updateError, isUpdated, navigator, orderStatus])
 
   return (
     <Fragment>
-    <MetaData title={'Chi tiết đơn hàng'} />
+    <MetaData title={'Cập nhật trạng thái đơn hàng'} />
     { (loading === false) ? (
         <Fragment>
           <div>
@@ -40,14 +81,14 @@ const OrderDetails = () => {
                 <div className="row">
                   <div className="col-lg-6 col-md-6 col-sm-6">
                     <div className="breadcrumb__text">
-                      <h2>Chi tiết đơn hàng</h2>
+                      <h2>Cập nhật trạng thái đơn hàng</h2>
                     </div>
                   </div>
                   <div className="col-lg-6 col-md-6 col-sm-6">
                     <div className="breadcrumb__links">
                       <Link to="/index">Trang chủ</Link>
-                      <Link to="/orders/me">Đơn hàng của tôi</Link>
-                      <span>Chi tiết đơn hàng</span>
+                      <Link to="/orders/me">Đơn hàng</Link>
+                      <span>Cập nhật trạng thái đơn hàng</span>
                     </div>
                   </div>
                 </div>
@@ -56,8 +97,34 @@ const OrderDetails = () => {
             <section className="shopping-cart spad">
               <div className="container">
                 <div className="row">
-                  <div className="col-lg-8">
+                  <div className="col-8">
+                    <div className="order__details__info">
+                      <h4 className='mb-3'>Trạng thái đơn hàng hiện tại</h4>
+                        <div className='col-4'>   
+                          {
+                            {
+                              'Delivering': <h4><MDBBadge color='primary' pill>Đang giao</MDBBadge></h4>,
+                              'Completed': <h4><MDBBadge color='success' pill>Hoàn tất</MDBBadge></h4>,
+                              'Cancelled': <h4><MDBBadge color='danger' pill>Đã hủy</MDBBadge></h4>
+                            }[order.orderStatus]
+                          }
+                        </div>
+                        <h4 className='mb-3 mt-3'>Cập nhật trạng thái đơn hàng</h4>
+                        <div className='row'>
+                          <div className='col-4'>
+                            <Select
+                              styles={selectStyles}
+                              options={orderStatuses}
+                              placeholder={<div>Trạng thái</div>}
+                              value={orderStatus}
+                              onChange={handleChange}
+                              className='mb-3 mt-3'
+                              />
+                          </div>
+                        </div>
+                      </div>
                     <div className="shopping__cart__table">
+                      <h4 id='list_products' className='mb-3 mt-3'>Danh mục sản phẩm</h4>
                       <table>
                         <thead>
                           <tr>
@@ -77,7 +144,7 @@ const OrderDetails = () => {
                   </div>
                   <div className="col-lg-4">
                     <div className="cart__total mb-4">
-                      <h6>Đơn hàng của bạn</h6>
+                      <h6>Đơn hàng</h6>
                       <ul>
                         <li>Số sản phẩm:
                           <span>{new Intl.NumberFormat().format(order.orderItems
@@ -108,16 +175,6 @@ const OrderDetails = () => {
                         }
                     </div>
                     <div className="order__details__info">
-                      <h4>Tình trạng đơn hàng</h4>
-                        {
-                          {
-                            'Delivering': <h4><span className='badge bg-primary mt-1 mb-3'>Đang giao</span></h4>,
-                            'Completed': <h4><span className='badge bg-success mt-1 mb-3'>Hoàn tất</span></h4>,
-                            'Canccelled': <h4><span className='badge bg-danger mt-1 mb-3'>Đã hủy</span></h4>
-                          }[order.orderStatus]
-                        }
-                    </div>
-                    <div className="order__details__info">
                       <h4>Ngày đặt hàng</h4>
                       <p>{String(order.createdAt).substring(0, 10)}</p>
                     </div>
@@ -133,4 +190,4 @@ const OrderDetails = () => {
   )
 }
 
-export default OrderDetails
+export default UpdateOrder
