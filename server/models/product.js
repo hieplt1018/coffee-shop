@@ -57,6 +57,11 @@ const productSchema = new mongoose.Schema({
     maxLength: [300, 'Tên sản phẩm không được vượt quá 300 ký tự'],
     default: "Cantata Coffee"
   },
+  hotTrend: {
+    type: Boolean,
+    required: [true, 'Vui lòng nhập sự yêu thích'],
+    default: false
+  },
   createdAt: {
     type: Date,
     default: Date.now

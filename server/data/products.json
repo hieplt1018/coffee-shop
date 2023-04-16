@@ -8,7 +8,8 @@
       "url": "https://i.ibb.co/B6nKVw5/product-3.jpg"
     }],
     "category": "Cake",
-    "stock": 20
+    "stock": 20,
+    "hotTrend": true
   },
   {
     "name": "Coffee",
@@ -19,7 +20,8 @@
       "url": "https://i.ibb.co/B6nKVw5/product-3.jpg"
     }],
     "category": "Coffee",
-    "stock": 20
+    "stock": 20,
+    "hotTrend": true
   },
   {
     "name": "Coffee Bean",
@@ -30,7 +32,8 @@
       "url": "https://i.ibb.co/B6nKVw5/product-3.jpg"
     }],
     "category": "Coffee Bean",
-    "stock": 20
+    "stock": 20,
+    "hotTrend": false
   },
   {
     "name": "Bread",
@@ -41,7 +44,8 @@
       "url": "https://i.ibb.co/B6nKVw5/product-3.jpg"
     }],
     "category": "Bread",
-    "stock": 20
+    "stock": 20,
+    "hotTrend": false
   },
   {
     "name": "Pastries",
@@ -52,7 +56,8 @@
       "url": "https://i.ibb.co/B6nKVw5/product-3.jpg"
     }],
     "category": "Pastries",
-    "stock": 20
+    "stock": 20,
+    "hotTrend": false
   },
   {
     "name": "Cake",
@@ -63,7 +68,8 @@
       "url": "https://i.ibb.co/B6nKVw5/product-3.jpg"
     }],
     "category": "Cake",
-    "stock": 20
+    "stock": 20,
+    "hotTrend": false
   },
   {
     "name": "Americano",
@@ -74,7 +80,8 @@
       "url": "https://i.ibb.co/B6nKVw5/product-3.jpg"
     }],
     "category": "Coffee",
-    "stock": 20
+    "stock": 20,
+    "hotTrend": false
   },
   {
     "name": "Coffee Bean",
@@ -85,7 +92,8 @@
       "url": "https://i.ibb.co/B6nKVw5/product-3.jpg"
     }],
     "category": "Coffee Bean",
-    "stock": 20
+    "stock": 20,
+    "hotTrend": false
   },
   {
     "name": "Bread",
@@ -96,7 +104,8 @@
       "url": "https://i.ibb.co/B6nKVw5/product-3.jpg"
     }],
     "category": "Bread",
-    "stock": 20
+    "stock": 20,
+    "hotTrend": false
   },
   {
     "name": "Pastries",
@@ -107,7 +116,8 @@
       "url": "https://i.ibb.co/B6nKVw5/product-3.jpg"
     }],
     "category": "Pastries",
-    "stock": 20
+    "stock": 20,
+    "hotTrend": false
   },
   {
     "name": "Cake",
@@ -118,7 +128,8 @@
       "url": "https://i.ibb.co/B6nKVw5/product-3.jpg"
     }],
     "category": "Cake",
-    "stock": 20
+    "stock": 20,
+    "hotTrend": false
   },
   {
     "name": "Cappuccino",
@@ -129,7 +140,8 @@
       "url": "https://i.ibb.co/B6nKVw5/product-3.jpg"
     }],
     "category": "Coffee",
-    "stock": 20
+    "stock": 20,
+    "hotTrend": false
   },
   {
     "name": "Coffee Bean",
@@ -140,7 +152,8 @@
       "url": "https://i.ibb.co/B6nKVw5/product-3.jpg"
     }],
     "category": "Coffee Bean",
-    "stock": 20
+    "stock": 20,
+    "hotTrend": false
   },
   {
     "name": "Bread",
@@ -151,7 +164,8 @@
       "url": "https://i.ibb.co/B6nKVw5/product-3.jpg"
     }],
     "category": "Bread",
-    "stock": 20
+    "stock": 20,
+    "hotTrend": false
   },
   {
     "name": "Pastries",
@@ -162,7 +176,8 @@
       "url": "https://i.ibb.co/B6nKVw5/product-3.jpg"
     }],
     "category": "Pastries",
-    "stock": 20
+    "stock": 20,
+    "hotTrend": false
   },
   {
     "name": "Cake",
@@ -173,7 +188,8 @@
       "url": "https://i.ibb.co/B6nKVw5/product-3.jpg"
     }],
     "category": "Cake",
-    "stock": 20
+    "stock": 20,
+    "hotTrend": false
   },
   {
     "name": "Espresso",
@@ -184,7 +200,8 @@
       "url": "https://i.ibb.co/B6nKVw5/product-3.jpg"
     }],
     "category": "Coffee",
-    "stock": 20
+    "stock": 20,
+    "hotTrend": false
   },
   {
     "name": "Coffee Bean",
@@ -195,7 +212,8 @@
       "url": "https://i.ibb.co/B6nKVw5/product-3.jpg"
     }],
     "category": "Coffee Bean",
-    "stock": 20
+    "stock": 20,
+    "hotTrend": false
   },
   {
     "name": "Bread",
@@ -206,7 +224,8 @@
       "url": "https://i.ibb.co/B6nKVw5/product-3.jpg"
     }],
     "category": "Bread",
-    "stock": 20
+    "stock": 20,
+    "hotTrend": false
   },
   {
     "name": "Pastries",
@@ -217,6 +236,7 @@
       "url": "https://i.ibb.co/B6nKVw5/product-3.jpg"
     }],
     "category": "Pastries",
-    "stock": 20
+    "stock": 20,
+    "hotTrend": false
   }
 ]

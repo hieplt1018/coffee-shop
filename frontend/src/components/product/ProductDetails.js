@@ -119,11 +119,11 @@ const ProductDetails = () => {
                         <li>Danh mục: 
                         {
                           {
-                            'Bread': <span>Bánh mì</span>,
-                            'Coffee': <span>Cà phê</span>,
-                            'Coffee Bean': <span>Hạt cà phê</span>,
-                            'Cake': <span>Bánh ngọt</span>,
-                            'Pastries': <span>Bánh mặn</span>
+                            'Bread': <span> Bánh mì</span>,
+                            'Coffee': <span> Cà phê</span>,
+                            'Coffee Bean': <span> Hạt cà phê</span>,
+                            'Cake': <span> Bánh ngọt</span>,
+                            'Pastries': <span> Bánh mặn</span>
                           }[product.category]
                         }
                         </li>

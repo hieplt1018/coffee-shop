@@ -27,6 +27,7 @@ const Product = ({ product }) => {
   return (
     <div className="col-lg-3 col-md-6 col-sm-6">
       <div className="product__item">
+        <div className="hotTrend-badge" style={{display: product.hotTrend ? null : 'none'}}>Bán chạy</div>
         <div className="product__item__pic">
           <Link to={`/product/${product._id}`}>
             <img className='product__item__pic set-bg' src={product.images[0].url} alt="product-4" />

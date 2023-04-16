@@ -59,7 +59,7 @@ exports.getAllOrders = catchAsyncErrors(async (req, res, next) => {
     }
   } : {}
 
-  const apiFeatures = new APIFeatures(Order.find({ ...keyword }), req.query)
+  const apiFeatures = new APIFeatures(Order.find({ ...keyword }).sort({'createdAt': -1}), req.query)
     .search().filter().pagination(resPerPage);  
   const orders = await apiFeatures.query;
   const totalOrders = await Order.find({...keyword});

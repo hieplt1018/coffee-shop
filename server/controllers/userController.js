@@ -133,7 +133,7 @@ exports.getAllUsers = catchAsyncErrors(async (req, res, next) => {
     }
   } : {}
 
-  const apiFeatures = new APIFeatures(User.find({ ...keyword }), req.query)
+  const apiFeatures = new APIFeatures(User.find({ ...keyword }).sort({'createdAt': -1}), req.query)
     .search().filter().pagination(resPerPage);  
   const users = await apiFeatures.query;
   const totalUsers = await User.find({...keyword});

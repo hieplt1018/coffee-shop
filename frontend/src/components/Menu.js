@@ -87,9 +87,7 @@ const Menu = () => {
             <div className="container">
               <div className="shop__option">
                 <div className="row">
-                  <div className="col-7">
-                    <Search />
-                  </div>
+                  <Search />
                   <div className="col-3 offset-md-2">
                     <Select
                       styles={selectStyles}

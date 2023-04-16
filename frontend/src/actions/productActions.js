@@ -19,7 +19,7 @@ import {
   UPDATE_PRODUCT_FAIL,
 } from '../constants/productConstants'
 
-export const getProducts = (keyword='', currentPage = 1, category) => async (dispatch) => {
+export const getProducts = (keyword='', currentPage = 1, category, hotTrend) => async (dispatch) => {
   try {
     dispatch({ type: ALL_PRODUCTS_REQUEST });
     let link = `/api/v1/products?page=${currentPage}&keyword=${keyword}`;
@@ -27,6 +27,11 @@ export const getProducts = (keyword='', currentPage = 1, category) => async (dis
     if (category) {
       link =`/api/v1/products?page=${currentPage}&keyword=${keyword}&category=${category.value}`;
     }
+
+    if (hotTrend) {
+      link =`/api/v1/products?page=${currentPage}&hotTrend=${hotTrend}`;
+    }
+
     const { data } = await axios.get(link);
     
     dispatch({
