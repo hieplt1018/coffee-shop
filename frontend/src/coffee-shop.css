@@ -387,6 +387,7 @@ ol {
   -webkit-transition: all, 0.3s;
   -o-transition: all, 0.3s;
   transition: all, 0.3s;
+  min-width: 100px;
 }
 .header__top__left ul li ul li {
   list-style: none;
@@ -394,6 +395,7 @@ ol {
   color: #ffffff;
   padding: 2px 15px;
   cursor: pointer;
+  border-bottom: solid 1px #fff;
 }
 .header__top__left ul li ul li:after {
   display: none;
@@ -4285,7 +4287,7 @@ ol {
 }
 .btn-edit i {
   color: #28A745;
-  margin-left: 0.7em;
+  margin-left: 1em;
 }
 .btn-delete i {
   color: #e3242b;
@@ -4327,7 +4329,6 @@ ol {
   border: none;
   height: 46px;
 }
-
 #list_products {
   color: #5D453F;
   font-weight: bold;
