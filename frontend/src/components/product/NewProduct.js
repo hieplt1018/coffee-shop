@@ -6,6 +6,7 @@ import { toast } from 'react-toastify';
 import { NEW_PRODUCT_RESET } from '../../constants/productConstants';
 import { newProduct, clearErrors } from '../../actions/productActions';
 import { PreLoader } from '../layout/PreLoader';
+import Form from 'react-bootstrap/Form';
 
 const NewProduct = () => {
   const [name, setName] = useState('');
@@ -14,6 +15,7 @@ const NewProduct = () => {
   const [category, setCategory] = useState('Cake');
   const [stock, setStock] = useState(1);
   const [supplier, setSupplier] = useState('Cantata Coffee');
+  const [hotTrend, setHotTrend] = useState(true);
   const [images, setImages] = useState([]);
   const [imagesPreview, setImagesPreview] = useState([]);
   const categories = ['Cake', 'Coffee', 'Coffee Bean', 'Pastries', 'Bread'];
@@ -56,6 +58,7 @@ const NewProduct = () => {
       category: category,
       stock: stock,
       supplier: supplier,
+      hotTrend: hotTrend,
       images: images
     }
 
@@ -80,6 +83,10 @@ const NewProduct = () => {
 
       reader.readAsDataURL(file);
     });
+  }
+
+  const handleChangeCheckbox = (e) => {
+    setHotTrend(e.target.value);
   }
 
   return (
@@ -177,6 +184,19 @@ const NewProduct = () => {
                                   id='new-product-supplier' 
                                   className='form-control mt-3 mb-3'
                                 />
+                              </div>
+                              <div className='col-md-12 mb-3'>
+                                <h4>
+                                  <Form.Check 
+                                    type='checkbox'
+                                    id='hotTrend-checkbox'
+                                    value={hotTrend}
+                                    name='hotTrend'
+                                    label='Sản phẩm nổi bật'
+                                    onChange={(e) => handleChangeCheckbox(e)}
+                                    checked={hotTrend}
+                                  />
+                                </h4>
                               </div>
                               <div className='form-group col-md-12'>
                                 <h4><label className='labels new-product'>Hình ảnh sản phẩm</label></h4>

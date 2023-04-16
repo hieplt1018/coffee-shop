@@ -14,9 +14,10 @@ import { PreLoader } from './layout/PreLoader';
 const Home = () => {
   const dispatch = useDispatch();
   const { products, error, loading } = useSelector(state => state.products);
-
+  
   useEffect(() => {
-    dispatch(getProducts());
+    dispatch(getProducts('', 1, '', true));
+
     if(error) {
       toast.error(error, {
         theme: "colored"
